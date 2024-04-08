@@ -12,7 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+svg{
+  width: 30px;
+}
 a {
   font-weight: 500;
   color: #646cff;

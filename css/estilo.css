@@ -1,19 +1,4 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-body{
-    font-family: 'Courier New', Courier, monospace;
-    width: 100%;
-    height: 100%;
-    background: rgba(33,33,33,0.94);
-    background: -moz-linear-gradient(top,  #002e3e 0%, #fbe4bf 100%); 
-    background: -webkit-linear-gradient(top,  #002e3e 0%,#fbe4bf 100%); 
-    background: linear-gradient(to bottom,  #002e3e 0%,#fbe4bf 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002e3e', endColorstr='#fbe4bf',GradientType=0 );
-}
-img  { 
+img  {
     max-width: 100%; 
 }     
 .content{
@@ -24,19 +9,19 @@ img  {
     margin: 0 auto;
     display: block;
 }
-#page .apresenta h1 {
+h1 {
     text-indent: -90000px;
     display: block;
     width: 375px;
     height: 295px;
     margin: 0 auto;    
-    background: url(../image/tauk-design.png) no-repeat scroll 0 0 transparent;
+    background: url('../dist/tauk-design.png') no-repeat scroll 0 0 transparent;
 }
 #page h1:hover{
     opacity: 0.4;
 }
 #page hr{
-    background: url("../image/linha.png") repeat scroll 0 0 transparent;
+    background: url("../dist/image/linha.png") repeat scroll 0 0 transparent;
     border: medium none;
     clear: left;
     display: block;
@@ -47,13 +32,12 @@ img  {
     -moz-transform: rotate(-180deg);
     z-index: -3;
 }
-.apresenta{
-    max-width: 736px;
+.apresenta {
+    width: 736px;
     height: 657px;
     margin: 0 auto;
     display: block;
-    background: url("../image/bg-apresenta.png") no-repeat scroll center center transparent;
-    overflow: hidden;
+    background: url('../dist/image/bg-apresenta.png') no-repeat scroll 0 0 transparent;
 }
 .apresenta h3{
     color: #002e3e;
@@ -85,7 +69,7 @@ img  {
     display: inline-table
 }
 .contactInfo hr{
-    background: url("../image/linha.png") no-repeat left transparent;
+    background: url("../dist/image/linha.png") no-repeat left transparent;
     border: none;
     height: 13px;
     display: block;
