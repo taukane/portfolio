@@ -43,6 +43,7 @@ h1 {
     color: #002e3e;
     position: relative;
     top: -85px;
+    font-size:  1rem !important;
 }
 .caxa{
     display: flex;
@@ -164,6 +165,7 @@ div#works  img:hover{
 	-moz-transform: rotate(360deg);
 }
 #QuickView{
+    display: none;
     position: relative;
     clear: both;
     bottom: 0;

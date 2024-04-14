@@ -4,6 +4,7 @@ function dimOff(){
 function dimOn(){
     document.getElementById("QuickView").style.display = "block";
 }
+alert('oi')
 $(function() {
     $("img").lazyload({
         event : "sporty"
