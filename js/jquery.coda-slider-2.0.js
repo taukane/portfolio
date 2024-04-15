@@ -35,8 +35,8 @@ $.fn.codaSlider = function(settings) {
 		// If we need arrows
 		if (settings.dynamicArrows) {
 			slider.parent().addClass("arrows");
-			slider.before('<div class="coda-nav-left" id="coda-nav-left-' + sliderCount + '"><a href="#"><img alt="Next" src="image/prev.jpg"></a></div>');
-			slider.before('<div class="coda-nav-right" id="coda-nav-right-' + sliderCount + '"><a href="#"><img alt="Prev" src="image/next.jpg"></a></div>');
+			slider.before('<div class="coda-nav-left" id="coda-nav-left-' + sliderCount + '"><a href="#"><img alt="Next" src="dist/image/prev.jpg"></a></div>');
+			slider.before('<div class="coda-nav-right" id="coda-nav-right-' + sliderCount + '"><a href="#"><img alt="Prev" src="dist/image/next.jpg"></a></div>');
 		};
 		
 		var panelWidth = slider.find(".panel").width();
