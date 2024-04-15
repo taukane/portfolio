@@ -1,5 +1,4 @@
 import './App.css'
-//import './index.js'
 function App() {
 	function dimOn() {
 		document.getElementById("QuickView").style.display = "block";
@@ -19,7 +18,7 @@ function App() {
 					<h1>Designer Curitiba</h1>
 				</a>
 				<div className="caxa">
-					<h2 className="text-secondary">Taukane Portfolio</h2>
+					<h2 className="text-secondary">Taukane Portfolio React</h2>
 					<h3>Designer Web e Gráfico</h3>
 					<p className="bio-text">
 						Atuo em criação e desenvolvimento de interfaces visuais, para mídias
