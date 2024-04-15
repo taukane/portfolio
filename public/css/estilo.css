@@ -30,13 +30,13 @@ h1 {
     width: 375px;
     height: 295px;
     margin: 0 auto;    
-    background: url('../dist/tauk-design.png') no-repeat scroll 0 0 transparent;
+    background: url('../image/tauk-design.png') no-repeat scroll 0 0 transparent;
 }
 #page h1:hover{
     opacity: 0.4;
 }
 #page hr{
-    background: url("../dist/image/linha.png") repeat scroll 0 0 transparent;
+    background: url("../image/linha.png") repeat scroll 0 0 transparent;
     border: medium none;
     clear: left;
     display: block;
@@ -52,7 +52,7 @@ h1 {
     height: 657px;
     margin: 0 auto;
     display: block;
-    background: url('../dist/image/bg-apresenta.png') no-repeat scroll 0 0 transparent;
+    background: url('../image/bg-apresenta.png') no-repeat scroll 0 0 transparent;
 }
 .apresenta h3{
     color: #002e3e;
@@ -85,7 +85,7 @@ h1 {
     display: inline-table
 }
 .contactInfo hr{
-    background: url("../dist/image/linha.png") no-repeat left transparent;
+    background: url("../image/linha.png") no-repeat left transparent;
     border: none;
     height: 13px;
     display: block;
