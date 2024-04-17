@@ -55,7 +55,7 @@ h1 {
 }
 
 .apresenta hr {
-    background: url("../dist/image/linha.png") repeat scroll 0 0 transparent;
+    background: url('../dist/image/linha.png') repeat scroll 0 0 transparent;
     border: medium none;
     clear: left;
     display: block;
@@ -68,7 +68,7 @@ h1 {
 }
 
 .apresenta {
-    width: 736px;
+    max-width: 736px;
     height: 657px;
     margin: 0 auto;
     display: block;
@@ -280,13 +280,6 @@ and (max-width: 768px) {
         -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
         filter: sepia(0) hue-rotate(0deg) saturate(100%);
     }
-
-    .contactInfo {
-        left: 20px;
-        position: absolute;
-        top: 500px;
-        display: block;
-    }
 }
 
 @media only screen
@@ -298,15 +291,6 @@ and (max-width: 590px) {
         font-weight: bolder;
         letter-spacing: -3px;
         font-size: 2.423rem;
-    }
-
-    #QuickView {
-        display: block
-    }
-
-    .coda-slider .panel {
-        display: table;
-        float: left;
     }
 
     #works img {
@@ -329,18 +313,15 @@ and (max-width: 590px) {
         clear: both
     }
 
-    .coda-nav-right, .coda-nav-left {
-        bottom: 20px;
-    }
 }
 
 @media only screen
 and (max-width: 380px) {
     body {
-        background: rgb(0 0 0 / 83%);
+        background: rgb(0 0 0);
     }
 
     #works {
-        background-color: #002e3e;
+        background-color: #000000;
     }
 }
