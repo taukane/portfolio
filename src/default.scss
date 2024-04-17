@@ -29,6 +29,10 @@ $font-family-base: 'Courier New', Courier, monospace !default;
 @media (prefers-reduced-motion: no-preference) {
     .apresenta h2 {
         animation: logo-spin infinite 5s linear;
+        &:hover{
+            animation: logo-spin 3s linear;
+             transform: rotate(0deg);
+        }
     }
 }
 body{
@@ -101,12 +105,11 @@ img {
     }
 }
 .contactInfo {
-    margin: 40px;
     color: #919191;
     font-size: 0.85em;
     display: inline-flex;
     position: relative;
-    top: 130px;
+
     span {
         display: table;
         float: left;

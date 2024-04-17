@@ -5,12 +5,10 @@
 .bio-text {
     font-size: 1em;
     letter-spacing: -0.6px;
-    margin: 83px 29px 5px 17px;
+    margin: 21px 5px 5px 5px;
     word-spacing: 1px;
     text-align: left;
-    clear: both;
     line-height: 1.8em;
-    display: inline-table
 }
 .lazy {
     vertical-align: middle;
