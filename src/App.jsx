@@ -1,7 +1,6 @@
 import './App.css';
 import  './index.js';
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
-import 'react-horizontal-scrolling-menu/dist/styles.css';
+
 function App() {
 	function dimOn() {
 		document.getElementById("QuickView").style.display = "block";
@@ -300,19 +299,3 @@ function App() {
 }
 
 export default App
-
-function onWheel(apiObj: scrollVisibilityApiType, ev: React.WheelEvent): void {
-	const isThouchpad = Math.abs(ev.deltaX) !== 0 || Math.abs(ev.deltaY) < 15;
-
-	if (isThouchpad) {
-		ev.stopPropagation();
-		return;
-	}
-
-	if (ev.deltaY < 0) {
-		apiObj.scrollNext();
-	} else if (ev.deltaY > 0) {
-		apiObj.scrollPrev();
-	}
-}
-
