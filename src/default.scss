@@ -13,3 +13,149 @@ $font-family-base: 'Courier New', Courier, monospace !default;
 
 // Required
 @import "bootstrap/scss/bootstrap";
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .apresenta {
+        animation: logo-spin infinite 12s linear;
+    }
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 100%;
+    background: rgba(33,33,33,0.94);
+    background: -moz-linear-gradient(top,  #002e3e 0%, #fbe4bf 100%);
+    background: -webkit-linear-gradient(top,  #002e3e 0%,#fbe4bf 100%);
+    background: linear-gradient(to bottom,  #002e3e 0%,#fbe4bf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002e3e', endColorstr='#fbe4bf',GradientType=0 );
+}
+img {
+    max-width: 100%;
+}
+.apresenta {
+    max-width: 736px;
+    height: 657px;
+    margin: 0 auto;
+    display: block;
+    background: url('../dist/image/bg-apresenta.png') no-repeat scroll 0 0 transparent;
+    h1 {
+        text-indent: -90000px;
+        display: block;
+        width: 375px;
+        height: 295px;
+        margin: 0 auto;
+        background: url('../dist/tauk-design.png') no-repeat scroll 0 0 transparent;
+        will-change: filter;
+        transition: filter 900ms;
+        filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67));
+        &:hover {
+            opacity: 0.85;
+            filter: drop-shadow(0 0 2em rgba(2, 2, 39, 0.67));
+        }
+    }
+    hr {
+        background: url('../dist/image/linha.png') repeat scroll 0 0 transparent;
+        border: none;
+        clear: left;
+        display: block;
+        height: 8px;
+        margin: 0 0 20px 18px;
+        width: 95%;
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        z-index: -3;
+    }
+    h3 {
+        color: #002e3e;
+        position: relative;
+        top: -85px;
+        font-size: 1rem !important;
+    }
+}
+
+.caxa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        position: relative;
+        top: -185px;
+        left: 60px;
+        font-weight: bolder;
+        letter-spacing: -1px;
+        font-size: 1.473rem;
+    }
+}
+.contactInfo {
+    margin: 40px;
+    color: #919191;
+    font-size: 0.85em;
+    display: inline-flex;
+    position: relative;
+    top: 130px;
+    span {
+        display: table;
+        float: left;
+        padding-top: 8px;
+        height: 30px;
+        margin-right: 30px;
+    }
+    hr {
+        background: url('../dist/image/linha.png') no-repeat left transparent;
+        border: none;
+        height: 13px;
+        display: block;
+        margin-top: 35px;
+        float: left;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+    }
+    a {
+        color: #636363;
+        &:hover span {
+            -webkit-transition: all .4s ease-in-out;
+            -moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -ms-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+            opacity: 0.7;
+        }
+        
+    }
+    @include media-breakpoint-down(md) {
+        .contactInfo {
+            margin: 0;
+            position: absolute;
+            left: 5px;
+            top: 600px;
+        }
+    }
+}
+.text-left {
+    display: block;
+}
+.fechar img {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    display: block;
+    margin: 18px auto;
+    width: 50px;
+    height: 50px;
+    opacity: 40%;
+}
+
