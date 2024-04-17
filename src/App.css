@@ -13,7 +13,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
+    a:nth-of-type(2) h1 {
         animation: logo-spin infinite 12s linear;
     }
 }
@@ -56,7 +56,7 @@ h1 {
 
 .apresenta hr {
     background: url('../dist/image/linha.png') repeat scroll 0 0 transparent;
-    border: medium none;
+    border: none;
     clear: left;
     display: block;
     height: 8px;
@@ -110,7 +110,7 @@ h1 {
 }
 
 .contactInfo hr {
-    background: url("../dist/image/linha.png") no-repeat left transparent;
+    background: url('../dist/image/linha.png') no-repeat left transparent;
     border: none;
     height: 13px;
     display: block;
@@ -155,94 +155,15 @@ h1 {
     display: block;
 }
 
-#works {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: block;
-    color: #fefefe;
-}
-
-#works div {
-    display: block;
-    max-width: 289px;
-    float: left;
-    margin: 20px;
-}
-
-div#works h4 {
-    display: block;
-    position: relative;
-    top: -10px;
-    height: 40px;
-    z-index: -1;
-    margin: 6px;
-    font-size: 16px;
-    font-weight: lighter;
-    text-shadow: 1px 1px 1px rgb(56, 56, 56);
-}
-
-div#works img:hover {
-    z-index: 0;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
-    filter: sepia(0) hue-rotate(0deg) saturate(100%);
-    opacity: 1;
-}
-
-#works img {
-    z-index: 2;
-    border: solid 4px #cfe2de;
-    opacity: 0.85;
-    -moz-opacity: 85%;
-    -webkit-opacity: 85%;
-    -webkit-filter: sepia(20%) hue-rotate(0deg) saturate(30%);
-    filter: sepia(20%) hue-rotate(0deg) saturate(30%);
-    margin: 4px;
-}
-
-#works hr {
-    background: transparent url("../image/linha.png") no-repeat scroll left center;
-    border: medium none;
-    display: block;
-    height: 13px;
-    margin: 100px 0 15px 20px;
-    position: absolute;
-    width: 87%;
-    z-index: -1;
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-}
-
-#QuickView {
-    /*display: none;*/
-    /*position: relative;*/
-    /*clear: both;*/
-    /*bottom: 0;*/
-    /*z-index: 0;*/
-    /*color: #fefefe;*/
-    /*padding-top: 110px;*/
-    /*overflow-x: visible;*/
-    /*overflow-y: hidden;*/
-    /*height: 100%;*/
-}
-
-#QuickView a {
-    font-size: 13px;
-    color: #131393;
-    display: contents;
-}
-
 .fechar img {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
     display: block;
     margin: 18px auto;
     width: 50px;
     height: 50px;
-    opacity: 20%;
+    opacity: 40%;
 }
 
 .lazy {
@@ -273,12 +194,14 @@ div#works img:hover {
 
 @media only screen
 and (max-width: 768px) {
-    #works img {
-        border: solid 4px #cfe2de;
-        opacity: 1;
-        margin-bottom: 40px;
-        -webkit-filter: sepia(0) hue-rotate(0deg) saturate(100%);
-        filter: sepia(0) hue-rotate(0deg) saturate(100%);
+    .apresenta h3{
+        left: 30%;
+        top: -220px;
+    }
+    .contactInfo {
+        margin: 0;
+        position: absolute;
+        left: 5px;
     }
 }
 
@@ -287,23 +210,11 @@ and (max-width: 590px) {
     .caxa h2 {
         position: relative;
         top: -105px;
-        left: 243px;
+        left: 143px;
         font-weight: bolder;
         letter-spacing: -3px;
         font-size: 2.423rem;
     }
-
-    #works img {
-        border: solid 4px #cfe2de;
-        background-color: rgba(0, 0, 0, 0.57);
-        opacity: 1;
-        margin-bottom: 20px;
-    }
-
-    #works div {
-        margin-bottom: 20px;
-    }
-
     .panel-wrapper span {
         font-size: 1em;
         font-weight: bold
