@@ -10,7 +10,6 @@ $border-radius: .4rem;
 $primary: #1b063b;
 $font-family-base: 'Courier New', Courier, monospace !default;
 
-
 // Required
 @import "bootstrap/scss/bootstrap";
 #root {
@@ -28,8 +27,8 @@ $font-family-base: 'Courier New', Courier, monospace !default;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .apresenta {
-        animation: logo-spin infinite 12s linear;
+    .apresenta h2 {
+        animation: logo-spin infinite 5s linear;
     }
 }
 body{
@@ -85,7 +84,6 @@ img {
         font-size: 1rem !important;
     }
 }
-
 .caxa {
     display: flex;
     justify-content: center;
@@ -143,7 +141,7 @@ img {
     @include media-breakpoint-down(md) {
         .contactInfo {
             margin: 0;
-            position: absolute;
+            position: relative;
             left: 5px;
             top: 600px;
         }
