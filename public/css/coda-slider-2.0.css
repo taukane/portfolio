@@ -19,27 +19,17 @@ noscript div {
 	float: left
 }
 .coda-slider .panel {
-	display: table;
-	float:left;
-	width: 100vw
+	padding-top: 40px;
+
 } 
 .coda-slider-wrapper {     
 	text-align: center;
 }
 .coda-slider {
-	background: rgba(92, 92, 92, 0.71);
+	background: #fdfdfd;
 	position: relative;
-	top:0;
-	bottom: 0;
-	left:0;
-	right:0;
-	overflow-x: hidden;
-	overflow-y: visible
 }
-.panel-container{
-	overflow-x: hidden;
-	overflow-y: visible
-}
+
 .coda-slider-wrapper.arrows .coda-slider { margin: 0  }
 .coda-nav-left a, .coda-nav-right a { 
 	background: #000; 

@@ -1,14 +1,13 @@
 import './App.css';
 import  './index.js';
+function dimOn() {
+	document.getElementById("QuickView").style.display = "block";
+}
 
+function dimOff() {
+	document.getElementById("QuickView").style.display = "none";
+}
 function App() {
-	function dimOn() {
-		document.getElementById("QuickView").style.display = "block";
-	}
-
-	function dimOff() {
-		document.getElementById("QuickView").style.display = "none";
-	}
 	return (
 		<>
 			<div className="apresenta">
@@ -45,125 +44,6 @@ function App() {
 						</a>
 						<hr/>
 					</div>
-				</div>
-			</div>
-			<div id="works">
-				<div>
-					<h4>
-						Cover Facebook + Email Marketing
-						<br/>
-						<strong>Volvo CE</strong>
-					</h4>
-					<a className="xtrig" href="#1" rel="coda-slider-1['1']">
-						<img
-							src="image/work22.jpg"
-							alt="Cover Facebook + Email Marketing"
-							width={280}
-						/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Identidade Visual
-						<br/>
-						<strong>Marmoraria Florianópolis</strong>
-					</h4>
-					<a href="#2" className="xtrig" rel="coda-slider-1['2']">
-						<img
-							src="image/marmoraria-florianopolis.jpg"
-							alt="Re-Design de Marca  - Marmoraria Florianópolis"
-							width={280}
-						/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Interface Website + Desenvolvimento Wordpress <br/>
-						<strong>Probat Leogap</strong>
-					</h4>
-					<a className="xtrig" href="#3" rel="coda-slider-1['3']">
-						<img
-							src="image/probat-leogap-website.jpg"
-							alt="Interface Design + Desenvolvimento Wordpress"
-							width={280}
-						/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Midia Kit
-						<br/>
-						<strong>Curitiba Cultura</strong>
-					</h4>
-					<a href="#4" className="xtrig" rel="coda-slider-1['4']">
-						<img
-							src="image/curitiba-cultura-peq.jpg"
-							alt="Midia Kit Projeto Gráfico - Curitiba Cultura"
-							width={280}
-						/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Posts Facebook
-						<br/>
-						<strong>Roldão Atacadista</strong>
-					</h4>
-					<a href="#5" className="xtrig" rel="coda-slider-1['5']">
-						<img
-							src="image/posts-facebook-thumb.jpg"
-							alt="Posts Facebook"
-							width={280}
-						/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Identidade Visual + Website
-						<br/>
-						<strong>Zeta Estaleiro</strong>
-					</h4>
-					<a href="#6" className="xtrig" rel="coda-slider-1['6']">
-						<img
-							src="image/zeta-estaleiro.jpg"
-							alt="Identidade Visual e Website - Zeta Estaleiro"
-							width={280}
-						/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Interface Visual
-						<br/>
-						<strong>Gazeta do Povo</strong>
-					</h4>
-					<a className="xtrig" href="#7" rel="coda-slider-1['7']">
-						<img src="image/gazeta-thumb.jpg" alt="Interface Visual" width={280}/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Facebook
-						<br/>
-						<strong>Shopping Total</strong>
-					</h4>
-					<a className="xtrig" href="#8" rel="coda-slider-1['8']">
-						<img src="image/work19.jpg" alt="Facebook" width={280}/>
-					</a>
-				</div>
-				<div>
-					<h4>
-						Desenvolvimento Front-end
-						<br/>
-						<strong>Instituto GRPCOM</strong>
-					</h4>
-					<a className="xtrig" href="#9" rel="coda-slider-1['9']">
-						<img
-							src="image/work18.jpg"
-							alt="Desenvolvimento Front-end"
-							width={280}
-						/>
-					</a>
 				</div>
 			</div>
 			<div id="QuickView">
