@@ -7,6 +7,13 @@ function dimOn() {
 function dimOff() {
 	document.getElementById("QuickView").style.display = "none";
 }
+function toTop() {
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: 'smooth'
+	});
+}
 function App() {
 	return (
 		<>
@@ -166,7 +173,7 @@ function App() {
 			<a className="fechar" onClick={dimOff}>
 				<img alt="Fechar" src="image/bt_fechar.gif" width={50}/>
 			</a>
-			<a href="javascript:void(0);" title="Topo" id="topo">
+			<a onClick={toTop} title="Topo" id="topo">
 				<img
 					src="image/top.jpg"
 					alt="Taukane - Diretor de Arte Web"
