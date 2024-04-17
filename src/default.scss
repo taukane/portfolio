@@ -92,11 +92,14 @@ img {
     align-items: center;
     h2 {
         position: relative;
-        top: -185px;
-        left: 60px;
+        top: -155px;
         font-weight: bolder;
         letter-spacing: -1px;
         font-size: 1.473rem;
+        @include media-breakpoint-up(md) {
+            left: 60px;
+            top: -185px;
+        }
     }
 }
 .contactInfo {
@@ -126,15 +129,16 @@ img {
     }
     a {
         color: #636363;
-        &:hover span {
-            -webkit-transition: all .4s ease-in-out;
-            -moz-transition: all .4s ease-in-out;
-            -o-transition: all .4s ease-in-out;
-            -ms-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
-            opacity: 0.7;
+        span {
+            &:hover {
+                -webkit-transition: all .4s ease-in-out;
+                -moz-transition: all .4s ease-in-out;
+                -o-transition: all .4s ease-in-out;
+                -ms-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+                opacity: 0.7;
+            }
         }
-        
     }
     @include media-breakpoint-down(md) {
         .contactInfo {
