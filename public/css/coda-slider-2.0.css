@@ -26,8 +26,9 @@ noscript div {
 	text-align: center;
 }
 .coda-slider {
-	background: #fdfdfd;
+	background: #061b22;
 	position: relative;
+	color: #fefefe;
 }
 
 .coda-slider-wrapper.arrows .coda-slider { margin: 0  }
