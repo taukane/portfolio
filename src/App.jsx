@@ -78,8 +78,32 @@ function App() {
 				</div>
 			</div>
 			<div id="QuickView">
-				<div className="coda-slider-wrapper" id="coda-slider-1" data-key="slider">
-					<div className="coda-slider">
+				<div className="wrapper" data-key="slider">
+					<div className="slider">
+						<div className="panel">
+							<div className="panel-wrapper">
+								<h2 className="title">Globo Renault</h2>
+								<p>/ Layout Landing</p>
+								<img
+									alt="Layout Landing"
+									className="lazy"
+									src="image/landing-reanult-globo.jpg"
+									width={1024}
+								/>
+							</div>
+						</div>
+						<div className="panel">
+							<div className="panel-wrapper">
+								<h2 className="title">Lawww</h2>
+								<p>/ Layout Website</p>
+								<img
+									alt="Layout Landing"
+									className="lazy"
+									src="image/laww-layout-home-v2.png"
+									width={1024}
+								/>
+							</div>
+						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
 								<h2 className="title">Volvo CE</h2>
