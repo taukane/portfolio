@@ -2,6 +2,25 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './default.scss'
+
+import {
+	createBrowserRouter,
+	RouterProvider,
+} from "react-router-dom";
+
+import Root from "./routes/root";
+import ErrorPage from "./error-page";
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <App />,
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/app",
+		element: <Root />,
+	},
+]);
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -25,6 +44,6 @@ const analytics = getAnalytics(app);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<App />
+		<RouterProvider router={router} />
 	</React.StrictMode>,
 )

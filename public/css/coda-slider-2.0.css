@@ -1,10 +1,9 @@
 .panel h2.title { 
-	font-size: 1.1em;
-	font-weight: bolder;
+	font-size: 1.3em;
+	font-weight: bold;
 	margin: 20px 0 0;
 }
 .panel-wrapper span{
-	font-size: 0.85em;     
 	display: block;margin: 20px 
 }
 noscript div { 
