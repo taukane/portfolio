@@ -142,18 +142,6 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Curitiba Cultura</h2>
-								<span>/ Projeto Gráfico Midia Kit</span>
-								<img
-									alt="Curitiba Cultura - Projeto Gráfico"
-									className="lazy"
-									src="image/curitiba-cultura.jpg"
-									width={1024}
-								/>
-							</div>
-						</div>
-						<div className="panel">
-							<div className="panel-wrapper">
 								<h2 className="title">Roldão Atacadista</h2>
 								<span>/ Facebook Posts</span>
 								<img
@@ -187,30 +175,6 @@ function App() {
 								alt="Interface Design"
 								className="lazy"
 								src="image/gazeta.jpg"
-								width={1024}
-							/>
-						</div>
-					</div>
-					<div className="panel">
-						<div className="panel-wrapper">
-							<h2 className="title">Shopping Total</h2>
-							<span>/ Cover Facebook + Campanha Facebook</span>
-							<img
-								alt="Interface Design"
-								className="lazy"
-								src="image/shopping-total.jpg"
-								width={1024}
-							/>
-						</div>
-					</div>
-					<div className="panel">
-						<div className="panel-wrapper">
-							<h2 className="title">Desenvolvimento Front-End</h2>
-							<span/>
-							<img
-								alt="Interface Design"
-								className="lazy"
-								src="image/work18_big.jpg"
 								width={1024}
 							/>
 						</div>

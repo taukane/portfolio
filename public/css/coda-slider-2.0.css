@@ -4,7 +4,8 @@
 	margin: 20px 0 0;
 }
 .panel-wrapper span{
-	display: block;margin: 20px 
+	display: block;
+	margin: 20px ;
 }
 noscript div { 
 	background: #ccc; 
@@ -17,69 +18,22 @@ noscript div {
 	display: block;
 	float: left
 }
-.coda-slider .panel {
+.slider .panel {
 	padding-top: 40px;
 
 } 
-.coda-slider-wrapper {     
+.slider-wrapper {
 	text-align: center;
 }
-.coda-slider {
+.slider {
 	background: #061b22;
 	position: relative;
 	color: #fefefe;
 }
 
-.coda-slider-wrapper.arrows .coda-slider { margin: 0  }
-.coda-nav-left a, .coda-nav-right a { 
-	background: #000; 
-	color: #fff; 
-	width: 50px;
-	height: 50px 
-}
-.coda-nav ul li a.current {    
-	background-color:  rgba(250,250,250,0.5);
-	color: #000 !important;
-	padding: 10px;
-	font-weight: 600;
-	-webkit-transition: all .8s ease-in-out;
-	-moz-transition: all .8s ease-in-out;
-	-o-transition: all .8s ease-in-out;
-	transition: all .8s ease-in-out; 
-}
-
-p.loading { 
+p.loading {
 	padding: 20px; 
 	text-align: center;
 	z-index: -1;
 	display: block 
-}
-
-.coda-nav ul { 
-	display: none;
-	visibility: hidden;
-}
-.coda-nav ul li { 
-	display: inline;
-	margin-right: 18px;
-	width: 179px;
-}
-.coda-nav ul li a { margin: 11px;width: 187px; }
-
-.coda-nav-left { left: 20px; }
-
-.coda-nav-right { right: 20px; }
-.coda-nav-right, .coda-nav-left{
-	opacity: 20%;	
-	top: 78%;
-	z-index: 999999;
-	position: fixed;
-}
-.coda-nav-right:hover, .coda-nav-left:hover{
-	opacity: 100%;
-}
-.coda-nav-left a, .coda-nav-right a { 
-	display: inline-block; 
-	text-align: center; 
-	text-decoration: none;
 }
