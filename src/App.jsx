@@ -79,7 +79,19 @@ function App() {
 			</div>
 			<div id="QuickView">
 				<div className="wrapper" data-key="slider">
-					<div className="slider">
+					<div className="slider text-center">
+						<div className="panel">
+							<div className="panel-wrapper">
+								<h2 className="title">Black Club</h2>
+								<p>/ Layout Website</p>
+								<img
+									alt="Layout Landing"
+									className="lazy"
+									src="image/black-club-layout-v2.png"
+									width={1024}
+								/>
+							</div>
+						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
 								<h2 className="title">Globo Renault</h2>
