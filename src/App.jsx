@@ -87,7 +87,7 @@ function App() {
 								<img
 									alt="Layout Landing"
 									className="lazy"
-									src="image/black-club-layout-v2.png"
+									src="image/black-club-layout-v2.jpg"
 									width={1024}
 								/>
 							</div>
