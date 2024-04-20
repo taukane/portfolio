@@ -153,14 +153,51 @@ img {
 .text-left {
     display: block;
 }
-.fechar img {
+.fechar {
+    img {
+        position: fixed;
+        bottom: 5px;
+        right: 25px;
+        display: block;
+        margin: 18px auto;
+        width: 50px;
+        height: 50px;
+        opacity: 40%;
+    }
+}
+
+.panel {
+    h2.title {
+        font-size: 1.473em;
+        font-weight: bold;
+        margin: 20px 0 0;
+    }
+}
+.panel-wrapper{
+    span {
+        display: block;
+        margin: 10px;
+    }
+}
+.panel {
+    padding-top: 40px;
+}
+.slider {
+    background: #061b22;
+    position: relative;
+    color: #fefefe;
+}
+.bio-text {
+    font-size: 1em;
+    letter-spacing: -0.6px;
+    margin: 21px 5px 5px 5px;
+    word-spacing: 1px;
+    text-align: left;
+    line-height: 1.8em;
+}
+#topo {
     position: fixed;
-    bottom: 5px;
-    right: 5px;
-    display: block;
-    margin: 18px auto;
-    width: 50px;
-    height: 50px;
-    opacity: 40%;
+    bottom: 20px;
+    left: 20px;
 }
 
