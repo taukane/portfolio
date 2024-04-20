@@ -1,3 +1,43 @@
+.panel h2.title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 0;
+}
+.panel-wrapper span{
+    display: block;
+    margin: 20px ;
+}
+noscript div {
+    background: #ccc;
+    border: 1px solid #900;
+    margin: 20px 0;
+    padding: 15px
+}
+.coda-slider-no-js .coda-slider {
+    margin: 0 auto;
+    display: block;
+    float: left
+}
+.slider .panel {
+    padding-top: 40px;
+
+}
+.slider-wrapper {
+    text-align: center;
+}
+.slider {
+    background: #061b22;
+    position: relative;
+    color: #fefefe;
+}
+
+p.loading {
+    padding: 20px;
+    text-align: center;
+    z-index: -1;
+    display: block
+}
+
 .content {
     max-width: 768px;
     margin: 0 auto;
