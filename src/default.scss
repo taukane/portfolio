@@ -53,14 +53,14 @@ img {
     height: 657px;
     margin: 0 auto;
     display: block;
-    background: url('../dist/image/bg-apresenta.png') no-repeat scroll 0 0 transparent;
+    background: url('../image/bg-apresenta.png') no-repeat scroll 0 0 transparent;
     h1 {
         text-indent: -90000px;
         display: block;
         width: 375px;
         height: 295px;
         margin: 0 auto;
-        background: url('../dist/tauk-design.png') no-repeat scroll 0 0 transparent;
+        background: url('../tauk-design.png') no-repeat scroll 0 0 transparent;
         will-change: filter;
         transition: filter 900ms;
         filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67));
@@ -70,7 +70,7 @@ img {
         }
     }
     hr {
-        background: url('../dist/image/linha.png') repeat scroll 0 0 transparent;
+        background: url('../image/linha.png') repeat scroll 0 0 transparent;
         border: none;
         clear: left;
         display: block;
