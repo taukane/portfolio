@@ -160,6 +160,9 @@ img {
         display: block;
         margin: 10px;
     }
+    img{
+        border-radius: $border-radius;
+    }
 }
 
 .slider {

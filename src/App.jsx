@@ -82,7 +82,7 @@ function App() {
 				</div>
 			</div>
 			<div id="QuickView">
-				<div className="slider text-center">
+				<div className="slider text-center rounded shadow-lg">
 					<div className="panel" id="anchor">
 						<div className="panel-wrapper">
 							<a href="#anchor-2">
