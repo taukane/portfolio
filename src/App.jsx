@@ -62,7 +62,7 @@ function App() {
 							<div className="text-center">
 								<a
 									href="https://github.com/taukane/portfolio"
-									title="linkedin Taukane"
+									title="github Taukane"
 									target="_blank">
 									<svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
 										 data-view-component="true"
@@ -78,15 +78,14 @@ function App() {
 				</div>
 			</div>
 			<div id="QuickView">
-				<div className="wrapper" data-key="slider">
+				<div className="wrapper">
 					<div className="slider text-center">
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Black Club</h2>
-								<p>/ Layout Website</p>
+								<h4 className="title">Black Club</h4>
+								<p>Layout Website <small>/ 2018</small></p>
 								<img
 									alt="Layout Landing"
-									className="lazy"
 									src="image/black-club-layout-v2.jpg"
 									width={1024}
 								/>
@@ -94,23 +93,10 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Globo Renault</h2>
-								<p>/ Layout Landing</p>
-								<img
-									alt="Layout Landing"
-									className="lazy"
-									src="image/landing-reanult-globo.jpg"
-									width={1024}
-								/>
-							</div>
-						</div>
-						<div className="panel">
-							<div className="panel-wrapper">
 								<h2 className="title">Lawww</h2>
-								<p>/ Layout Website</p>
+								<p>Layout Website <small>/ 2018</small></p>
 								<img
 									alt="Layout Landing"
-									className="lazy"
 									src="image/laww-layout-home-v2.png"
 									width={1024}
 								/>
@@ -118,12 +104,11 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Volvo CE</h2>
-								<span>/ Cover Facebook + Email Marketing </span>
+								<h2 className="title">Globo Renault</h2>
+								<p>Layout Landing <small>/ 2016</small></p>
 								<img
-									alt="Volvo CE Cover Facebook"
-									className="lazy"
-									src="image/work22_big.jpg"
+									alt="Layout Landing"
+									src="image/landing-reanult-globo.jpg"
 									width={1024}
 								/>
 							</div>
@@ -131,10 +116,9 @@ function App() {
 						<div className="panel">
 							<div className="panel-wrapper">
 								<h2 className="title">Marmoraria Florianópolis</h2>
-								<span>/ Indentidade Visual </span>
+								<span>Indentidade Visual <small>/ 2014</small></span>
 								<img
 									alt="Marmoraria Florianópolis - Redesign de Marca"
-									className="lazy"
 									src="image/marmoraria-florianopolis-2014.jpg"
 									width={1024}
 								/>
@@ -142,11 +126,21 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
+								<h2 className="title">Volvo CE</h2>
+								<span>Cover Facebook + Email Marketing <small>/ 2012</small></span>
+								<img
+									alt="Volvo CE Cover Facebook"
+									src="image/work22_big.jpg"
+									width={1024}
+								/>
+							</div>
+						</div>
+						<div className="panel">
+							<div className="panel-wrapper">
 								<h2 className="title">Probat Leogap</h2>
-								<span>/ Website Interface + Desenvolvimento Wordpress</span>
+								<span>Website Interface + Desenvolvimento Wordpress</span>
 								<img
 									alt="Criação site Probat Leogap"
-									title="Criação site Probat Leogap"
 									src="image/probat-leogap.jpg"
 									width={1024}
 								/>
@@ -158,7 +152,6 @@ function App() {
 								<span>/ Facebook Posts</span>
 								<img
 									alt="Facebook Posts"
-									className="lazy"
 									src="image/roldao-posts.jpg"
 									width={1024}
 								/>
@@ -167,32 +160,27 @@ function App() {
 						<div className="panel">
 							<div className="panel-wrapper">
 								<h2 className="title">Zeta Estaleiro</h2>
-								<span>
-              / Indentidade Visual + Website Interface + Desenvolvimento
-              Wordpress{" "}
-            </span>
-							<img
-								alt="Zeta Estaleiro - Identidade Corporativa"
-								className="lazy"
-								src="image/zeta-estaleiro-redesign.jpg"
-								width={1024}
-							/>
+								<span>Indentidade Visual + Website Interface + Desenvolvimento Wordpress{" "}</span>
+								<img
+									alt="Zeta Estaleiro - Identidade Corporativa"
+									src="image/zeta-estaleiro-redesign.jpg"
+									width={1024}
+								/>
+							</div>
 						</div>
-					</div>
-					<div className="panel">
-						<div className="panel-wrapper">
-							<h2 className="title">Gazeta do Povo</h2>
-							<span>/ Interface</span>
-							<img
-								alt="Interface Design"
-								className="lazy"
-								src="image/gazeta.jpg"
-								width={1024}
-							/>
+						<div className="panel">
+							<div className="panel-wrapper">
+								<h2 className="title">Gazeta do Povo</h2>
+								<span>Interface Layout</span>
+								<img
+									alt="Interface Design"
+									src="image/gazeta.jpg"
+									width={1024}
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 			<a className="fechar" onClick={dimOff}>
 				<img alt="Fechar" src="image/bt_fechar.gif" width={50}/>
