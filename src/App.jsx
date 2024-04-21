@@ -82,6 +82,17 @@ function App() {
 					<div className="slider text-center">
 						<div className="panel">
 							<div className="panel-wrapper">
+								<h4 className="title">Lawww</h4>
+								<p>Layout Website <small>/ 2018</small></p>
+								<img
+									alt="Layout Landing"
+									src="image/laww-layout-home-v2.png"
+									width={1024}
+								/>
+							</div>
+						</div>
+						<div className="panel">
+							<div className="panel-wrapper">
 								<h4 className="title">Black Club</h4>
 								<p>Layout Website <small>/ 2018</small></p>
 								<img
@@ -93,18 +104,29 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Lawww</h2>
-								<p>Layout Website <small>/ 2018</small></p>
+								<h4 className="title">Probat Leogap</h4>
+								<span>Website Interface + Desenvolvimento Wordpress <small>/ 2017</small></span>
 								<img
-									alt="Layout Landing"
-									src="image/laww-layout-home-v2.png"
+									alt="Criação site Probat Leogap"
+									src="image/probat-leogap.jpg"
 									width={1024}
 								/>
 							</div>
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Globo Renault</h2>
+								<h4 className="title">Roldão Atacadista</h4>
+								<span>Facebook Posts  <small>/ 2017</small></span>
+								<img
+									alt="Facebook Posts"
+									src="image/roldao-posts.jpg"
+									width={1024}
+								/>
+							</div>
+						</div>
+						<div className="panel">
+							<div className="panel-wrapper">
+								<h4 className="title">Globo Renault</h4>
 								<p>Layout Landing <small>/ 2016</small></p>
 								<img
 									alt="Layout Landing"
@@ -115,7 +137,7 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Marmoraria Florianópolis</h2>
+								<h4 className="title">Marmoraria Florianópolis</h4>
 								<span>Indentidade Visual <small>/ 2014</small></span>
 								<img
 									alt="Marmoraria Florianópolis - Redesign de Marca"
@@ -126,7 +148,18 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Volvo CE</h2>
+								<h4 className="title">Zeta Estaleiro</h4>
+								<span>Indentidade Visual + Website Interface + Desenvolvimento Wordpress <small>/ 2014</small></span>
+								<img
+									alt="Zeta Estaleiro - Identidade Corporativa"
+									src="image/zeta-estaleiro-redesign.jpg"
+									width={1024}
+								/>
+							</div>
+						</div>
+						<div className="panel">
+							<div className="panel-wrapper">
+								<h4 className="title">Volvo CE</h4>
 								<span>Cover Facebook + Email Marketing <small>/ 2012</small></span>
 								<img
 									alt="Volvo CE Cover Facebook"
@@ -137,41 +170,8 @@ function App() {
 						</div>
 						<div className="panel">
 							<div className="panel-wrapper">
-								<h2 className="title">Probat Leogap</h2>
-								<span>Website Interface + Desenvolvimento Wordpress</span>
-								<img
-									alt="Criação site Probat Leogap"
-									src="image/probat-leogap.jpg"
-									width={1024}
-								/>
-							</div>
-						</div>
-						<div className="panel">
-							<div className="panel-wrapper">
-								<h2 className="title">Roldão Atacadista</h2>
-								<span>/ Facebook Posts</span>
-								<img
-									alt="Facebook Posts"
-									src="image/roldao-posts.jpg"
-									width={1024}
-								/>
-							</div>
-						</div>
-						<div className="panel">
-							<div className="panel-wrapper">
-								<h2 className="title">Zeta Estaleiro</h2>
-								<span>Indentidade Visual + Website Interface + Desenvolvimento Wordpress{" "}</span>
-								<img
-									alt="Zeta Estaleiro - Identidade Corporativa"
-									src="image/zeta-estaleiro-redesign.jpg"
-									width={1024}
-								/>
-							</div>
-						</div>
-						<div className="panel">
-							<div className="panel-wrapper">
-								<h2 className="title">Gazeta do Povo</h2>
-								<span>Interface Layout</span>
+								<h4 className="title">Gazeta do Povo</h4>
+								<span>Interface Layout <small>/ 2010</small></span>
 								<img
 									alt="Interface Design"
 									src="image/gazeta.jpg"
