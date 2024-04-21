@@ -109,6 +109,7 @@ img {
         }
     }
 }
+
 .bio-text {
     font-size: 1em;
     letter-spacing: -0.6px;
@@ -139,14 +140,16 @@ img {
 
 .panel {
     padding-top: 40px;
-    a{
+    a {
         color: $white;
+        
         h4 {
             font-size: 1.473em;
             font-weight: bold;
             margin: 20px 0 5px;
         }
-        &:hover{
+        
+        &:hover {
             text-decoration: none;
         }
     }
@@ -165,15 +168,35 @@ img {
     color: #fefefe;
 }
 
-.contact-infos{
+.contact-infos {
     a {
         display: block;
         transition: all ease-in-out .2s;
         opacity: .7;
-        &:hover{
+        
+        &:hover {
             transform: scale(1.473);
             transition: all ease-in-out .2s;
             opacity: 1;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .apresenta {
+        h3 {
+            left: 53%;
+            top: -100px !important;
+        }
+    }
+    .caxa {
+        h2 {
+            position: relative;
+            top: -105px !important;
+            left: 143px;
+            font-weight: bolder;
+            letter-spacing: -3px;
+            font-size: 2.423rem;
         }
     }
 }
