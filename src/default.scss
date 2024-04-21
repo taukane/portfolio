@@ -1,11 +1,6 @@
 $enable-gradients: true;
 $enable-shadows: true;
-
 $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
-
-// Customize some defaults
-//$body-color: #e0e0e0;
-$body-bg: rgba(64, 64, 64, 0.95);
 $border-radius: .4rem;
 $primary: #1b063b;
 $font-family-base: 'Courier New', Courier, monospace !default;
@@ -29,46 +24,53 @@ $font-family-base: 'Courier New', Courier, monospace !default;
 @media (prefers-reduced-motion: no-preference) {
     .apresenta h2 {
         animation: logo-spin infinite 5s linear;
-        &:hover{
+        
+        &:hover {
             animation: logo-spin 3s linear;
-             transform: rotate(0deg);
+            transform: rotate(0deg);
         }
     }
 }
-body{
+
+body {
     font-family: 'Courier New', Courier, monospace;
     width: 100%;
     height: 100%;
-    background: rgba(33,33,33,0.94);
-    background: -moz-linear-gradient(top,  #002e3e 0%, #fbe4bf 100%);
-    background: -webkit-linear-gradient(top,  #002e3e 0%,#fbe4bf 100%);
-    background: linear-gradient(to bottom,  #002e3e 0%,#fbe4bf 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002e3e', endColorstr='#fbe4bf',GradientType=0 );
+    background: rgba(33, 33, 33, 0.94);
+    background: -moz-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
+    background: -webkit-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
+    background: linear-gradient(to bottom, #002e3e 0%, #fbe4bf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002e3e', endColorstr='#fbe4bf', GradientType=0);
 }
+
 img {
     max-width: 100%;
 }
+
 .apresenta {
     max-width: 736px;
     height: 657px;
     margin: 0 auto;
     display: block;
     background: url('../image/bg-apresenta.png') no-repeat scroll 0 0 transparent;
+    
     h1 {
         text-indent: -90000px;
         display: block;
-        width: 375px;
+        max-width: 375px;
         height: 295px;
         margin: 0 auto;
         background: url('../tauk-design.png') no-repeat scroll 0 0 transparent;
         will-change: filter;
         transition: filter 900ms;
         filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67));
+        
         &:hover {
             opacity: 0.85;
             filter: drop-shadow(0 0 2em rgba(2, 2, 39, 0.67));
         }
     }
+    
     hr {
         background: url('../image/linha.png') repeat scroll 0 0 transparent;
         border: none;
@@ -81,78 +83,47 @@ img {
         -moz-transform: rotate(-180deg);
         z-index: -3;
     }
+    
     h3 {
         color: #002e3e;
         position: relative;
         top: -85px;
         font-size: 1rem !important;
     }
-}
-.caxa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h2 {
-        position: relative;
-        top: -155px;
-        font-weight: bolder;
-        letter-spacing: -1px;
-        font-size: 1.473rem;
-        @include media-breakpoint-up(md) {
-            left: 60px;
-            top: -185px;
-        }
-    }
-}
-.contactInfo {
-    color: #919191;
-    font-size: 0.85em;
-    display: inline-flex;
-    position: relative;
-
-    span {
-        display: table;
-        float: left;
-        padding-top: 8px;
-        height: 30px;
-        margin-right: 30px;
-    }
-    hr {
-        background: url('../image/linha.png') no-repeat left transparent;
-        border: none;
-        height: 13px;
-        display: block;
-        margin-top: 35px;
-        float: left;
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-    }
-    a {
-        color: #636363;
-        span {
-            &:hover {
-                -webkit-transition: all .4s ease-in-out;
-                -moz-transition: all .4s ease-in-out;
-                -o-transition: all .4s ease-in-out;
-                -ms-transition: all .4s ease-in-out;
-                transition: all .4s ease-in-out;
-                opacity: 0.7;
+    
+    .caxa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        h2 {
+            position: relative;
+            top: -155px;
+            font-weight: bolder;
+            letter-spacing: -1px;
+            font-size: 1.473rem;
+            @include media-breakpoint-up(md) {
+                left: 60px;
+                top: -185px;
             }
         }
     }
-    @include media-breakpoint-down(md) {
-        .contactInfo {
-            margin: 0;
-            position: relative;
-            left: 5px;
-            top: 600px;
-        }
-    }
 }
-.text-left {
-    display: block;
+.bio-text {
+    font-size: 1em;
+    letter-spacing: -0.6px;
+    margin: 21px 5px 5px 5px;
+    word-spacing: 1px;
+    text-align: left;
+    line-height: 1.8em;
 }
+
+#topo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
 .fechar {
     img {
         position: fixed;
@@ -167,37 +138,36 @@ img {
 }
 
 .panel {
+    padding-top: 40px;
     h4.title {
         font-size: 1.473em;
         font-weight: bold;
-        margin: 20px 0 0;
+        margin: 20px 0 5px;
     }
 }
-.panel-wrapper{
+
+.panel-wrapper {
     span {
         display: block;
         margin: 10px;
     }
 }
-.panel {
-    padding-top: 40px;
-}
+
 .slider {
     background: #061b22;
     position: relative;
     color: #fefefe;
 }
-.bio-text {
-    font-size: 1em;
-    letter-spacing: -0.6px;
-    margin: 21px 5px 5px 5px;
-    word-spacing: 1px;
-    text-align: left;
-    line-height: 1.8em;
-}
-#topo {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-}
 
+.contact-infos{
+    a {
+        display: block;
+        transition: all ease-in-out .2s;
+        opacity: .7;
+        &:hover{
+            transform: scale(1.473);
+            transition: all ease-in-out .2s;
+            opacity: 1;
+        }
+    }
+}
