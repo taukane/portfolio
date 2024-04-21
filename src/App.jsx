@@ -1,5 +1,4 @@
 import './App.css';
-import './index.js';
 import {auto} from "@popperjs/core";
 
 function dimOn() {
@@ -10,7 +9,6 @@ function dimOn() {
 		behavior: 'smooth'
 	});
 }
-
 function dimOff() {
 	document.getElementById("QuickView").style.display = "none";
 }
@@ -84,90 +82,103 @@ function App() {
 				</div>
 			</div>
 			<div id="QuickView">
-
 				<div className="slider text-center">
-					<div className="panel">
+					<div className="panel" id="anchor">
 						<div className="panel-wrapper">
-							<h4 className="title">Lawww</h4>
-							<p>Layout Website <small>/ 2018</small></p>
-							<img
-								alt="Layout Landing"
-								src="image/laww-layout-home-v2.webp"
-								width={1024}
-								height={auto}
-							/>
+							<a href="#anchor-2">
+								<h4 className="title">Lawww</h4>
+								<p>Layout Website <small>/ 2018</small></p>
+								<img
+									alt="Layout Landing"
+									src="image/laww-layout-home-v2.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
 						</div>
 					</div>
-					<div className="panel">
+					<div className="panel" id="anchor-2">
 						<div className="panel-wrapper">
-							<h4 className="title">Probat Leogap</h4>
-							<span>Website Interface + Desenvolvimento Wordpress <small>/ 2017</small></span>
-							<img
-								alt="Redesign website Probat Leogap"
-								src="image/probat-leogap.webp"
-								width={1024}
-								height={auto}
-							/>
+							<a href="#anchor-3">
+								<h4 className="title">Probat Leogap</h4>
+								<span>Website Interface + Desenvolvimento Wordpress <small>/ 2017</small></span>
+								<img
+									alt="Redesign website Probat Leogap"
+									src="image/probat-leogap.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
 						</div>
 					</div>
-					<div className="panel">
+					<div className="panel" id="anchor-3">
 						<div className="panel-wrapper">
-							<h4 className="title">Roldão Atacadista</h4>
-							<span>Facebook Posts  <small>/ 2017</small></span>
-							<img
-								alt="Facebook Posts"
-								src="image/roldao-posts.webp"
-								width={1024}
-								height={auto}
-							/>
+							<a href="#anchor-4">
+								<h4 className="title">Roldão Atacadista</h4>
+								<span>Facebook Posts  <small>/ 2017</small></span>
+								<img
+									alt="Facebook Posts"
+									src="image/roldao-posts.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
 						</div>
 					</div>
-					<div className="panel">
+					<div className="panel" id="anchor-4">
 						<div className="panel-wrapper">
-							<h4 className="title">Globo Renault</h4>
-							<p>Layout Landing <small>/ 2016</small></p>
-							<img
-								alt="Layout Landing"
-								src="image/landing-reanult-globo.jpg"
-								width={1024}
-								height={auto}
-							/>
+							<a href="#anchor-5">
+								<h4 className="title">Globo Renault</h4>
+								<p>Layout Landing <small>/ 2016</small></p>
+								<img
+									alt="Layout Landing"
+									src="image/landing-reanult-globo.jpg"
+									width={1024}
+									height={auto}
+								/>
+							</a>
 						</div>
 					</div>
-					<div className="panel">
+					<div className="panel" id="anchor-5">
 						<div className="panel-wrapper">
-							<h4 className="title">Marmoraria Florianópolis</h4>
-							<span>Indentidade Visual <small>/ 2014</small></span>
-							<img
-								alt="Marmoraria Florianópolis Redesign de Marca"
-								src="image/marmoraria-florianopolis-2014.jpg"
-								width={1024}
-								height={auto}
-							/>
+							<a href="#anchor-6">
+								<h4 className="title">Marmoraria Florianópolis</h4>
+								<span>Indentidade Visual <small>/ 2014</small></span>
+								<img
+									alt="Marmoraria Florianópolis Redesign de Marca"
+									src="image/marmoraria-florianopolis-2014.jpg"
+									width={1024}
+									height={auto}
+								/>
+							</a>
 						</div>
 					</div>
-					<div className="panel">
+					<div className="panel" id="anchor-6">
 						<div className="panel-wrapper">
-							<h4 className="title">Volvo CE</h4>
-							<span>Facebook Cover + Email Marketing <small>/ 2012</small></span>
-							<img
-								alt="Volvo CE Facebook EMKT"
-								src="image/work22_big.webp"
-								width={1024}
-								height={auto}
-							/>
+							<a href="#anchor-7">
+								<h4 className="title">Volvo CE</h4>
+								<span>Facebook Cover + Email Marketing <small>/ 2012</small></span>
+								<img
+									alt="Volvo CE Facebook EMKT"
+									src="image/work22_big.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
 						</div>
 					</div>
-					<div className="panel">
+					<div className="panel" id="anchor-7">
 						<div className="panel-wrapper">
-							<h4 className="title">Gazeta do Povo</h4>
-							<span>Layout Classificados<small>/ 2010</small></span>
-							<img
-								alt="Gazeta do Povo Interface Design"
-								src="image/gazeta.webp"
-								width={1024}
-								height={auto}
-							/>
+							<a href="#anchor">
+								<h4 className="title">Gazeta do Povo</h4>
+								<span>Layout Classificados<small>/ 2010</small></span>
+								<img
+									alt="Gazeta do Povo Interface Design"
+									src="image/gazeta.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
 						</div>
 					</div>
 				</div>

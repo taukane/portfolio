@@ -139,10 +139,16 @@ img {
 
 .panel {
     padding-top: 40px;
-    h4.title {
-        font-size: 1.473em;
-        font-weight: bold;
-        margin: 20px 0 5px;
+    a{
+        color: $white;
+        h4 {
+            font-size: 1.473em;
+            font-weight: bold;
+            margin: 20px 0 5px;
+        }
+        &:hover{
+            text-decoration: none;
+        }
     }
 }
 
