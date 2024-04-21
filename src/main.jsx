@@ -8,7 +8,7 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 
-import Root from "./routes/root";
+//import Root from "./routes/root";
 import ErrorPage from "./error-page";
 const router = createBrowserRouter([
 	{
@@ -16,10 +16,10 @@ const router = createBrowserRouter([
 		element: <App />,
 		errorElement: <ErrorPage />,
 	},
-	{
-		path: "/app",
-		element: <Root />,
-	},
+	// {
+	// 	path: "/app",
+	// 	element: <Root />,
+	// },
 ]);
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";

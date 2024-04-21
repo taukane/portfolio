@@ -92,19 +92,7 @@ function App() {
 							<p>Layout Website <small>/ 2018</small></p>
 							<img
 								alt="Layout Landing"
-								src="image/laww-layout-home-v2.png"
-								width={1024}
-								height={auto}
-							/>
-						</div>
-					</div>
-					<div className="panel">
-						<div className="panel-wrapper">
-							<h4 className="title">Black Club</h4>
-							<p>Layout Website <small>/ 2018</small></p>
-							<img
-								alt="Layout Landing"
-								src="image/black-club-layout-v2.jpg"
+								src="image/laww-layout-home-v2.webp"
 								width={1024}
 								height={auto}
 							/>
@@ -116,7 +104,7 @@ function App() {
 							<span>Website Interface + Desenvolvimento Wordpress <small>/ 2017</small></span>
 							<img
 								alt="Redesign website Probat Leogap"
-								src="image/probat-leogap.jpg"
+								src="image/probat-leogap.webp"
 								width={1024}
 								height={auto}
 							/>
@@ -128,7 +116,7 @@ function App() {
 							<span>Facebook Posts  <small>/ 2017</small></span>
 							<img
 								alt="Facebook Posts"
-								src="image/roldao-posts.jpg"
+								src="image/roldao-posts.webp"
 								width={1024}
 								height={auto}
 							/>
@@ -160,23 +148,11 @@ function App() {
 					</div>
 					<div className="panel">
 						<div className="panel-wrapper">
-							<h4 className="title">Zeta Estaleiro</h4>
-							<span>Indentidade Visual + Website Interface + Desenvolvimento Wordpress <small>/ 2014</small></span>
-							<img
-								alt="Zeta Estaleiro Identidade Corporativa e Website"
-								src="image/zeta-estaleiro-redesign.jpg"
-								width={1024}
-								height={auto}
-							/>
-						</div>
-					</div>
-					<div className="panel">
-						<div className="panel-wrapper">
 							<h4 className="title">Volvo CE</h4>
 							<span>Facebook Cover + Email Marketing <small>/ 2012</small></span>
 							<img
 								alt="Volvo CE Facebook EMKT"
-								src="image/work22_big.jpg"
+								src="image/work22_big.webp"
 								width={1024}
 								height={auto}
 							/>
@@ -188,7 +164,7 @@ function App() {
 							<span>Layout Classificados<small>/ 2010</small></span>
 							<img
 								alt="Gazeta do Povo Interface Design"
-								src="image/gazeta.jpg"
+								src="image/gazeta.webp"
 								width={1024}
 								height={auto}
 							/>
