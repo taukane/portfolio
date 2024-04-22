@@ -1,4 +1,3 @@
-import './default.scss'
 import {auto} from "@popperjs/core";
 
 function dimOn() {
