@@ -1,6 +1,13 @@
 {
   "hosting": {
     "public": "dist",
+    "redirects": [
+      {
+        "source": "https://www.taukane.com.br",
+        "destination": "https://taukane.com.br",
+        "type": 301
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
