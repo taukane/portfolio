@@ -3,11 +3,24 @@
     "public": "dist",
     "redirects": [
       {
-        "source": "https://www.taukane.com.br",
+        "source": "www.taukane.com.br/**",
         "destination": "https://taukane.com.br",
         "type": 301
       }
     ],
+    "headers": [ {
+      "source": "**/*.@(jpg|jpeg|gif|png)",
+      "headers": [ {
+        "key": "Cache-Control",
+        "value": "max-age=7200"
+      } ]
+    }, {
+      "source": "404.html",
+      "headers": [ {
+        "key": "Cache-Control",
+        "value": "max-age=300"
+      } ]
+    } ],
     "ignore": [
       "firebase.json",
       "**/.*",
