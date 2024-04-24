@@ -96,6 +96,48 @@ function App() {
 							</a>
 						</div>
 					</div>
+					<div className="panel" id="anchor-1">
+						<div className="panel-wrapper">
+							<a href="#anchor-2">
+								<h4 className="title">Sibras</h4>
+								<p>Website Sibras<small>/ 2018</small></p>
+								<img
+									alt="Layout Landing"
+									src="image/sibras-site.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
+						</div>
+					</div>
+					<div className="panel" id="anchor-1">
+						<div className="panel-wrapper">
+							<a href="#anchor-2">
+								<h4 className="title">Serro Carrocerias</h4>
+								<p>Website Sibras<small>/ 2018</small></p>
+								<img
+									alt="Layout Landing"
+									src="image/serro-carrocerias-layout.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
+						</div>
+					</div>
+					<div className="panel" id="anchor-1">
+						<div className="panel-wrapper">
+							<a href="#anchor-2">
+								<h4 className="title">Embalagens</h4>
+								<p>Faca para embalagens<small>/ 2019</small></p>
+								<img
+									alt="Faca para embalagens"
+									src="image/facas-embalagens.png"
+									width={1024}
+									height={auto}
+								/>
+							</a>
+						</div>
+					</div>
 					<div className="panel" id="anchor-2">
 						<div className="panel-wrapper">
 							<a href="#anchor-3">
