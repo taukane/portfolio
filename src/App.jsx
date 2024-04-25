@@ -47,7 +47,8 @@ function App() {
 							<div className="d-block">
 								<a
 									href="http://www.linkedin.com/in/taukane"
-									title="linkedin Taukane"
+									title="Linkedin Taukane"
+									rel="Linkedin Taukane"
 									target="_blank">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +66,8 @@ function App() {
 							<div className="d-block">
 								<a
 									href="https://github.com/taukane/portfolio"
-									title="github Taukane"
+									title="Github Taukane"
+									rel="Github Taukane"
 									target="_blank">
 									<svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
 										 data-view-component="true"
@@ -96,9 +98,9 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-2">
+					<div className="panel" id="anchor-1">
 						<div className="panel-wrapper">
-							<a href="#anchor-3">
+							<a href="#anchor-2">
 								<h4 className="title">Sibras</h4>
 								<p>Website Sibras<small>/ 2018</small></p>
 								<img
@@ -110,9 +112,9 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-1">
+					<div className="panel" id="anchor-2">
 						<div className="panel-wrapper">
-							<a href="#anchor-2">
+							<a href="#anchor-3">
 								<h4 className="title">Lawww</h4>
 								<p>Layout Website <small>/ 2018</small></p>
 								<img

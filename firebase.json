@@ -3,7 +3,7 @@
     "public": "dist",
     "redirects": [
       {
-        "source": "www.taukane.com.br/**",
+        "source": "www/**",
         "destination": "https://taukane.com.br",
         "type": 301
       }

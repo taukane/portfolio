@@ -23,8 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-.firebase/
+*.firebase/
 .firebase.json
-.firebaserc
+*.firebaserc
 firebase-debug.log
 firebase-debug.*.log
