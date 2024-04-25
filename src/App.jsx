@@ -48,7 +48,7 @@ function App() {
 								<a
 									href="http://www.linkedin.com/in/taukane"
 									title="Linkedin Taukane"
-									rel="Linkedin Taukane"
+									rel="noopener"
 									target="_blank">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ function App() {
 								<a
 									href="https://github.com/taukane/portfolio"
 									title="Github Taukane"
-									rel="Github Taukane"
+									rel="noopener"
 									target="_blank">
 									<svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
 										 data-view-component="true"
