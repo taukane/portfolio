@@ -84,21 +84,21 @@ function App() {
 				<div className="slider text-center rounded shadow-lg">
 					<div className="panel" id="anchor">
 						<div className="panel-wrapper">
-							<a href="#anchor-2">
-								<h4 className="title">Lawww</h4>
-								<p>Layout Website <small>/ 2018</small></p>
+							<a href="#anchor-1">
+								<h4 className="title">Embalagens</h4>
+								<p>Faca para embalagens<small>/ 2020</small></p>
 								<img
-									alt="Layout Landing"
-									src="image/laww-layout-home-v2.webp"
+									alt="Faca para embalagens"
+									src="image/facas-embalagens.png"
 									width={1024}
 									height={auto}
 								/>
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-1">
+					<div className="panel" id="anchor-2">
 						<div className="panel-wrapper">
-							<a href="#anchor-2">
+							<a href="#anchor-3">
 								<h4 className="title">Sibras</h4>
 								<p>Website Sibras<small>/ 2018</small></p>
 								<img
@@ -113,6 +113,20 @@ function App() {
 					<div className="panel" id="anchor-1">
 						<div className="panel-wrapper">
 							<a href="#anchor-2">
+								<h4 className="title">Lawww</h4>
+								<p>Layout Website <small>/ 2018</small></p>
+								<img
+									alt="Layout Landing"
+									src="image/laww-layout-home-v2.webp"
+									width={1024}
+									height={auto}
+								/>
+							</a>
+						</div>
+					</div>
+					<div className="panel" id="anchor-3">
+						<div className="panel-wrapper">
+							<a href="#anchor-4">
 								<h4 className="title">Serro Carrocerias</h4>
 								<p>Website Sibras<small>/ 2018</small></p>
 								<img
@@ -124,23 +138,9 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-1">
+					<div className="panel" id="anchor-4">
 						<div className="panel-wrapper">
-							<a href="#anchor-2">
-								<h4 className="title">Embalagens</h4>
-								<p>Faca para embalagens<small>/ 2019</small></p>
-								<img
-									alt="Faca para embalagens"
-									src="image/facas-embalagens.png"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-2">
-						<div className="panel-wrapper">
-							<a href="#anchor-3">
+							<a href="#anchor-5">
 								<h4 className="title">Probat Leogap</h4>
 								<span>Website Interface + Desenvolvimento Wordpress <small>/ 2017</small></span>
 								<img
@@ -152,9 +152,9 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-3">
+					<div className="panel" id="anchor-5">
 						<div className="panel-wrapper">
-							<a href="#anchor-4">
+							<a href="#anchor-6">
 								<h4 className="title">Roldão Atacadista</h4>
 								<span>Facebook Posts  <small>/ 2017</small></span>
 								<img
@@ -166,9 +166,9 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-4">
+					<div className="panel" id="anchor-6">
 						<div className="panel-wrapper">
-							<a href="#anchor-5">
+							<a href="#anchor-7">
 								<h4 className="title">Globo Renault</h4>
 								<p>Layout Landing <small>/ 2016</small></p>
 								<img
@@ -180,9 +180,9 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-5">
+					<div className="panel" id="anchor-7">
 						<div className="panel-wrapper">
-							<a href="#anchor-6">
+							<a href="#anchor-8">
 								<h4 className="title">Marmoraria Florianópolis</h4>
 								<span>Indentidade Visual <small>/ 2014</small></span>
 								<img
@@ -194,13 +194,13 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-6">
+					<div className="panel" id="anchor-8">
 						<div className="panel-wrapper">
-							<a href="#anchor-7">
+							<a href="#anchor-9">
 								<h4 className="title">Volvo CE</h4>
 								<span>Facebook Cover + Email Marketing <small>/ 2012</small></span>
 								<img
-									alt="Volvo CE Facebook EMKT"
+									alt="Facebook Cover + Volvo CE Facebook Email Marketing"
 									src="image/work22_big.webp"
 									width={1024}
 									height={auto}
@@ -208,7 +208,7 @@ function App() {
 							</a>
 						</div>
 					</div>
-					<div className="panel" id="anchor-7">
+					<div className="panel" id="anchor-9">
 						<div className="panel-wrapper">
 							<a href="#anchor">
 								<h4 className="title">Gazeta do Povo</h4>
