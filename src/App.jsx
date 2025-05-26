@@ -1,49 +1,69 @@
-import {auto} from "@popperjs/core";
-
-function dimOn() {
-	document.getElementById("QuickView").style.display = "block";
-	window.scrollTo({
-		top: 658,
-		left: 0,
-		behavior: 'smooth'
-	});
-}
-function dimOff() {
-	document.getElementById("QuickView").style.display = "none";
-}
+import { NavLink } from "react-router";
+import React, { useEffect, useRef, useState } from "react";
 
 function toTop() {
-	window.scrollTo({
-		top: 0,
-		left: 0,
-		behavior: 'smooth'
-	});
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
 }
 
 function App() {
+	const boxesRef = useRef([]);
+    const [currentBox, setCurrentBox] = useState(0);
+
+    const scrollToNextBox = () => {
+        if (currentBox < boxesRef.current.length - 1) {
+            const nextBox = boxesRef.current[currentBox + 1];
+            if (nextBox) {
+                nextBox.scrollIntoView({ 
+					behavior: "smooth",
+					block: 'center',
+					inline: 'center'	
+				});
+                setCurrentBox(currentBox + 1);
+            }
+        } else {
+            boxesRef.current[0]?.scrollIntoView({					
+					behavior: "smooth",
+					block: 'center',
+					inline: 'center'
+				 });
+            setCurrentBox(0);
+        }
+    };
+
+    useEffect(() => {
+        boxesRef.current = document.querySelectorAll('.box');
+    }, []);
 	return (
 		<>
-			<div className="apresenta">
-				<a
-					onClick={dimOn}
-					className="tauk"
-					title="Taukane Designer Web e Grafico"
-				>
-					<h1>Designer Curitiba</h1>
-				</a>
-				<hr/>
-				<div className="caxa">
-					<h2 className="text-secondary">TAUKANE</h2>
-					<h3>Designer Web e Gráfico</h3>
-					<p className="bio-text">
-						Atuo em criação e desenvolvimento de interfaces visuais, para mídias
-						online e off-line.
-					</p>
+			<span className="scroller"></span>
+			<div className="container-fluid">
+				<div className="row">
+					<div className="col">
+						<div className="box box-1 my-5" onClick={scrollToNextBox}>
+							<h2>Taukane</h2>
+							<p>Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.
+							</p>
+						</div>
+						<div className="box box-2 my-5" onClick={scrollToNextBox}>
+							<h2>Designer</h2>
+							<p>Arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.
+							</p>
+						</div>
+						<div className="box box-3 my-5" onClick={scrollToNextBox}>
+							<h2>Web e Gráfico</h2>
+						</div>
+					</div>
 				</div>
-				<hr/>
+			</div>
+			<div className="apresenta box rounded mb-5 pb-5">
+				<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
 				<div className="container">
 					<div className="row">
-						<div className="col-md-10 d-flex justify-content-end gap-5 mt-2 contact-infos">
+						<div className="col-md-10 d-flex justify-content-md-end justify-content-center gap-5 mt-5 contact-infos">
 							<div className="d-block">
 								<a
 									href="http://www.linkedin.com/in/taukane"
@@ -65,7 +85,7 @@ function App() {
 							</div>
 							<div className="d-block">
 								<a
-									href="https://github.com/taukane/portfolio"
+									href="https://github.com/taukane/portfolio-taukane"
 									title="Github Taukane"
 									rel="noopener"
 									target="_blank">
@@ -82,186 +102,12 @@ function App() {
 					</div>
 				</div>
 			</div>
-			<div id="QuickView">
-				<div className="slider text-center rounded shadow-lg">
-					<div className="panel" id="anchor">
-						<div className="panel-wrapper">
-							<a href="#anchor-1">
-								<h4 className="title">Website</h4>
-								<p>Real Veiculos / Concessionaria Volkswagem<small>/ 2022</small></p>
-								<img
-									alt="Website Template"
-									src="image/Volkswagen-layout-site.png"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-1">
-						<div className="panel-wrapper">
-							<a href="#anchor-2">
-								<h4 className="title">Website</h4>
-								<p>Honda<small>/ 2021</small></p>
-								<img
-									alt="Website Template"
-									src="image/honda-veiculos.jpg"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor">
-						<div className="panel-wrapper">
-							<a href="#anchor-1">
-								<h4 className="title">Embalagens</h4>
-								<p>Faca para embalagens<small>/ 2020</small></p>
-								<img
-									alt="Faca para embalagens"
-									src="image/facas-embalagens.png"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-1">
-						<div className="panel-wrapper">
-							<a href="#anchor-2">
-								<h4 className="title">Sibras</h4>
-								<p>Website Sibras<small>/ 2018</small></p>
-								<img
-									alt="Layout Landing"
-									src="image/sibras-site.webp"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-2">
-						<div className="panel-wrapper">
-							<a href="#anchor-3">
-								<h4 className="title">Lawww</h4>
-								<p>Layout Website <small>/ 2018</small></p>
-								<img
-									alt="Layout Landing"
-									src="image/laww-layout-home-v2.webp"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-3">
-						<div className="panel-wrapper">
-							<a href="#anchor-4">
-								<h4 className="title">Serro Carrocerias</h4>
-								<p>Website Sibras<small>/ 2018</small></p>
-								<img
-									alt="Layout Landing"
-									src="image/serro-carrocerias-layout.webp"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-4">
-						<div className="panel-wrapper">
-							<a href="#anchor-5">
-								<h4 className="title">Probat Leogap</h4>
-								<span>Website Interface + Desenvolvimento Wordpress <small>/ 2017</small></span>
-								<img
-									alt="Redesign website Probat Leogap"
-									src="image/probat-leogap.webp"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-5">
-						<div className="panel-wrapper">
-							<a href="#anchor-6">
-								<h4 className="title">Roldão Atacadista</h4>
-								<span>Facebook Posts  <small>/ 2017</small></span>
-								<img
-									alt="Facebook Posts"
-									src="image/roldao-posts.webp"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-6">
-						<div className="panel-wrapper">
-							<a href="#anchor-7">
-								<h4 className="title">Globo Renault</h4>
-								<p>Layout Landing <small>/ 2016</small></p>
-								<img
-									alt="Layout Landing"
-									src="image/landing-reanult-globo.jpg"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-7">
-						<div className="panel-wrapper">
-							<a href="#anchor-8">
-								<h4 className="title">Marmoraria Florianópolis</h4>
-								<span>Indentidade Visual <small>/ 2014</small></span>
-								<img
-									alt="Marmoraria Florianópolis Redesign de Marca"
-									src="image/marmoraria-florianopolis-2014.jpg"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-8">
-						<div className="panel-wrapper">
-							<a href="#anchor-9">
-								<h4 className="title">Volvo CE</h4>
-								<span>Facebook Cover + Email Marketing <small>/ 2012</small></span>
-								<img
-									alt="Facebook Cover + Volvo CE Facebook Email Marketing"
-									src="image/work22_big.webp"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-					<div className="panel" id="anchor-9">
-						<div className="panel-wrapper">
-							<a href="#anchor">
-								<h4 className="title">Gazeta do Povo</h4>
-								<span>Layout Classificados<small>/ 2010</small></span>
-								<img
-									alt="Gazeta do Povo Interface Design"
-									src="image/gazeta.webp"
-									width={1024}
-									height={auto}
-								/>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a className="fechar" onClick={dimOff}>
-				<img alt="Fechar" src="image/bt_fechar.gif" width={50} height={50}/>
-			</a>
-			<a onClick={toTop} title="Topo Portfolio" id="topo">
+			<a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
 				<img
 					src="image/top.jpg"
 					alt="Taukane - Diretor de Arte Web"
-					title="Taukane Website"
+					title="Diretor de Arte Web Curitiba"
+					className="img-fluid rounded shadow-lg"
 					width={50}
 					height={50}
 				/>
@@ -269,5 +115,4 @@ function App() {
 		</>
 	)
 }
-
 export default App
