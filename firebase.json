@@ -35,13 +35,6 @@
         "source": "**",
         "destination": "/index.html"
       }
-    ],
-    "redirects": [
-      {
-        "source": "www./**",
-        "destination": "https://taukane.com.br",
-        "type": 301
-      }
     ]
   }
 }

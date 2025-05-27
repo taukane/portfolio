@@ -84,7 +84,7 @@ function App() {
 							</div>
 							<div className="d-block">
 								<a
-									href="https://github.com/taukane/portfolio-taukane"
+									href="https://github.com/taukane/portfolio"
 									title="Github Taukane"
 									rel="noopener"
 									target="_blank">
