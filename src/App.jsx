@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import React, { useEffect, useRef, useState } from "react";
+import{ useEffect, useRef, useState } from "react";
 
 function toTop() {
     window.scrollTo({
@@ -39,27 +39,26 @@ function App() {
     }, []);
 	return (
 		<>
-			<span className="scroller"></span>
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col">
-						<div className="box box-1 my-5" onClick={scrollToNextBox}>
+						<div className="box box-1 my-5" onTouchMove={scrollToNextBox}  onClick={scrollToNextBox}>
 							<h2>Taukane</h2>
 							<p>Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.
 							</p>
 						</div>
-						<div className="box box-2 my-5" onClick={scrollToNextBox}>
+						<div className="box box-2 my-5" onTouchMove={scrollToNextBox} onClick={scrollToNextBox}>
 							<h2>Designer</h2>
 							<p>Arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.
 							</p>
 						</div>
-						<div className="box box-3 my-5" onClick={scrollToNextBox}>
+						<div className="box box-3 my-5" onTouchMove={scrollToNextBox} onClick={scrollToNextBox}>
 							<h2>Web e Gráfico</h2>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="apresenta box rounded mb-5 pb-5">
+			<div className="apresenta rounded mb-5 pb-5 box">
 				<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
 				<div className="container">
 					<div className="row">
@@ -112,6 +111,7 @@ function App() {
 					height={50}
 				/>
 			</a>
+			<span className="scroller"></span>
 		</>
 	)
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function DarkModeToggle() {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
