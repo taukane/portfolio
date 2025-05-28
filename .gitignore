@@ -1,0 +1,45 @@
+# Sensitive files
+.env*
+.env.*
+.local
+firebase.json # If it contains sensitive info
+*.pem
+
+# Dependencies
+node_modules/
+package-lock.json # or yarn.lock, pnpm-lock.yaml if you use them, but consider committing them for reproducibility
+
+# Build artifacts
+dist/
+build/
+dist-ssr/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor and IDE files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Firebase related (if not already covered)
+*.firebase/
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+*.tmp
