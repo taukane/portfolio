@@ -1,48 +1,72 @@
 import { NavLink } from "react-router";
-import{ useEffect, useRef, useState } from "react";
-
-function toTop() {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-    });
-}
+import{ useEffect, useRef, useCallback, useState } from "react";
 
 function App() {
-	const boxesRef = useRef([]);
+    function toTop() {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    }
+    const boxesRef = useRef([]);
     const [currentBox, setCurrentBox] = useState(0);
 
-    const scrollToNextBox = () => {
+    const scrollToNextBox = useCallback(() => {
+        if (!boxesRef.current || boxesRef.current.length === 0) return;
+
         if (currentBox < boxesRef.current.length - 1) {
             const nextBox = boxesRef.current[currentBox + 1];
             if (nextBox) {
-                nextBox.scrollIntoView({ 
-					behavior: "smooth",
-					block: 'center',
-					inline: 'center'	
-				});
+                nextBox.scrollIntoView({
+                    behavior: "smooth",
+                    block: 'center',
+                    inline: 'center'
+                });
                 setCurrentBox(currentBox + 1);
             }
         } else {
-            boxesRef.current[0]?.scrollIntoView({					
-					behavior: "smooth",
-					block: 'center',
-					inline: 'center'
-				 });
+            boxesRef.current[0]?.scrollIntoView({
+                behavior: "smooth",
+                block: 'center',
+                inline: 'center'
+            });
             setCurrentBox(0);
         }
-    };
+    }, [currentBox]);
 
     useEffect(() => {
         boxesRef.current = document.querySelectorAll('.box');
-    }, []);
+
+        const handleKeyUp = (e) => {
+            if (e.key === 'Enter') {
+                console.log(e.key);
+                window.location.href = '/portfolio';
+            }
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                console.log(e.key);
+                scrollToNextBox();
+            }
+			if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                console.log(e.key);
+                toTop();
+            }
+        };
+
+        window.addEventListener('keyup', handleKeyUp);
+
+        return () => {
+            window.removeEventListener('keyup', handleKeyUp);
+        };
+    }, [scrollToNextBox]);
 	return (
 		<>
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col">
-						<div className="box box-1 my-5" onTouchMove={scrollToNextBox}  onClick={scrollToNextBox}>
+						<div className="box box-1 my-5" onTouchMove={scrollToNextBox} onClick={scrollToNextBox}>
 							<h2>Taukane</h2>
 							<p>Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.
 							</p>

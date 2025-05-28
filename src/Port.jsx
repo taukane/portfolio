@@ -68,6 +68,41 @@ const thumbis = [
 ];
 
 function Port() {
+    const handleKeyDown = useCallback((e) => {
+        if (e.key === 'Enter' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            console.log(e.key);
+            window.scrollTo({
+                top: document.querySelector('#works').offsetTop,
+                behavior: 'smooth',
+            });
+        }
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            console.log(e.key);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        }
+        if (e.key === '1') {
+            console.log(e.key);
+            window.location.href = '/';
+        }
+        if (e.key === '2') {
+            console.log(e.key);
+            window.location.href = '/portfolio-taukane';
+        }
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [handleKeyDown]);
+
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const panelsSwiperRef = useRef(null);
 
@@ -119,6 +154,7 @@ function Port() {
             window.removeEventListener('hashchange', scrollToPanel);
         };
     }, [scrollToPanel]);
+
 return (
 <>
 <span className="scroller"></span>

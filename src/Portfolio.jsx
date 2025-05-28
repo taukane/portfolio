@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
@@ -51,6 +51,37 @@ const thumbis = [
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
 
 function Portfolio() {
+        useEffect(() => {
+    
+            const handleKeyUp = (e) => {
+                if (e.key === '1') {
+                    console.log(e.key);
+                    window.location.href = '/';
+                }
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    console.log(e.key);
+                    window.scrollTo({
+                        top: document.querySelector('#works').offsetTop,
+                        behavior: 'smooth',
+                    });
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    console.log(e.key);
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth',
+                    });
+                }
+            };
+    
+            window.addEventListener('keyup', handleKeyUp);
+    
+            return () => {
+                window.removeEventListener('keyup', handleKeyUp);
+            };
+        }, []);
 const [thumbsSwiper, setThumbsSwiper] = useState(null);
 const panelsSwiperRef = useRef(null);
 
