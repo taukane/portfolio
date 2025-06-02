@@ -11,6 +11,7 @@ import './default.scss';
 import App from './App.jsx';
 import Port from './Port.jsx';
 import Portfolio from './Portfolio.jsx';
+import Contato from './Contato.jsx';
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -125,6 +126,16 @@ const router = createBrowserRouter([
                 <TitleUpdater />
                 <MetaDescriptionUpdater />
                 <Portfolio />
+            </>
+        )
+    },
+        {
+        path: "/contato",
+        element: (
+            <>
+                <TitleUpdater />
+                <MetaDescriptionUpdater />
+                <Contato />
             </>
         )
     },

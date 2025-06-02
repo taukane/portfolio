@@ -50,6 +50,7 @@ const thumbis = [
 ];
 
 import DarkModeToggle from './assets/DarkModeToggle.jsx';
+import ContatoModal from './ContatoModal.jsx';
 
 function Portfolio() {
     useEffect(() => {
@@ -108,6 +109,12 @@ function Portfolio() {
         updateHash();
     }, []);
     const href = 'mailto:taukanepires@gmail.com';
+    const [showContato, setShowContato] = useState(false);
+    function openModal() {
+        window.scrollTo({
+            top: document.querySelector('#contato-modal').offsetTop,
+        });
+    }
     return (
 <>
 <span className="scroller"></span>
@@ -190,6 +197,7 @@ function Portfolio() {
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo" /><p>React</p></SwiperSlide>
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap Logo" /><p>Bootstrap</p></SwiperSlide>
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="Amazon Web Services Logo" /><p>Amazon Web Services</p></SwiperSlide>
+        <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original-wordmark.svg" alt="Firebase Logo" /><p>Firebase</p></SwiperSlide>
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo" /><p>Git</p></SwiperSlide>
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo" /><p>GitHub</p></SwiperSlide>
       </Swiper>
@@ -291,6 +299,21 @@ function Portfolio() {
         </SwiperSlide>
     ))}
 </Swiper>
+<div className="text-center my-3">
+    <button 
+        className="btn btn-primary" 
+        onClick={() => {
+            setShowContato(true);
+            openModal();
+        }}>
+        Contato
+    </button>
+</div>
+<ContatoModal 
+    show={showContato} 
+    onClose={() => setShowContato(false)} 
+    id="contato-modal"
+/>
 <hr className="border-0"/>
 </>
 )}
