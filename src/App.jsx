@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import{ useEffect, useRef, useCallback, useState } from "react";
 
 function App() {
+
     function toTop() {
         window.scrollTo({
             top: 0,
@@ -9,6 +10,7 @@ function App() {
             behavior: "smooth",
         });
     }
+
     const boxesRef = useRef([]);
     const [currentBox, setCurrentBox] = useState(0);
 
@@ -26,12 +28,7 @@ function App() {
                 setCurrentBox(currentBox + 1);
             }
         } else {
-            boxesRef.current[0]?.scrollIntoView({
-                behavior: "smooth",
-                block: 'center',
-                inline: 'center'
-            });
-            setCurrentBox(0);
+			window.location.href = '/portfolio';
         }
     }, [currentBox]);
 
@@ -76,22 +73,21 @@ function App() {
 							<p>Arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.
 							</p>
 						</div>
-						<div className="box box-3 my-5" onTouchMove={scrollToNextBox} onClick={scrollToNextBox}>
+						<div className="box box-3 my-5" onClick={scrollToNextBox}>
 							<h2>Web e Gráfico</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="apresenta rounded mb-5 pb-5 box">
-				<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
+				<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico" onWheel={scrollToNextBox}><h1>Portfolio Designer Web e Grafico</h1></NavLink>
 				<div className="container">
 					<div className="row">
 						<div className="col-md-10 d-flex justify-content-md-end justify-content-center gap-5 mt-5 contact-infos">
 							<div className="d-block">
 								<a
 									href="http://www.linkedin.com/in/taukane"
-									title="Linkedin Taukane"
-									rel="noopener"
+									title="Linkedin"
 									target="_blank">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -109,8 +105,7 @@ function App() {
 							<div className="d-block">
 								<a
 									href="https://github.com/taukane/portfolio"
-									title="Github Taukane"
-									rel="noopener"
+									title="Github"
 									target="_blank">
 									<svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
 										 data-view-component="true"
