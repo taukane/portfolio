@@ -15,6 +15,7 @@ import Contato from './Contato.jsx';
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import Api from './Api.jsx';
 
 let firebaseConfig = {
     apiKey: import.meta.env.VITE_API_KEY,
@@ -129,13 +130,21 @@ const router = createBrowserRouter([
             </>
         )
     },
-        {
+    {
         path: "/contato",
         element: (
             <>
                 <TitleUpdater />
                 <MetaDescriptionUpdater />
                 <Contato />
+            </>
+        )
+    },
+    {
+        path: "/api",
+        element: (
+            <>
+                <Api />
             </>
         )
     },

@@ -1,0 +1,109 @@
+{
+    "args": {
+        "products": [
+            {
+                "id": 1,
+                "name": "Website Interface + Desenvolvimento Wordpress",
+                "descricao": "<p>Black Club <small>/ 2018</small></p>",
+                "src": [
+                    "image/black-club-layout-v2.webp"
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Branding + Website Interface + Desenvolvimento Wordpress",
+                "descricao": "<p>CBD Med <small>/ 2018</small></p>",
+                "src": [
+                    "image/cbd-med-layout-home-logo.webp"
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Website Interface + Desenvolvimento Wordpress",
+                "descricao": "<p>Sibras <small>/ 2018</small></p>",
+                "src": [
+                    "image/sibras-site.webp"
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Projeto Gráfico Jornal",
+                "descricao": "<p>Jornal Independente <small>/ 2014</small></p>",
+                "src": [
+                    "image/jornal-independente-big.jpg"
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Branding + Website Interface + Desenvolvimento Wordpress",
+                "descricao": "<p>Emariot <small>/ 2012</small></p>",
+                "src": [
+                    "image/emariot-2011.jpg"
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Direção de Arte Redes Sociais",
+                "descricao": "<p>Café Automatic <small>/ 2012</small></p>",
+                "src": [
+                    "image/cafe-automatic.jpg"
+                ]
+            },
+            {
+                "id": 7,
+                "name": "Direção de Arte UI Design",
+                "descricao": "<p>SDLG <small>/ 2012</small></p>",
+                "src": [
+                    "image/sdlg-2012.webp",
+                    "image/sdlg-2012-2.jpg"
+                ]
+            },
+            {
+                "id": 8,
+                "name": "Direção de Arte Web + Desenvolvimento",
+                "descricao": "<p>Carmen Steffens / Loja Villa / Franquias Brasileiras... <small>/ 2011</small></p>",
+                "src": [
+                    "image/taukane-port.jpg"
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Direção de Arte Web + Email Marketing + Desenvolvimento",
+                "descricao": "<p>Diversos <small>/ 2008 / 2011</small></p>",
+                "src": [
+                    "image/varios-taukane.webp"
+                ]
+            },
+            {
+                "id": 10,
+                "name": "Websites + Projetos Gráficos + Website Interface",
+                "descricao": "<p>Diversos <small>/ 2004 / 2008</small></p>",
+                "src": [
+                    "image/inicio-taukane.jpg"
+                ]
+            },
+            {
+                "id": 11,
+                "last": [
+                    "<a href='/portfolio' className='d-block my-auto text-center'>\n    <p>Portfolio</p>\n    <img\n        src='image/prev.jpg'\n        alt='< Portfolio Taukane'\n        title='< Portfolio Taukane'\n        className='img-fluid rounded shadow-lg border-0 opacity-100'\n        width={50}\n        height={50}\n    />\n    </a>"
+                ]
+            }
+        ]
+    },
+    "headers": {
+        "host": "postman-echo.com",
+        "x-request-start": "t1749065767.650",
+        "connection": "close",
+        "content-length": "2849",
+        "x-forwarded-proto": "https",
+        "x-forwarded-port": "443",
+        "x-amzn-trace-id": "Root=1-6840a027-549489c759c555b4757c2114",
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.44.0",
+        "accept": "*/*",
+        "postman-token": "7699085d-d9ba-4a3d-bd89-aee9f6250d03",
+        "accept-encoding": "gzip, deflate, br",
+        "cookie": "sails.sid=s%3AHLta91FrhXRHiK-7Xw0Mtvq7Jm3jIqUx.YHRrD2sdY7I9Ap9rDGx28BEk2aXITGZngRo0ietRDuw"
+    },
+    "url": "https://postman-echo.com/get"
+}
