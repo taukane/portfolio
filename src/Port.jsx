@@ -10,9 +10,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-import  * as bootstrap from 'bootstrap';
-
-import DarkModeToggle from './assets/DarkModeToggle.jsx';
+import Nav from "./assets/Nav.js";
+import { useTranslation } from 'react-i18next';
 
 const panels = [
     {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" rel="noreferrer noopener">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: ['image/mitsul.jpg']},
@@ -154,30 +153,19 @@ function Port() {
             window.removeEventListener('hashchange', scrollToPanel);
         };
     }, [scrollToPanel]);
+    const { t, i18n } = useTranslation();
+
+    const getHeadline = () => {
+        if (i18n.language === 'pt') {
+            return <h2>Desde 2002 desenvolvo Interfaces de Design <b>Web</b> e <b>Gráfico.</b></h2>;
+        }
+        return <h2>Since 2002 developing <b>Web</b> and <b>Graphic</b> Design Interfaces.</h2>;
+    };
 
 return (
 <>
 <span className="scroller"></span>
-<nav className="navbar navbar-expand-lg bg-body-tertiary">
-    <div className="container-fluid">
-        <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
-        <span className="navbar-toggler-icon"></span>
-        </button>
-        <DarkModeToggle />
-        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul className="navbar-nav mt-3 hstack gap-5">
-            <li className="nav-item h3">
-            <NavLink className="nav-link" href="#" to="/">
-                Taukane
-            </NavLink>
-            </li>
-            <li className="nav-item h3">
-            <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio">Portfolio</NavLink>
-            </li>
-        </ul>
-        </div>
-    </div>
-</nav>
+<Nav />
 <div className="apresenta rounded-bottom w-100 h-100" loading="lazy">
     <a  title="Designer Web e Grafico"
         href="#works">
@@ -186,11 +174,15 @@ return (
     <div className="container">
         <div className="row">
             <div className="col-8 mx-auto lh-lg">
-                <h2>Desde 2002 desenvolvendo Interfaces de Design para <b>Web</b> e <b>Gráfico.</b></h2>
+                {getHeadline()}
                 <hr/>
-                <h3>Experiência sólida em desenvolvimento web full-stack (front-end e back-end), desde a concepção da arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.</h3>
+                <h3>{t('bio.0')}</h3>
                 <hr/>
-                <h4 className="mb-5">Criação de identidades visuais para marcas e embalagens até a arte final para impressão.</h4>
+                <h4>{t('bio.1')}</h4>
+                <hr/>
+                <h4>{t('bio.2')}</h4>
+                <hr/>
+                <h5 className="mb-5">{t('bio.3')}</h5>
             </div>
         </div>
     </div>
@@ -266,7 +258,7 @@ return (
                     ref={panelsSwiperRef}>
                     {panels.map((panel) => (
                         <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora" className="pb-3">
-                            <h5 className="pt-4 fw-bold text-light">{panel.name}</h5>
+                            <h5 className="mt-5 pt-4 fw-bold text-light">{panel.name}</h5>
                             <div>{panel.descricao}</div>
                             {panel.src && panel.src.length > 0 ? (
                                 <Swiper

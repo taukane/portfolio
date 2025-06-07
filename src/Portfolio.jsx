@@ -48,8 +48,8 @@ const thumbis = [
 },
 ];
 
-import DarkModeToggle from './assets/DarkModeToggle.jsx';
 import ContatoModal from './ContatoModal.jsx';
+import Nav from './assets/Nav.jsx';
 
 function Portfolio() {
     useEffect(() => {
@@ -117,59 +117,33 @@ function Portfolio() {
     return (
 <>
 <span className="scroller"></span>
-
-<nav className="navbar navbar-expand-lg bg-body-tertiary bg-gradient shadow">
-    <div className="container-fluid">
-        <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
-            <span className="navbar-toggler-icon"></span>
-        </button>
-        <DarkModeToggle />
-                <a className="btn btn-outline-secondary ms-3" href={href} title="Enviar Email" aria-label="Enviar Email">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={16}
-                    height={16}
-                    fill="currentColor"
-                    className="bi bi-envelope-fill"
-                    viewBox="0 0 16 16"
-                    >
-                    <path d="M.05 3.555A2 2 0 012 2h12a2 2 0 011.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 002 14h12a2 2 0 001.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
-                </svg> 
-        </a>
-        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav my-3 hstack gap-5 d-block d-md-flex">
-                <li className="nav-item h3">
-                <NavLink className="nav-link" href="/" to="/">
-                    Taukane
-                </NavLink>
-                </li>
-                <li className="nav-item h3">
-                <NavLink  className="nav-link" to="/portfolio">Portfolio</NavLink>
-                </li>
-                <li className="nav-item h3">
-                <NavLink  className="nav-link fw-bold disabled" aria-current="page" to="/portfolio-taukane">Portfolio +</NavLink>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<Nav/>
 <div className="container-fluid">   
     <h5 className="bg-body-tertiary mt-0 mb-0 pt-4 pb-3 text-center">Ferramentas:</h5>
     <Swiper
         style={{
         '--swiper-pagination-color': '#121212',
         }}
-        spaceBetween={60}
-        slidesPerView={11}
-        pagination={{
-            clickable: true,
+        breakpoints={{
+            '@0.00': {
+            slidesPerView: 3,
+            spaceBetween: 80,
+            },
+            '@1.00': {
+            slidesPerView: 6,
+            spaceBetween: 50,
+            },
+            '@1.50': {
+            slidesPerView: 12,
+            spaceBetween: 40,
+            },
         }}
         modules={[ FreeMode, Pagination ]}
+        pagination={true}
         grabCursor={true}
         freeMode={true}
         loop={true}
-        className="myexpertise bg-body-tertiary bg-gradient p-5 text-center rounded-0 rounded-bottom shadow-lg"
-    >
+        className="myexpertise bg-body-tertiary bg-gradient pt-4 pb-3 mb-5 text-center rounded-0 rounded-bottom shadow-lg">
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator Logo" /><p>Illustrator</p></SwiperSlide>
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop Logo" /><p>Photoshop</p></SwiperSlide>
         <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD Logo" /><p>Adobe XD</p></SwiperSlide>
@@ -271,7 +245,7 @@ function Portfolio() {
     ref={panelsSwiperRef}>
     {panels.map((panel) => (
         <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora" loading="lazy">
-            <h5 className="pt-4 ps-4 fw-bold text-light">{panel.name}</h5>
+            <h5 className="mt-5 pt-4 ps-4 fw-bold text-light">{panel.name}</h5>
             <div className="ps-4">{panel.descricao}</div>
             {panel.src && panel.src.length > 0 ? (
                 <Swiper
@@ -298,21 +272,6 @@ function Portfolio() {
         </SwiperSlide>
     ))}
 </Swiper>
-<div className="text-center my-3">
-    <button 
-        className="btn btn-primary" 
-        onClick={() => {
-            setShowContato(true);
-            openModal();
-        }}>
-        Contato
-    </button>
-</div>
-<ContatoModal 
-    show={showContato} 
-    onClose={() => setShowContato(false)} 
-    id="contato-modal"
-/>
 <hr className="border-0"/>
 </>
 )}
