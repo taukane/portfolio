@@ -1,14 +1,17 @@
+import { useTranslation } from 'react-i18next';
+
 function Contato() { 
+    const { t } = useTranslation();
     return ( 
     <div className="vh-100 d-flex justify-content-center align-items-center">
         <div className="container-fluid container-md my-4"> 
             <div className="row">
                 <div className="col contact-infos">
-                    <h3 className="fw-bold mt-5">Contato:</h3>
+                    <h3 className="fw-bold mt-5">{t('contact-title')}:</h3>
                     <section className="d-grid d-md-flex align-items-center gap-2 gap-md-5">
                         <div className="small">
                             <a href="mailto:taukanepires@gmail.com">
-                                <span className="btn btn-sm">                                
+                                <span>                                
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={32}
@@ -63,26 +66,14 @@ function Contato() {
                 </div>
                 <div className="row mt-5"> 
                 <div className="col">
-                    <section>
-                        <h4 className="fw-bold">Serviços:</h4>
-                        <ul className="small">
-                            <li>UI/UX Design</li>
-                            <li>Design Gráfico</li>
-                            <li>Criação de Identidade Visual</li>
-                            <li>Consultoria em Design</li>
-                            <li>Desenvolvimento Web</li>
-                            <li>Manutenção de Sites</li>
-                            <li>SEO / Otimização de Performance</li>
-                            <li>Marketing para Redes Sociais</li>
-                            <li>Desenvolvimento de Aplicativos Web</li>
-                            <li>Criação de Landing Pages</li>
-                            <li>Desenvolvimento de e-Commerce</li>
-                            <li>Criação de Blogs</li>
-                            <li>Desenvolvimento de Portais</li>
-                            <li>Criação de Templates para Sites</li>
-                            <li>Desenvolvimento de Sistemas Personalizados</li>
-                        </ul>
-                    </section>
+                        <section>
+                            <h4 className="fw-bold">{t('services-title')}:</h4>
+                            <ul className="small">
+                                {t('services', { returnObjects: true }).map((service, index) => (
+                                    <li key={index}>{service}</li>
+                                ))}
+                            </ul>
+                        </section>
                 </div>
             </div>
         </div>

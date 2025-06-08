@@ -63,7 +63,6 @@ function App() {
 
 	const { t } = useTranslation();
 
-
 	return (
 		<>
 			<Nav />

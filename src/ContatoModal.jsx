@@ -15,7 +15,7 @@ const ContatoModal = ({ show, onClose }) => {
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="modal-close btn btn-danger" onClick={onClose}>
+                <button className="modal-close btn btn-sm btn-secondary px-3 py-2 me-1" onClick={onClose}>
                     &times;
                 </button>
                 <Contato />

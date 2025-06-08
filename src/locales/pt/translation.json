@@ -10,5 +10,25 @@
         "Conhecimento em metodologias ágeis, versionamento de código com Git e implementação de boas práticas de desenvolvimento.",
         "Habilidades em design responsivo, otimização de performance, acessibilidade web e SEO.",
         "Criação de identidades visuais para marcas e embalagens até a arte final para impressão."
-    ]
+    ],
+    "contact-title": "Contato",
+    "services-title": "Serviços",
+      "services": [
+        "UI/UX Design",
+        "Design Gráfico",
+        "Criação de Identidade Visual",
+        "Consultoria em Design",
+        "Desenvolvimento Web",
+        "Manutenção de Sites",
+        "SEO / Otimização de Performance",
+        "Marketing para Redes Sociais",
+        "Desenvolvimento de Aplicativos Web",
+        "Criação de Landing Pages",
+        "Desenvolvimento de e-Commerce",
+        "Criação de Blogs",
+        "Desenvolvimento de Portais",
+        "Criação de Templates para Sites",
+        "Desenvolvimento de Sistemas Personalizados"
+  ],
+   "widgets-title": "Ferramentas"
 }

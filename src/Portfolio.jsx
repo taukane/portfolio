@@ -50,6 +50,7 @@ const thumbis = [
 
 import ContatoModal from './ContatoModal.jsx';
 import Nav from './assets/Nav.jsx';
+import { useTranslation } from 'react-i18next';
 
 function Portfolio() {
     useEffect(() => {
@@ -107,19 +108,17 @@ function Portfolio() {
         Swiper.on('slideChangeTransitionEnd', updateHash);
         updateHash();
     }, []);
-    const href = 'mailto:taukanepires@gmail.com';
+
     const [showContato, setShowContato] = useState(false);
-    function openModal() {
-        window.scrollTo({
-            top: document.querySelector('#contato-modal').offsetTop,
-        });
-    }
+
+    const { t } = useTranslation();
+
     return (
 <>
 <span className="scroller"></span>
 <Nav/>
 <div className="container-fluid">   
-    <h5 className="bg-body-tertiary mt-0 mb-0 pt-4 pb-3 text-center">Ferramentas:</h5>
+    <h5 className="bg-body-tertiary mt-0 mb-0 pt-4 pb-3 text-center">{t('widgets-title')}:</h5>
     <Swiper
         style={{
         '--swiper-pagination-color': '#121212',
