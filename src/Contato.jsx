@@ -10,7 +10,7 @@ function Contato() {
                     <h3 className="fw-bold mt-5">{t('contact-title')}:</h3>
                     <section className="d-grid d-md-flex align-items-center gap-2 gap-md-5">
                         <div className="small">
-                            <a href="mailto:taukanepires@gmail.com">
+                            <a href="mailto:taukanepires@gmail.com" className='ms-2'>
                                 <span>                                
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
