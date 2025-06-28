@@ -1,30 +1,41 @@
 {
   "hosting": {
     "public": "dist",
-    "redirects": [
+    "headers": [
       {
-        "source": "www./**",
-        "destination": "https://taukane.com.br",
-        "type": 301
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7200"
+          }
+        ]
+      },
+      {
+        "source": "404.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=30000"
+          }
+        ]
       }
     ],
-    "headers": [ {
-      "source": "**/*.@(jpg|jpeg|gif|png)",
-      "headers": [ {
-        "key": "Cache-Control",
-        "value": "max-age=7200"
-      } ]
-    }, {
-      "source": "404.html",
-      "headers": [ {
-        "key": "Cache-Control",
-        "value": "max-age=300"
-      } ]
-    } ],
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "*.local",
+      "dist/image/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
+
