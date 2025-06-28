@@ -3,7 +3,7 @@ $enable-shadows: true;
 $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
 $border-radius: .4rem;
 $primary: #1b063b;
-$font-family-base: 'Courier New', Courier, monospace !default;
+$font-family-base: "Space Mono", Courier, monospace !default;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -214,21 +214,27 @@ img  {
 }
 
 .apresenta {
-    width: 100%;
-    max-width: 1024px;
-    height: 75%;
-    margin: 0px auto 40px auto;
-    padding-bottom: 40px;
+    border-radius: $border-radius;
+    aspect-ratio: 3/2;
+    clip-path: polygon(0 74%, 0 0, 100% 0, 100% 74%, 45% 100%);
+    max-width: 50%;
+    height: 5%;
+    margin: 40px auto 40px auto;
+    padding: 15%;
     display: block;
     background: #fefefede;
+    animation-range-start: cover;
+    animation-range-end: cover;
+    animation-range: entry 0 exit 100%;
+    animation: animaquatro;
+    animation-timeline: view();
     h1 {
         text-indent: -90000px;
         display: block;
-        max-width: 375px;
-        height: 333px;
         margin: 0 auto;
-        background: url('../tauk-design.png') no-repeat scroll 0 0 transparent;
-        border-radius: $border-radius;
+        width:100%;
+        height: 100%;
+        background: url('/image/logo.svg') no-repeat scroll 0 0 transparent;
         will-change: filter;
         transition: filter 900ms;
         filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67)); 
@@ -241,6 +247,25 @@ img  {
         background: url('../image/linha.png') repeat scroll 0 0 transparent;
         border: none;
         height: 8px;
+    }
+}
+@keyframes animaquatro {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(1) translateY(0);
+        opacity: 0.8;
+
+    }
+    65% {
+        transform: scale(1) translateY(0);
+        opacity: .6;
+    }
+    100%{
+        transform: scale(1) translateY(100%);
+        opacity: 0;
     }
 }
 

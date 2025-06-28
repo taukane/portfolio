@@ -69,7 +69,7 @@ function App() {
 			<div className="container-fluid">
                 <div className="row">
                     <div className="col">
-                        <div className="box box-1 my-5" onTouchMove={scrollToNextBox} onClick={scrollToNextBox}>
+                        <div className="box box-1 my-5" onClick={scrollToNextBox}>
                             <h2>Taukane</h2>
                             <p>{t('intro')}</p>
                         </div>
@@ -83,9 +83,11 @@ function App() {
                     </div>
                 </div>
 			</div>
-			<div className="apresenta rounded mb-5 pb-5">
-				<NavLink to="/portfolio" title="Portfolio Designer Web e Grafico" onWheel={scrollToNextBox}><h1>Portfolio Designer Web e Grafico</h1></NavLink>
-			</div>
+			<div className="box box-4 apresenta rounded mb-5 pb-5">
+
+				    <NavLink to="/portfolio" title="Portfolio Designer Web e Grafico" onMouseOut={scrollToNextBox}><h1>Portfolio Designer Web e Grafico</h1></NavLink>
+
+            </div>
 			<a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
 				<img
 					src="image/top.jpg"
