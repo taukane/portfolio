@@ -166,24 +166,24 @@ return (
 <>
 <span className="scroller"></span>
 <Nav />
-<div className="apresenta rounded-bottom w-100 h-100" loading="lazy">
+<div className="apresenta portfa rounded-bottom w-100 mb-5" loading="lazy">
     <a  title="Designer Web e Grafico"
         href="#works">
         <h1>Taukane / Portfolio Web Designer Curitiba</h1>
     </a>
-    <div className="container">
-        <div className="row">
-            <div className="col-8 mx-auto lh-lg">
-                {getHeadline()}
-                <hr/>
-                <h3>{t('bio.0')}</h3>
-                <hr/>
-                <h4>{t('bio.1')}</h4>
-                <hr/>
-                <h4>{t('bio.2')}</h4>
-                <hr/>
-                <h5 className="mb-5">{t('bio.3')}</h5>
-            </div>
+</div>
+<div className="container">
+    <div className="row">
+        <div className="col-8 mx-auto lh-lg text-light bio">
+            {getHeadline()}
+            <hr/>
+            <h3>{t('bio.0')}</h3>
+            <hr/>
+            <h4>{t('bio.1')}</h4>
+            <hr/>
+            <h4>{t('bio.2')}</h4>
+            <hr/>
+            <h5 className="mb-5">{t('bio.3')}</h5>
         </div>
     </div>
 </div>

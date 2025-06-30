@@ -30,8 +30,10 @@ function App() {
                 setCurrentBox(currentBox + 1);
             }
         } else {
-			window.location.href = '/portfolio';
-        }
+        setTimeout(() => {
+            window.location.href = '/portfolio';
+        }, 2000);
+    }
     }, [currentBox]);
 
     useEffect(() => {
@@ -80,14 +82,13 @@ function App() {
                         <div className="box box-3 my-5" onClick={scrollToNextBox}>
                             <h2>{t('web')}</h2>
                         </div>
+                        <div className="box apresenta rounded my-5 p-5">
+				            <NavLink to="/portfolio" onClick={toTop} title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
+                        </div>
+                        <div className="py-3 d-block"></div>
                     </div>
                 </div>
 			</div>
-			<div className="box box-4 apresenta rounded mb-5 pb-5">
-
-				    <NavLink to="/portfolio" title="Portfolio Designer Web e Grafico" onMouseOut={scrollToNextBox}><h1>Portfolio Designer Web e Grafico</h1></NavLink>
-
-            </div>
 			<a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
 				<img
 					src="image/top.jpg"

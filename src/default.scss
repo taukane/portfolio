@@ -1,7 +1,7 @@
 $enable-gradients: true;
 $enable-shadows: true;
-$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
-$border-radius: .4rem;
+$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .473);
+$border-radius: .473rem;
 $primary: #1b063b;
 $font-family-base: "Space Mono", Courier, monospace !default;
 
@@ -14,9 +14,8 @@ html {min-height: 100%}
         background: rgba(33, 32, 34, 0.522);
         color: var(--bs-light);
     }
-    .apresenta {
+    .apresenta, .bio {
         color: var(--bs-light);
-        background-color: var(--bs-dark);
     }
     .myexpertise p{
         color: var(--bs-light);
@@ -130,7 +129,7 @@ img  {
     
 .box {
     width: 100%;
-    height: 90vh;
+    height: 34%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,11 +183,8 @@ img  {
 }
 
 .box-3{
-    height: 85vh;
-    opacity: .5;
-    animation-range-start: contain;
-    animation-range-end: cover;
-    animation-range: entry 100% exit 100%;
+    height: 70vh;
+    animation-range: entry 0 exit 55%;
     animation: animatreis;
     animation-timeline: view();
 }
@@ -213,34 +209,44 @@ img  {
     }
 }
 
+.box.apresenta{
+    background: linear-gradient(to bottom, #c1e4efcc 0%, #fbe4bfe7 100%);
+    height: auto;
+}
+
 .apresenta {
     border-radius: $border-radius;
     aspect-ratio: 3/2;
-    clip-path: polygon(0 74%, 0 0, 100% 0, 100% 74%, 45% 100%);
+    clip-path: polygon(0 74%, 0 0, 100% 0, 100% 74%, 50% 100%);
     max-width: 50%;
-    height: 5%;
-    margin: 40px auto 40px auto;
-    padding: 15%;
-    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 40px;
     background: #fefefede;
-    animation-range-start: cover;
-    animation-range-end: cover;
-    animation-range: entry 0 exit 100%;
-    animation: animaquatro;
+    animation: animaquatro forwards;
+    animation-range: entry 100% exit 95%;
     animation-timeline: view();
+    &.portfa {
+        h1{
+        animation: animalogo forwards;
+        animation-range: entry 100% exit 75%;
+        animation-timeline: view();
+        }
+    }
     h1 {
         text-indent: -90000px;
         display: block;
         margin: 0 auto;
-        width:100%;
-        height: 100%;
+        width:230px;
+        height: 230px;
         background: url('/image/logo.svg') no-repeat scroll 0 0 transparent;
         will-change: filter;
         transition: filter 900ms;
-        filter: drop-shadow(0 0 2em rgba(181, 234, 248, 0.67)); 
+        filter: drop-shadow(0 0 2em rgba(154, 204, 218, 0.838)); 
         &:hover {
-            opacity: 0.85;
-            filter: drop-shadow(0 0 2em rgba(2, 2, 39, 0.67));
+            opacity: 0.75;
+            filter: drop-shadow(0 0 2em rgba(2, 2, 39, 0.37));
         }
     }
     hr{
@@ -253,22 +259,42 @@ img  {
     0% {
         transform: scale(1) translateY(0);
         opacity: 1;
+        background-color: #d5e9f2d9;
     }
-    60% {
+    50% {
+        transform: scale(1) translateY(1%);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.1243) translateY(30%);
+        opacity: 0.4;
+    }
+    100% {
         transform: scale(1) translateY(0);
-        opacity: 0.8;
-
-    }
-    65% {
-        transform: scale(1) translateY(0);
-        opacity: .6;
-    }
-    100%{
-        transform: scale(1) translateY(100%);
-        opacity: 0;
+        opacity: 1;
+        background-color: linear-gradient(to bottom, #bbe7f6 0%, #fbe4bf 100%);
     }
 }
 
+@keyframes animalogo {
+    0% {
+        transform: scale(.7) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.77) translateY(13%);
+        opacity:1;
+    }
+    100% {
+        transform: scale(1) translateY(30%);
+        opacity: 1;
+    }
+}
+.bio{
+    h2,h3,h4,h5{
+        font-size: 1.743rem;
+    }
+}
 #works{
     h4{
         max-width: 250px;
@@ -410,7 +436,7 @@ img  {
     .apresenta {width: 100%;}
     .box {
         width: 100%;
-        height: 90vh;
+        height: 100vh;
         text-align: left;
     }
     #works {
