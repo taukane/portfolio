@@ -216,30 +216,33 @@ img  {
 
 .apresenta {
     border-radius: $border-radius;
-    aspect-ratio: 3/2;
+    aspect-ratio: 16/9;
     clip-path: polygon(0 74%, 0 0, 100% 0, 100% 74%, 50% 100%);
-    max-width: 50%;
-    width: 100%;
+    max-width: 100%;
+    width: 50%;
     height: auto;
     margin: 0 auto;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     background: #fefefede;
     animation: animaquatro forwards;
     animation-range: entry 100% exit 95%;
     animation-timeline: view();
-    &.portfa {
-        h1{
-        animation: animalogo forwards;
-        animation-range: entry 100% exit 75%;
-        animation-timeline: view();
+        &.portfa {
+                animation: animaquatro linear;
+    animation-range: entry 0 exit 100%;
+   animation-timeline: scroll();
+            h1{
+            animation: animalogo forwards;
+            animation-range: entry 0 exit 110%;
+            animation-timeline: view();
+            }
         }
-    }
     h1 {
         text-indent: -90000px;
         display: block;
         margin: 0 auto;
-        width:230px;
-        height: 230px;
+        width:200px;
+        height: 200px;
         background: url('/image/logo.svg') no-repeat scroll 0 0 transparent;
         will-change: filter;
         transition: filter 900ms;
@@ -259,34 +262,41 @@ img  {
     0% {
         transform: scale(1) translateY(0);
         opacity: 1;
-        background-color: #d5e9f2d9;
     }
-    50% {
-        transform: scale(1) translateY(1%);
+    34% {
+        transform: scale(1.5) translateY(0);
         opacity: 1;
     }
-    80% {
-        transform: scale(1.1243) translateY(30%);
-        opacity: 0.4;
+    35% {
+        transform: scale(1.8) translateY(25%);
+        opacity: .9;
+    }
+    95% {
+        transform: scale(1.1273) translateY(95%);
+        opacity: 1.7;
     }
     100% {
-        transform: scale(1) translateY(0);
+        transform: scale(1.1) translateY(0);
         opacity: 1;
-        background-color: linear-gradient(to bottom, #bbe7f6 0%, #fbe4bf 100%);
+        background-color: linear-gradient(to bottom, #fbe4bf 0%, #bbe7f6 100%);
     }
 }
 
 @keyframes animalogo {
     0% {
-        transform: scale(.7) translateY(0);
-        opacity: 1;
+        transform: scale(1) translateY(110%);
+        opacity: .1;
+    }
+    49% {
+        transform: scale(1.1273) translateY(80%);
+        opacity: .7;
     }
     50% {
-        transform: scale(1.77) translateY(13%);
-        opacity:1;
+        transform: scale(1.7273) translateY(40%);
+        opacity: .7;
     }
     100% {
-        transform: scale(1) translateY(30%);
+        transform: scale(1) translateY(0);
         opacity: 1;
     }
 }
@@ -376,9 +386,6 @@ img  {
     }
 }
 
-@include color-mode(light) {
-    .swiper-slide img{background: $light}
-}
 .swiper-slide-thumb-active{
     img{
         filter: sepia(0) hue-rotate(0deg) saturate(100%) !important;
@@ -431,9 +438,23 @@ img  {
             }
         }
 }
+@include color-mode(light) {
+    .swiper-slide img{background: $light};
+    .apresenta{background: linear-gradient(to bottom, #c1e4efcc 0%, #fbe4bfe7 100%);}
+}
+@include color-mode(dark) {
+    .swiper-slide img{background: $dark};
+    .apresenta{background: linear-gradient(to bottom, #0e303acc 0%, #785111e7 100%);}
+}
 
 @include media-breakpoint-down(md) {
-    .apresenta {width: 100%;}
+    .apresenta {
+        width: 100%;
+        h1{
+            width: 120px;
+            height: 120px;
+        }
+    }
     .box {
         width: 100%;
         height: 100vh;

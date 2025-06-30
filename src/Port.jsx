@@ -166,15 +166,15 @@ return (
 <>
 <span className="scroller"></span>
 <Nav />
-<div className="apresenta portfa rounded-bottom w-100 mb-5" loading="lazy">
-    <a  title="Designer Web e Grafico"
-        href="#works">
-        <h1>Taukane / Portfolio Web Designer Curitiba</h1>
-    </a>
-</div>
 <div className="container">
     <div className="row">
-        <div className="col-8 mx-auto lh-lg text-light bio">
+        <div className="apresenta portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5" loading="lazy">
+            <a  title="Designer Web e Grafico"
+                href="#works">
+                <h1>Taukane / Portfolio Web Designer Curitiba</h1>
+            </a>
+        </div>
+        <div className="col-9 col-lg-8 mx-auto lh-lg text-light bio">
             {getHeadline()}
             <hr/>
             <h3>{t('bio.0')}</h3>
