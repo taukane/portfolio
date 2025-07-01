@@ -228,12 +228,12 @@ img  {
     animation-range: entry 100% exit 95%;
     animation-timeline: view();
         &.portfa {
-                animation: animaquatro linear;
-    animation-range: entry 0 exit 100%;
-   animation-timeline: scroll();
+            animation: animaquatro linear;
+            animation-range: entry 0 exit 100%;
+            animation-timeline: scroll();
             h1{
             animation: animalogo forwards;
-            animation-range: entry 0 exit 110%;
+            animation-range:entry -960% exit 50%;
             animation-timeline: view();
             }
         }
@@ -284,15 +284,15 @@ img  {
 
 @keyframes animalogo {
     0% {
-        transform: scale(1) translateY(110%);
+        transform: scale(1) translateY(900%);
         opacity: .1;
     }
     49% {
-        transform: scale(1.1273) translateY(80%);
+        transform: scale(1.1273) translateY(480%);
         opacity: .7;
     }
     50% {
-        transform: scale(1.7273) translateY(40%);
+        transform:scale(1.1273) translateY(980%);
         opacity: .7;
     }
     100% {
@@ -450,10 +450,6 @@ img  {
 @include media-breakpoint-down(md) {
     .apresenta {
         width: 100%;
-        h1{
-            width: 120px;
-            height: 120px;
-        }
     }
     .box {
         width: 100%;
