@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import{ useEffect, useRef, useCallback, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import Nav from "./assets/Nav";
+import Logo from "./assets/Logo.jsx";
 
 function App() {
 
@@ -71,21 +72,25 @@ function App() {
 			<div className="container-fluid">
                 <div className="row">
                     <div className="col">
-                        <div className="box box-1 my-5" onClick={scrollToNextBox}>
+                        <div className="box box-1 my-3" onClick={scrollToNextBox}>
                             <h2>Taukane</h2>
                             <p>{t('intro')}</p>
                         </div>
-                        <div className="box box-2 my-5" onClick={scrollToNextBox}>
+                        <div className="box box-2 my-3" onClick={scrollToNextBox}>
                             <h2>Designer</h2>
                             <p>{t('designer')}</p>
                         </div>
-                        <div className="box box-3 my-5" onClick={scrollToNextBox}>
+                        <div className="box box-3 my-3" onClick={scrollToNextBox}>
                             <h2>{t('web')}</h2>
                         </div>
-                        <div className="box apresenta rounded my-5 p-5">
-				            <NavLink to="/portfolio" onClick={toTop} title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
+                        <div className="box my-5 p-5" onClick={() => {window.location.href = '/portfolio';}}>
+                            <div className="apresenta rounded">
+                                <NavLink to="/portfolio" onClick={toTop} title="Portfolio Designer Web e Grafico">
+                                    <Logo />
+                                    <h1>Portfolio Designer Web e Grafico</h1>
+                                </NavLink>
+                            </div>
                         </div>
-                        <div className="py-3 d-block"></div>
                     </div>
                 </div>
 			</div>

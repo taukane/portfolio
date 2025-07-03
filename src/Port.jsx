@@ -10,6 +10,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
+import Logo from "./assets/Logo.jsx";
+
 import Nav from "./assets/Nav.js";
 import { useTranslation } from 'react-i18next';
 
@@ -168,13 +170,14 @@ return (
 <Nav />
 <div className="container">
     <div className="row">
-        <div className="apresenta portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5" loading="lazy">
+        <div className="portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5" loading="lazy">
             <a  title="Designer Web e Grafico"
                 href="#works">
-                <h1>Taukane / Portfolio Web Designer Curitiba</h1>
+                <Logo />
+                <h1>Portfolio Web Designer Curitiba</h1>
             </a>
         </div>
-        <div className="col-9 col-lg-8 mx-auto lh-lg text-light bio">
+        <div className="col-9 col-lg-8 mx-auto lh-lg text-light bio mt-3">
             {getHeadline()}
             <hr/>
             <h3>{t('bio.0')}</h3>
