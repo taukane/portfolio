@@ -177,7 +177,7 @@ return (
                 <h1>Portfolio Web Designer Curitiba</h1>
             </a>
         </div>
-        <div className="col-9 col-lg-8 mx-auto lh-lg text-light bio">
+        <div className="col-9 col-lg-8 mx-auto lh-lg text-light bio mt-3">
             {getHeadline()}
             <hr/>
             <h3>{t('bio.0')}</h3>

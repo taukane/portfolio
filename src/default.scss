@@ -188,22 +188,20 @@ img  {
     border-radius: $border-radius;
     aspect-ratio: 16/9;
     clip-path: polygon(0 74%, 0 0, 100% 0, 100% 74%, 50% 100%);
-    max-width: 100%;
-    width: 50%;
+    width: 75%;
     height: auto;
-    margin: 0 auto;
-    padding-bottom: 60px;
+    margin: 0 auto 2% auto;
     animation: animaquatro forwards;
-    animation-range: entry 100% exit 95%;
+    animation-range: entry 100% exit 100%;
     animation-timeline: view();
         svg{
             animation: animalogo forwards;
             animation-range:entry 0 exit 100%;
             animation-timeline: scroll();
             display: block;
-            margin: 0 auto;
+            margin: 50px auto;
             width: 100%;
-            height: 100%;
+            height:calc(2.325rem + 30vw);
             will-change: filter;
             transition: filter 900ms;
             filter: drop-shadow(0 0 2em rgba(128, 173, 185, 0.838)); 
@@ -216,20 +214,15 @@ img  {
         text-indent: -90000px;
         display: block;
     }
-    hr{
-        background: url('/image/linha.png') repeat scroll 0 0 transparent;
-        border: none;
-        height: 8px;
-    }
 }
 
 @keyframes animaquatro {
     0% {
-        transform: scale(1.3) translateY(100px);
+        transform: scale(1) translateY(100px);
         opacity: 1;
     }
     34% {
-        transform: scale(1.5) translateY(40px);
+        transform: scale(1.2) translateY(40px);
         opacity: 1;
     }
     85% {
@@ -237,7 +230,7 @@ img  {
         opacity: .7;
     }
     100% {
-        transform: scale(1.1) translateY(0);
+        transform: scale(1) translateY(0);
         opacity: 1;
         background-color:linear-gradient(to bottom, #fbe4bfe7 0%, #c1e4efcc 100%);
     }
@@ -323,6 +316,12 @@ img  {
 .bio{
     h2,h3,h4,h5{
         font-size: 1.1473rem;
+    }
+    hr{
+        background: url('/image/linha.png') repeat scroll 0 0 transparent;
+        border: none;
+        height: 8px;
+        margin:10px auto 10px;
     }
 }
 
@@ -500,10 +499,15 @@ img  {
 @include media-breakpoint-down(md) {
     .apresenta {
         width: 100%;
+        display: block;
+        svg{
+            width: 90%;
+            height: 90%;
+        }
     }
     .box {
         width: 100%;
-        height: 90vh;
+        height: 85vh;
         text-align: left;
     }
     .portfa{
