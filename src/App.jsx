@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import{ useEffect, useRef, useCallback, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import Nav from "./assets/Nav";
+import Logo from "./assets/Logo.jsx";
 
 function App() {
 
@@ -82,8 +83,11 @@ function App() {
                         <div className="box box-3 my-5" onClick={scrollToNextBox}>
                             <h2>{t('web')}</h2>
                         </div>
-                        <div className="box apresenta rounded my-5 p-5">
-				            <NavLink to="/portfolio" onClick={toTop} title="Portfolio Designer Web e Grafico"><h1>Portfolio Designer Web e Grafico</h1></NavLink>
+                        <div className="box apresenta rounded my-5 p-5" onClick={() => {window.location.href = '/portfolio';}}>
+				            <NavLink to="/portfolio" onClick={toTop} title="Portfolio Designer Web e Grafico">
+                                <Logo />
+                                <h1>Portfolio Designer Web e Grafico</h1>
+                            </NavLink>
                         </div>
                         <div className="py-3 d-block"></div>
                     </div>
