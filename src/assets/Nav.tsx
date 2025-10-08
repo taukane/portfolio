@@ -64,13 +64,6 @@ function Nav() {
                         Portfolio
                     </NavLink>
                     </li>
-                    <li className="nav-item">
-                    <NavLink className={({ isActive }) => 
-                            isActive ? "nav-link active" : "nav-link"
-                        } to="/portfolio-taukane">
-                        Portfolio +
-                    </NavLink>
-                    </li>
                 </ul>
             </div>
         </div>

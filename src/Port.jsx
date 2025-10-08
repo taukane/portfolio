@@ -3,8 +3,9 @@ import { NavLink } from "react-router";
 import { useState, useEffect, useCallback, useRef } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
+import { Grid, FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/grid';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -16,8 +17,8 @@ import Nav from "./assets/Nav.js";
 import { useTranslation } from 'react-i18next';
 
 const panels = [
-    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://mitsul.com.br" target="_blank" className="text-light" rel="noreferrer noopener">Mitsul / Mitsubishi</a> <small>/ 2023</small></p>, src: ['image/mitsul.jpg']},
-    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p><a href="https://realveiculos.com.br" target="_blank" className="text-light" rel="noreferrer noopener">Real Veiculos / Volkswagen</a> <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png']},
+    {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Mitsul / Mitsubishi <small>/ 2023</small></p>, src: ['image/mitsul.jpg']},
+    {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png']},
     {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg']},
     {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" rel="noreferrer noopener">Autoconf</a> <small>/ 2021</small></p>, src: ['image/layout-blog-autoconf-v2-01.jpg']},
     {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png']},
@@ -54,17 +55,7 @@ const thumbis = [
     {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
     {id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
     {id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
-    {id: 17, 
-    last:<a href="/portfolio-taukane" className="d-block text-center link-offset-3 link-underline link-underline-opacity-0 link-underline-opacity-50-hover">
-        <p>Mais Projetos</p>
-        <img
-            src="image/more.png"
-            alt="+ Projetos Design"
-            title="+ Projetos Design"
-            className="rounded shadow-lg border-0 mx-auto"
-            width={50}
-            height={50} />
-    </a>
+    {id: 17,
     },
 ];
 
@@ -155,69 +146,27 @@ function Port() {
             window.removeEventListener('hashchange', scrollToPanel);
         };
     }, [scrollToPanel]);
-    const { t, i18n } = useTranslation();
-
-    const getHeadline = () => {
-        if (i18n.language === 'pt') {
-            return <h2>Desde 2002 desenvolvo Interfaces de Design <b>Web</b> e <b>Gráfico.</b></h2>;
-        }
-        return <h2>Since 2002 developing <b>Web</b> and <b>Graphic</b> Design Interfaces.</h2>;
-    };
-
 return (
 <>
 <span className="scroller"></span>
 <Nav />
+
 <div className="container">
-    <div className="row">
-        <div className="portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5" loading="lazy">
+        <div className="portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5 sticky-top" loading="lazy">
             <a  title="Designer Web e Grafico"
                 href="#works">
                 <Logo />
                 <h1>Portfolio Web Designer Curitiba</h1>
             </a>
         </div>
-        <div className="col-9 col-lg-8 mx-auto lh-lg text-light bio mt-3">
-            {getHeadline()}
-            <hr/>
-            <h3>{t('bio.0')}</h3>
-            <hr/>
-            <h4>{t('bio.1')}</h4>
-            <hr/>
-            <h4>{t('bio.2')}</h4>
-            <hr/>
-            <h5 className="mb-5">{t('bio.3')}</h5>
-        </div>
-    </div>
-</div>
-<div className="container-fluid">
-        <div className="row">
-            <div className="col-12 col-lg-11 col-xxl-auto mx-auto">
+        <div className="container">
                 <Swiper
-                    style={{
-                        '--swiper-pagination-color': '#f90',
-                        }}
-                    modules={[FreeMode, Pagination, Thumbs]}
+                    modules={[Grid]}
                     onSwiper={tumbers}
-                    spaceBetween={10}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    freeMode={true}
                     watchSlidesProgress={true}
-                    breakpoints={{
-                        '@0.00': {
-                        slidesPerView: 3,
-                        spaceBetween: 8,
-                        },
-                        '@1.00': {
-                        slidesPerView: 4,
-                        spaceBetween: 10,
-                        },
-                        '@1.50': {
-                        slidesPerView: 6,
-                        spaceBetween: 20,
-                        },
+                    slidesPerView={4}
+                    grid={{
+                        rows: 5,
                     }}
                     id="works"
                 >
@@ -322,7 +271,6 @@ return (
                     ))}
                 </Swiper>
             </div>
-        </div>
     </div>
 </>
 )}
