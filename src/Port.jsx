@@ -164,9 +164,9 @@ return (
                     modules={[Grid]}
                     onSwiper={tumbers}
                     watchSlidesProgress={true}
-                    slidesPerView={4}
+                    slidesPerView={5}
                     grid={{
-                        rows: 5,
+                        rows: 4,
                     }}
                     id="works"
                 >

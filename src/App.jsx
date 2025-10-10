@@ -74,94 +74,99 @@ const thumbis = [
 
 ];
 
-    const scrollToNextBox = useCallback(() => {
-        if (!boxesRef.current || boxesRef.current.length === 0) return;
+const scrollToNextBox = useCallback(() => {
+    if (!boxesRef.current || boxesRef.current.length === 0) return;
 
-        if (currentBox < boxesRef.current.length - 1) {
-            const nextBox = boxesRef.current[currentBox + 1];
+    setCurrentBox(prev => {
+        if (prev < boxesRef.current.length - 1) {
+            const nextBox = boxesRef.current[prev + 1];
             if (nextBox) {
                 nextBox.scrollIntoView({
                     behavior: "smooth",
                     block: 'center',
                     inline: 'center'
                 });
-                setCurrentBox(currentBox + 1);
+                return prev + 1;
             }
-        } 
-    }, [currentBox]);
+        }
+        return prev;
+    });
+}, []);
 
-    useEffect(() => {
+const scrollToPanel = useCallback(() => {
+    const hash = window.location.hash;
+    if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    } else {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    }
+}, []);
+
+useEffect(() => {
+
+    const updateBoxes = () => {
         boxesRef.current = document.querySelectorAll('.box-next');
+    };
+    
+    updateBoxes();
+    
+    const handleKeyUp = (e) => {
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            scrollToNextBox();
+        }
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            toTop();
+        }
+    };
 
-        const handleKeyUp = (e) => {
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                console.log(e.key);
-                scrollToNextBox();
-            }
-			if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                console.log(e.key);
-                toTop();
+    window.addEventListener('keyup', handleKeyUp);
+
+    const observer = new MutationObserver(updateBoxes);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+        window.removeEventListener('keyup', handleKeyUp);
+        observer.disconnect();
+    };
+    }, [scrollToNextBox, toTop]);
+    const tumbers = useCallback((Swiper) => {
+        setThumbsSwiper(Swiper);
+    }, []);
+
+    const hash = useCallback((Swiper) => {
+        const hashNavigation = Swiper.params.hashNavigation;
+        if (!hashNavigation) return;
+
+        const updateHash = () => {
+            const activeSlide = Swiper.slides[Swiper.activeIndex];
+            if (activeSlide) {
+                const hash = activeSlide.getAttribute('data-hash');
+                if (hash) {
+                    document.location.hash = hash;
+                }
             }
         };
 
-        window.addEventListener('keyup', handleKeyUp);
-
+        Swiper.on('slideChange', updateHash);
+        Swiper.on('slideChangeTransitionEnd', updateHash);
+        updateHash();
+        
         return () => {
-            window.removeEventListener('keyup', handleKeyUp);
+            Swiper.off('slideChange', updateHash);
+            Swiper.off('slideChangeTransitionEnd', updateHash);
         };
-    }, [scrollToNextBox]);
-
-    
-        const tumbers = useCallback((Swiper) => {
-            setThumbsSwiper(Swiper);
-        }, []);
-    
-        const hash = useCallback((Swiper) => {
-            const hashNavigation = Swiper.params.hashNavigation;
-            if (!hashNavigation) return;
-    
-            const updateHash = () => {
-                const activeSlide = Swiper.slides[Swiper.activeIndex];
-                if (activeSlide) {
-                    const hash = activeSlide.getAttribute('data-hash');
-                    if (hash) {
-                        document.location.hash = hash;
-                    }
-                }
-            };
-    
-            Swiper.on('slideChange', updateHash);
-            Swiper.on('slideChangeTransitionEnd', updateHash);
-            updateHash();
-        }, []);
-    
-        const scrollToPanel = useCallback(() => {
-            const hash = window.location.hash;
-            if (hash) {
-                const element = document.querySelector(hash);
-                if (element) {
-                    element.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start',
-                    });
-                }
-            } else {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth',
-                });
-            }
-        }, []);
-    
-        // useEffect(() => {
-        //     scrollToPanel();
-        //     window.addEventListener('hashchange', scrollToPanel); 
-        //     return () => {
-        //         window.removeEventListener('hashchange', scrollToPanel);
-        //     };
-        // }, [scrollToPanel]);
+    }, []);
 
     const { t, i18n } = useTranslation();
 
@@ -303,7 +308,7 @@ const thumbis = [
             <div className="container-fluid"> 
                 <div className="box">
                     <div className="row">
-                        <div className="col-12 text-light bio">
+                        <div className="col-md-6 my-auto align-items-center text-light bio">
                         <hr/>
                         <h3>{t('bio.0')}</h3>
                         <hr/>
