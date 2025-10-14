@@ -1,12 +1,12 @@
 {
     "title": "Portfolio Designer Web e Gráfico",
-    "intro": "Atuo em criação e desenvolvimento de interfaces visuais, para mídias online e off-line.",
-    "designer": "Arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.",
+    "intro": "Criação e desenvolvimento de interfaces visuais. Mídias online e off-line.",
+    "designer": "Arquitetura da informação. Branding. Design UX/UI.",
     "web": "Web e Gráfico",
     "contact": "Contato",
     "top": "Topo Portfolio",
     "bio": [
-        "Experiência sólida em desenvolvimento web front-end, concepção da arquitetura da informação e wireframes até a implementação de interfaces UX/UI centradas no usuário.",
+        "Experiência sólida em desenvolvimento web front-end.",
         "Conhecimento em metodologias ágeis, versionamento de código com Git e implementação de boas práticas de desenvolvimento.",
         "Habilidades em design responsivo, otimização de performance, acessibilidade web e SEO.",
         "Criação de identidades visuais para marcas e embalagens até a arte final para impressão."
@@ -14,9 +14,10 @@
     "contact-title": "Contato",
     "services-title": "Serviços",
       "services": [
-        "UI/UX Design",
+        "UX/UI Design",
         "Design Gráfico",
         "Criação de Identidade Visual",
+        "Branding",
         "Consultoria em Design",
         "Desenvolvimento Web",
         "Manutenção de Sites",

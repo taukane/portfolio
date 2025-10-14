@@ -1,12 +1,12 @@
 {
   "title": "Portfolio Designer Web and Graphic",
-  "intro": "I work in creating and developing visual interfaces for online and offline media.",
-  "designer": "Information architecture and wireframes to the implementation of user-centered UX/UI interfaces.",
+  "intro": "Creation and development of visual interfaces. Online and offline media.",
+  "designer": "Information architecture. Branding. Design UX/UI.",
   "web": "Web and Graphic",
   "contact": "Contact",
   "top": "Top Portfolio",
     "bio": [
-        "Solid experience in front-end web development, designing information architecture and wireframes to implementing user-centric UX/UI interfaces.",
+        "Solid experience in front-end web development.",
         "Knowledge of agile methodologies, code versioning with Git and implementation of good development practices.",
         "Skills in responsive design, performance optimization, web accessibility and SEO.",
         "Creation of visual identities for brands and packaging through to final artwork for printing."
@@ -14,7 +14,7 @@
   "contact-title": "Contact",
   "services-title": "Services",
       "services": [
-        "UI/UX Design",
+        "UX/UI Design",
         "Graphic Design",
         "Visual Identity Creation",
         "Design Consulting",

@@ -4,7 +4,7 @@ function Contato() {
     const { t } = useTranslation();
     return ( 
     <div className="vh-100 d-flex justify-content-center align-items-center">
-        <div className="container-fluid container-md my-4"> 
+        <div className="contatk container-md my-4"> 
             <div className="row">
                 <div className="col contact-infos">
                     <h3 className="fw-bold mt-5">{t('contact-title')}:</h3>
