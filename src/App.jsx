@@ -14,24 +14,12 @@ import 'swiper/css/thumbs';
 
 function App() {
 
-    function toTop() {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-        });
-    }
-
+    const { t } = useTranslation();
+    
     const boxesRef = useRef([]);
     const [currentBox, setCurrentBox] = useState(0);
-
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const panelsSwiperRef = useRef(null);
-
-    const thumbs = useCallback((Swiper) => {
-        setThumbsSwiper(Swiper);
-    }, []);
-
+    const swiperRef = useRef(null);
     
 const panels = [
     {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Mitsul / Mitsubishi <small>/ 2023</small></p>, src: ['image/mitsul.jpg']},
@@ -40,17 +28,20 @@ const panels = [
     {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p><a href="https://autoconf.com.br" target="_blank" className="text-light" rel="noreferrer noopener">Autoconf</a> <small>/ 2021</small></p>, src: ['image/layout-blog-autoconf-v2-01.jpg']},
     {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png']},
     {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
-    {id: 6, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp']},
-    {id: 7, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão / Perini <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', 'image/megamidia-3.webp']},
-    {id: 8, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2016</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg', null]},
-    {id: 9, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg']},
-    {id: 10, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg']},
-    {id: 11, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['image/zeta-estaleiro-redesign.jpg']},
-    {id: 12, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: ['image/curitiba-cultura.jpg']},
-    {id: 13, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.webp', 'image/shopping-total.jpg', null]},
-    {id: 14, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg']},
-    {id: 15, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: ['image/boticario.jpg', 'image/boticario-2.jpg', 'image/boticario-3.jpg']},
-    {id: 16, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: ['image/gazeta.webp']},
+    {id: 6, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp' ]},
+    {id: 7, name: 'Website Interface UI Design', descricao:<p>Serro Carrocerias<small>/ 2018</small></p>, src: ['image/serro-carrocerias.webp']},
+    {id: 8, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Sibras <small>/ 2018</small></p>, src: ['image/sibras-site.webp']},
+    {id: 9, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão / Perini <small>/ 2017</small></p>, src: ['image/roldao-posts.webp', 'image/megamidia.webp', 'image/megamidia-3.webp']},
+    {id: 10, name: 'Website Interface + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2016</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg', null]},
+    {id: 11, name: 'Layout Landing Page', descricao:<p>Globo Renault Florianópolis <small>/ 2016</small></p>, src: ['image/landing-reanult-globo.jpg']},
+    {id: 12, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg']},
+    {id: 13, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg']},
+    {id: 14, name: 'Branding + Website Interface + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['image/zeta-estaleiro-redesign.jpg']},
+    {id: 15, name: 'Projeto Gráfico Midia Kit', descricao:<p>Curitiba Cultura <small>/ 2013</small></p>, src: ['image/curitiba-cultura.jpg']},
+    {id: 16, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.webp', 'image/shopping-total.jpg', null]},
+    {id: 17, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg']},
+    {id: 18, name: 'Direção de Arte Apresentação', descricao:<p>Boticário <small>/ 2012</small></p>, src: ['image/boticario.jpg', 'image/boticario-2.jpg', 'image/boticario-3.jpg']},
+    {id: 19, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: ['image/gazeta.webp']},
 ];
 
 const thumbis = [
@@ -60,115 +51,83 @@ const thumbis = [
     {id: 3, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/autoconf-thumb.jpg'},
     {id: 4, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
     {id: 5, name: 'Website Interface', src: 'image/laww-thumb.jpg'},
-    {id: 6, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
-    {id: 7, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
-    {id: 8, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
-    {id: 9, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
-    {id: 10, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
-    {id: 11, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
-    {id: 12, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
-    {id: 13, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
-    {id: 14, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
-    {id: 15, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
-    {id: 16, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
+    {id: 6, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png'},
+    {id: 7, name: 'Website Interface', src: 'image/serro-thumb.jpg'},
+    {id: 8, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/sibras-thumb.jpg'},
+    {id: 9, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg'},
+    {id: 10, name: 'Website Interface + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg'},
+    {id: 11, name: 'Website Interface', src: 'image/globo-renault-thumb.jpg'},
+    {id: 12, name: 'Branding', src: 'image/marmoraria-thumb.jpg'},
+    {id: 13, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg'},
+    {id: 14, name: 'Branding +  Website Interface + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg'},
+    {id: 15, name: 'Projeto Gráfico', src: 'image/curitiba-cultura-thumb.jpg'},
+    {id: 16, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg'},
+    {id: 17, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
+    {id: 18, name: 'Direção de Arte', src: 'image/boticario-thumb.jpg'},
+    {id: 19, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg'},
 
 ];
-
-const scrollToNextBox = useCallback(() => {
-    if (!boxesRef.current || boxesRef.current.length === 0) return;
-
-    setCurrentBox(prev => {
-        if (prev < boxesRef.current.length - 1) {
-            const nextBox = boxesRef.current[prev + 1];
-            if (nextBox) {
-                nextBox.scrollIntoView({
-                    behavior: "smooth",
-                    block: 'center',
-                    inline: 'center'
-                });
-                return prev + 1;
-            }
-        }
-        return prev;
-    });
-}, []);
-
-const scrollToPanel = useCallback(() => {
-    const hash = window.location.hash;
-    if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
-        }
-    } else {
+    const toTop = useCallback(() => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth',
+            left: 0,
+            behavior: "smooth",
         });
-    }
-}, []);
-
-useEffect(() => {
-
-    const updateBoxes = () => {
-        boxesRef.current = document.querySelectorAll('.box-next');
-    };
-    
-    updateBoxes();
-    
-    const handleKeyUp = (e) => {
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            scrollToNextBox();
-        }
-        if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            toTop();
-        }
-    };
-
-    window.addEventListener('keyup', handleKeyUp);
-
-    const observer = new MutationObserver(updateBoxes);
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => {
-        window.removeEventListener('keyup', handleKeyUp);
-        observer.disconnect();
-    };
-    }, [scrollToNextBox, toTop]);
-    const tumbers = useCallback((Swiper) => {
-        setThumbsSwiper(Swiper);
     }, []);
 
-    const hash = useCallback((Swiper) => {
-        const hashNavigation = Swiper.params.hashNavigation;
-        if (!hashNavigation) return;
+    const scrollToNextBox = useCallback(() => {
+        if (!boxesRef.current || boxesRef.current.length === 0) return;
 
+        setCurrentBox(prev => {
+            if (prev < boxesRef.current.length - 1) {
+                const nextBox = boxesRef.current[prev + 1];
+                if (nextBox) {
+                    nextBox.scrollIntoView({
+                        behavior: "smooth",
+                        block: 'center',
+                        inline: 'center'
+                    });
+                    return prev + 1;
+                }
+            }
+            return prev;
+        });
+    }, []);
+
+
+    const handleThumbsSwiper = useCallback((swiper) => {
+        setThumbsSwiper(swiper);
+    }, []);
+
+    const handleHashNavigation = useCallback((swiper) => {
         const updateHash = () => {
-            const activeSlide = Swiper.slides[Swiper.activeIndex];
+            const activeSlide = swiper.slides[swiper.activeIndex];
             if (activeSlide) {
                 const hash = activeSlide.getAttribute('data-hash');
                 if (hash) {
-                    document.location.hash = hash;
+                    window.location.hash = hash;
                 }
             }
         };
 
-        Swiper.on('slideChange', updateHash);
-        Swiper.on('slideChangeTransitionEnd', updateHash);
+        swiper.on('slideChange', updateHash);
         updateHash();
-        
-        return () => {
-            Swiper.off('slideChange', updateHash);
-            Swiper.off('slideChangeTransitionEnd', updateHash);
-        };
     }, []);
 
-    const { t, i18n } = useTranslation();
+        useEffect(() => {
+        const updateBoxes = () => {
+            boxesRef.current = Array.from(document.querySelectorAll('.box-next'));
+        };
+        
+        updateBoxes();
+
+        const observer = new MutationObserver(updateBoxes);
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
 
 	return (
 		<>
@@ -187,16 +146,50 @@ useEffect(() => {
                     </div>
                 </div>
 			</div>
-            <div className="container box-next">
+            <div className="container box-next" onClick={scrollToNextBox}>
                 <div className="row">
                     <div className="col">
                         <Swiper
-                            onSwiper={tumbers}
+                            onSwiper={handleThumbsSwiper}
                             modules={[Grid]}
-                            slidesPerView={5}
-                            grid={{
-                                rows: 4,
+                            breakpoints={{
+                                320: {
+                                    slidesPerView: 1,
+                                    grid: {
+                                        rows: 5,
+                                        fill: 'row',
+                                    },
+                                },
+                                576: {
+                                    slidesPerView: 2,
+                                    grid: {
+                                        rows: 6,
+                                        fill: 'row',
+                                    },
+                                },
+                                768: {
+                                    slidesPerView: 3,
+                                    grid: {
+                                        rows: 5,
+                                        fill: 'row',
+                                    },
+                                },
+                                992: {
+                                    slidesPerView: 4,
+                                    grid: {
+                                        rows: 5,
+                                        fill: 'row',
+                                    },
+                                },
+                                1200: {
+                                    slidesPerView: 5,
+                                    grid: {
+                                        rows: 4,
+                                        fill: 'row',
+                                    },
+                                },
                             }}
+                            spaceBetween={1}
                             id="works"
                         >
                         {
@@ -230,8 +223,8 @@ useEffect(() => {
                             hashNavigation={{
                                 watchState: true,
                             }}
-                            onSwiper={hash}
-                            thumbs={{ swiper: thumbsSwiper }}
+                            onSwiper={handleHashNavigation}
+                            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                             loop={true}
                             spaceBetween={20}
                             keyboard={{
@@ -239,12 +232,12 @@ useEffect(() => {
                             }}
                             navigation={true}
                             autoHeight={true}
-                            ref={panelsSwiperRef}>
+                            ref={swiperRef}>
                             {panels.map((panel) => (
                                 <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora" className="pb-3">
                                     <h5 className="mt-5 pt-4 fw-bold text-light">{panel.name}</h5>
                                     <div>{panel.descricao}</div>
-                                    {panel.src && panel.src.length > 0 ? (
+                                    {panel.src && panel.src.length > 0 && (
                                         <Swiper
                                             style={{
                                                 '--swiper-navigation-color': '#f40',
@@ -253,59 +246,26 @@ useEffect(() => {
                                             slidesPerView={1}
                                             modules={[Navigation, Pagination]}
                                             navigation={panel.src.length > 1}
-                                            pagination={{ clickable: true }}>
-                                            <SwiperSlide>
-                                                <img
-                                                    src={panel.src[0]}
-                                                    alt={`${panel.name} - Design 1`}
-                                                    className="img-fluid rounded shadow-lg"
-                                                />
-                                            </SwiperSlide>
-                                            {panel.src[1] && (
-                                                <SwiperSlide>
+                                            pagination={{ clickable: true }}
+                                        >
+                                            {panel.src.map((imgSrc, idx) => imgSrc && (
+                                                <SwiperSlide key={idx}>
                                                     <img
-                                                        src={panel.src[1]}
-                                                        alt={`${panel.name} - Design 2`}
+                                                        src={imgSrc}
+                                                        alt={`${panel.name} - Design ${idx + 1}`}
                                                         className="img-fluid rounded shadow-lg"
                                                     />
                                                 </SwiperSlide>
-                                            )}
-                                            {panel.src[2] && (
-                                                <SwiperSlide>
-                                                    <img
-                                                        src={panel.src[2]}
-                                                        alt={`${panel.name} - Design 3`}
-                                                        className="img-fluid rounded shadow-lg"
-                                                    />
-                                                </SwiperSlide>
-                                            )}
-                                            {panel.src[3] && (
-                                                <SwiperSlide>
-                                                    <img
-                                                        src={panel.src[3]}
-                                                        alt={`${panel.name} - Design 4`}
-                                                        className="img-fluid rounded shadow-lg"
-                                                    />
-                                                </SwiperSlide>
-                                            )}
-                                            {panel.src[4] && (
-                                                <SwiperSlide>
-                                                    <img
-                                                        src={panel.src[4]}
-                                                        alt={`${panel.name} - Design 5`}
-                                                        className="img-fluid rounded shadow-lg"
-                                                    />
-                                                </SwiperSlide>
-                                            )}
+                                            ))}
                                         </Swiper>
-                                    ) : null}
+                                    )}
                                 </SwiperSlide>
                             ))}
                         </Swiper>
                     </div>
                 </div>
             </div>
-            <div className="container-fluid"> 
+            <div className="container-fluid box-next" onClick={scrollToNextBox}> 
                 <div className="box">
                     <div className="row">
                         <div className="col-md-6 my-auto align-items-center text-light bio">
@@ -320,8 +280,8 @@ useEffect(() => {
                         </div>
                     </div>
                 </div>
-                <div className="container my-5">
-                    <div className="apresenta rounded box-next">
+                <div className="container my-5 box-next" onClick={scrollToNextBox}>
+                    <div className="apresenta rounded ">
                         <NavLink onClick={toTop} title="Portfolio Designer Web e Grafico">
                             <Logo />
                             <h1>Portfolio Designer Web e Grafico</h1>

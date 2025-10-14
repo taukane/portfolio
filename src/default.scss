@@ -29,6 +29,11 @@ html {min-height: 100%}
         background: $dark;
         color: $light;
     }
+    .contact-infos{
+        a{color: $light !important;}
+    }
+    .bi-person-lines-fill{fill: $light !important;}
+    .modal-close{fill: $light !important;}
 }
 
 [data-bs-theme=light] {
@@ -42,6 +47,11 @@ html {min-height: 100%}
     .modal-overlay {
         background: $dark;
     }
+    .contact-infos{
+        a{color: $dark !important;}
+    }
+    .modal-close{fill: $dark !important;}
+    .bi-person-lines-fill{fill: #636363 !important;}
 }
 
 body {
@@ -132,11 +142,11 @@ img  {
     p {
     text-align: center;
     display: block;
-    width: 30%;
     margin: 20px;
-    font-size: 1.347em;
+    font-size: 1.743em;
     color: #e0ffff;
     font-weight: bold;
+    max-width: 80%;
   }
 }
 
@@ -426,12 +436,12 @@ img  {
   
 .swiper-slide {
     img {
-    max-width: 100%;
-    margin: 0 auto;
-    @include color-mode(dark) {
-        .swiper-slide img{background: $dark}
+        max-width: 100%;
+        margin: 0 auto;
+        @include color-mode(dark) {
+            .swiper-slide img{background: $dark}
+        }
     }
-}
 }
 
 .swiper-slide-thumb-active{
@@ -534,11 +544,11 @@ img  {
     }
     .box {
         width: 100%;
-        height: 10vh;
+        height: 100vh;
         text-align: left;
     }
     .portfa{
-        width:42%;
+        width:95%;
     }
     #works {
         img{
@@ -554,4 +564,12 @@ img  {
         img{border:solid 5px #0f0f10 !important}
     }
     .swiper-button-next, .swiper-button-prev{display: none !important}
+
+    .contatk{
+        width:98% !important;
+    }
+}
+
+.contatk{
+    width: 50%;
 }
