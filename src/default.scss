@@ -383,9 +383,9 @@ img  {
 
 #works{
     .swiper-slide{
-        height: 200px;
         width: 100%;
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
+        display: contents;
     }
     h4{
         max-width: 250px;
@@ -556,8 +556,16 @@ img  {
         width: 100%;
         height: 100vh;
         text-align: left;
+        h2{
+            font-variant-ligatures: contextual;
+            font-size: 15.4vw;
+            word-spacing: -32px;
+        }
         p{
-            width: 90%;
+            width: 70%;
+            font-size: 5lvw;
+            word-spacing: -2px;
+            text-align: left;
         }
     }
     .portfa{
