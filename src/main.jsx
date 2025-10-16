@@ -45,11 +45,11 @@ function MetaDescriptionUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let description = "Sou Taukane Pires, Web Full Stack, Designer Gráfico e UI/UX, criação e desenvolvimento de interfaces visuais desde 2002. Confira meu Portfolio.";
+        let description = "Sou Taukane Pires, Web designer de criação Curitiba Brazel, Designer UX/UI,  desenvolvo interfaces visuais desde 2002. Salve Dezainers.";
 
         switch (location.pathname) {
             case "/":
-                description = "Sou Taukane Pires, Web Full Stack, Designer Gráfico e UI/UX, criação e desenvolvimento de interfaces visuais desde 2002. Confira meu Portfolio.";
+                description = "Sou Taukane Pires, Web designer de criação Curitiba Brazel, Designer UX/UI,  desenvolvo interfaces visuais desde 2002. Salve Dezainers";
                 break;
             case "/portfolio":
                 description = "Designer Gráfico e UI/UX, desenvolvedor Frontend e Backend.";
@@ -58,7 +58,7 @@ function MetaDescriptionUpdater() {
                 description = "Designer Gráfico e UI/UX, desenvolvedor Frontend e Backend, com experiência em criação e desenvolvimento de interfaces visuais desde 2002.";
                 break;
             default:
-                description = "Sou Taukane Pires, Designer Web e Gráfico. Atuo em criação e desenvolvimento de interfaces visuais desde 2002. Confira meu Portfolio.";
+                description = "Sou Taukane Pires, Web designer de criação Curitiba Brazel, Designer UX/UI,  desenvolvo interfaces visuais desde 2002. Salve Dezainers";
                 break;
         }
 
