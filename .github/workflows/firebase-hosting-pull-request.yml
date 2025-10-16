@@ -18,4 +18,4 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_TOKEN }}'
-          projectId: portfolio
+          projectId: portfolio-taukane
