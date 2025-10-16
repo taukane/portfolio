@@ -178,22 +178,8 @@ const thumbis = [
                                         fill: 'row',
                                     },
                                 },
-                                576: {
-                                    slidesPerView: 2,
-                                    grid: {
-                                        rows: 6,
-                                        fill: 'row',
-                                    },
-                                },
                                 768: {
                                     slidesPerView: 3,
-                                    grid: {
-                                        rows: 5,
-                                        fill: 'row',
-                                    },
-                                },
-                                992: {
-                                    slidesPerView: 4,
                                     grid: {
                                         rows: 5,
                                         fill: 'row',
