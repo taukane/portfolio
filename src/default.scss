@@ -148,7 +148,7 @@ img  {
     position: relative;
     opacity: 0;
     transform: scale(1) translateY(15%);
-    transition: transform 1.6s ease-in, opacity 1.6s ease-in;
+    transition: transform .4s ease-in-out, opacity .4s ease-in;
     h2 {
         font-size: 5.5em;
         color: #e0ffff;
@@ -162,7 +162,7 @@ img  {
     color: #e0ffff;
     font-weight: bold;
     width: 50%;
-  }
+    }
     &.is-visible {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -172,7 +172,6 @@ img  {
     opacity: 0.2;
     transform: scale(0.8) translateY(20%);
     }
-    
 }
 
 
@@ -242,6 +241,11 @@ img  {
     animation: animaquatro forwards;
     animation-range: entry 100% exit 0;
     animation-timeline: view();
+    opacity: 0;
+    transform: scale(1) translateY(15%);
+    transition: transform .6s ease-in-out, opacity .6s ease-in;
+                will-change: filter;
+            transition: filter 900ms;
         svg{
             animation: animalogo forwards;
             animation-range:entry 0 exit 100%;
@@ -261,6 +265,15 @@ img  {
     h1{
         text-indent: -90000px;
         display: block;
+    }
+    &.is-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    }
+
+    &.is-leaving {
+    opacity: 0.5;
+    transform: scale(1.8) translateY(20%);
     }
 }
 @keyframes animaquatro {
@@ -344,7 +357,7 @@ img  {
     }
     100% {
         transform: scale(.5) translateY(20px);
-        opacity: .1;
+        opacity: 0.5;
     }
 }
 
@@ -359,7 +372,7 @@ img  {
     }
     100% {
         transform: scale(1) translateY(0);
-        opacity: .1;
+        opacity: 0.5;
     }
 }
 
@@ -385,13 +398,12 @@ img  {
     .swiper-slide{
         width: 100%;
         margin-bottom: 0 !important;
-        display: contents;
     }
     h4{
         max-width: 250px;
         height: 100px;
         position: absolute;
-        top: 60px;
+        top: 30px;
         height: 1px;
         z-index: -1;
         margin: 30px;

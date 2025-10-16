@@ -146,6 +146,36 @@ const thumbis = [
             observer.disconnect();
         };
     }, []);
+        const handleKeyDown = useCallback((e) => {
+            if (e.key === 'Enter' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                console.log(e.key);
+                window.scrollTo({
+                    top: document.querySelector('#works').offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                console.log(e.key);
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+            }
+            if (e.key === 'p') {
+                console.log(e.key);
+                window.location.href = '/portfolio';
+            }
+        }, []);
+    
+        useEffect(() => {
+            window.addEventListener('keydown', handleKeyDown);
+    
+            return () => {
+                window.removeEventListener('keydown', handleKeyDown);
+            };
+        }, [handleKeyDown]);
 
 	return (
 		<>
@@ -157,6 +187,7 @@ const thumbis = [
                             <h2>Taukane</h2>
                             <p>{t('intro')}</p>
                         </div>
+                        <hr className="bg-light text-white w-50 mx-auto shadow-sm" />
                         <div className="box box-2 my-3 box-next" onClick={scrollToNextBox}>
                             <h2>Designer</h2>
                             <p>{t('designer')}</p>
@@ -172,9 +203,9 @@ const thumbis = [
                             modules={[Grid]}
                             breakpoints={{
                                 320: {
-                                    slidesPerView: 1,
+                                    slidesPerView: 2,
                                     grid: {
-                                        rows: 5,
+                                        rows: 8,
                                         fill: 'row',
                                     },
                                 },
@@ -186,9 +217,9 @@ const thumbis = [
                                     },
                                 },
                                 1200: {
-                                    slidesPerView: 5,
+                                    slidesPerView: 6,
                                     grid: {
-                                        rows: 4,
+                                        rows: 3,
                                         fill: 'row',
                                     },
                                 },
@@ -284,9 +315,9 @@ const thumbis = [
                         </div>
                     </div>
                 </div>
-                <div className="container my-5 box-next" onClick={scrollToNextBox}>
-                    <div className="apresenta rounded ">
-                        <NavLink onClick={toTop} title="Portfolio Designer Curitiba">
+                <div className="container my-5" onClick={scrollToNextBox}>
+                    <div className="apresenta rounded">
+                        <NavLink to="/portfolio" title="Portfolio Designer Curitiba">
                             <Logo />
                             <h1>Portfolio Designer Curitiba</h1>
                         </NavLink>
