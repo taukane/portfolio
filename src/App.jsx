@@ -286,9 +286,9 @@ const thumbis = [
                 </div>
                 <div className="container my-5 box-next" onClick={scrollToNextBox}>
                     <div className="apresenta rounded ">
-                        <NavLink onClick={toTop} title="Portfolio Designer Web e Grafico">
+                        <NavLink onClick={toTop} title="Portfolio Designer Curitiba">
                             <Logo />
-                            <h1>Portfolio Designer Web e Grafico</h1>
+                            <h1>Portfolio Designer Curitiba</h1>
                         </NavLink>
                     </div>
                 </div>  
