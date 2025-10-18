@@ -20,6 +20,24 @@ function App() {
     const [currentBox, setCurrentBox] = useState(0);
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const swiperRef = useRef(null);
+
+    const boxes = document.querySelectorAll('.box');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.remove('is-leaving');
+        } else {
+            entry.target.classList.remove('is-visible');
+            entry.target.classList.add('is-leaving');
+        }
+    });
+}, {
+    threshold: [0, 0.25, 0.5, 0.75, 1]
+});
+
+boxes.forEach(box => observer.observe(box));
     
 const panels = [
     {id: 0, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Mitsul / Mitsubishi <small>/ 2023</small></p>, src: ['image/mitsul.jpg']},
@@ -128,6 +146,36 @@ const thumbis = [
             observer.disconnect();
         };
     }, []);
+        const handleKeyDown = useCallback((e) => {
+            if (e.key === 'Enter' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                console.log(e.key);
+                window.scrollTo({
+                    top: document.querySelector('#works').offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                console.log(e.key);
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+            }
+            if (e.key === 'p') {
+                console.log(e.key);
+                window.location.href = '/portfolio';
+            }
+        }, []);
+    
+        useEffect(() => {
+            window.addEventListener('keydown', handleKeyDown);
+    
+            return () => {
+                window.removeEventListener('keydown', handleKeyDown);
+            };
+        }, [handleKeyDown]);
 
 	return (
 		<>
@@ -139,6 +187,7 @@ const thumbis = [
                             <h2>Taukane</h2>
                             <p>{t('intro')}</p>
                         </div>
+                        <hr className="bg-light text-white w-50 mx-auto shadow-sm" />
                         <div className="box box-2 my-3 box-next" onClick={scrollToNextBox}>
                             <h2>Designer</h2>
                             <p>{t('designer')}</p>
@@ -154,16 +203,9 @@ const thumbis = [
                             modules={[Grid]}
                             breakpoints={{
                                 320: {
-                                    slidesPerView: 1,
-                                    grid: {
-                                        rows: 5,
-                                        fill: 'row',
-                                    },
-                                },
-                                576: {
                                     slidesPerView: 2,
                                     grid: {
-                                        rows: 6,
+                                        rows: 8,
                                         fill: 'row',
                                     },
                                 },
@@ -174,17 +216,10 @@ const thumbis = [
                                         fill: 'row',
                                     },
                                 },
-                                992: {
-                                    slidesPerView: 4,
-                                    grid: {
-                                        rows: 5,
-                                        fill: 'row',
-                                    },
-                                },
                                 1200: {
-                                    slidesPerView: 5,
+                                    slidesPerView: 6,
                                     grid: {
-                                        rows: 4,
+                                        rows: 3,
                                         fill: 'row',
                                     },
                                 },
@@ -195,7 +230,7 @@ const thumbis = [
                         {
                             thumbis.map((tumbis) =>(
                                 <SwiperSlide  key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}>
-                                    <a href="#ancora" alt="Designer Web e Grafico" title="Designer Web e Grafico">
+                                    <a href="#ancora" alt="Web Design Curitiba" title="Web Design Curitiba">
                                         <h4 className="link-offset-3">{tumbis.name}</h4>   
                                         {tumbis.src ? (
                                             <img
@@ -252,7 +287,7 @@ const thumbis = [
                                                 <SwiperSlide key={idx}>
                                                     <img
                                                         src={imgSrc}
-                                                        alt={`${panel.name} - Design ${idx + 1}`}
+                                                        alt={`${panel.name} - Web Design Curitiba ${idx + 1}`}
                                                         className="img-fluid rounded shadow-lg"
                                                     />
                                                 </SwiperSlide>
@@ -280,15 +315,15 @@ const thumbis = [
                         </div>
                     </div>
                 </div>
-                <div className="container my-5 box-next" onClick={scrollToNextBox}>
-                    <div className="apresenta rounded ">
-                        <NavLink onClick={toTop} title="Portfolio Designer Web e Grafico">
+                <div className="container my-5" onClick={scrollToNextBox}>
+                    <div className="apresenta rounded">
+                        <NavLink to="/portfolio" title="Portfolio Designer Curitiba">
                             <Logo />
-                            <h1>Portfolio Designer Web e Grafico</h1>
+                            <h1>Portfolio Designer Curitiba</h1>
                         </NavLink>
                     </div>
                 </div>  
-                <h5 className="bg-body-tertiary mt-0 mb-0 pt-4 pb-3 text-center position-relative">{t('widgets-title')}:</h5>
+                <h5 className="bg-body-tertiary mt-0 mb-0 py-4 text-center position-relative fw-bold">{t('widgets-title')}:</h5>
                 <Swiper
                     style={{
                     '--swiper-pagination-color': '#121212',
@@ -312,7 +347,7 @@ const thumbis = [
                     grabCursor={true}
                     freeMode={true}
                     loop={true}
-                    className="myexpertise bg-body-tertiary bg-gradient pt-4 pb-3 mb-5 text-center rounded-0 rounded-bottom shadow-lg">
+                    className="myexpertise bg-body-tertiary bg-gradient p-5 mb-5 text-center rounded-0 rounded-bottom shadow-lg">
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator Logo" /><p>Illustrator</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop Logo" /><p>Photoshop</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD Logo" /><p>Adobe XD</p></SwiperSlide>
@@ -344,11 +379,12 @@ const thumbis = [
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo" /><p>GitHub</p></SwiperSlide>
                 </Swiper>
             </div>
+            <hr className="text-light bg-light m-5" />
 			<a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
 				<img
 					src="image/top.jpg"
-					alt="Taukane - Diretor de Arte Web"
-					title="Diretor de Arte Web Curitiba"
+					alt="Web Design Curitiba"
+					title="Web Design Curitiba"
 					className="img-fluid rounded shadow-lg"
 					width={50}
 					height={50}

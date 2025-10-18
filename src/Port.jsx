@@ -86,10 +86,6 @@ function Port() {
             console.log(e.key);
             window.location.href = '/';
         }
-        if (e.key === '2') {
-            console.log(e.key);
-            window.location.href = '/portfolio-taukane';
-        }
     }, []);
 
     useEffect(() => {
@@ -297,6 +293,7 @@ return (
                 </Swiper>
             </div>
     </div>
+    <hr className="text-light w-50 mx-auto" />
 </>
 )}
 
