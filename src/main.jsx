@@ -13,7 +13,6 @@ import './default.scss';
 
 import App from './App.jsx';
 import Port from './Port.jsx';
-import Portfolio from './Portfolio.jsx';
 import Contato from './Contato.jsx';
 
 import { initializeApp } from "firebase/app";
@@ -54,9 +53,6 @@ function MetaDescriptionUpdater() {
             case "/portfolio":
                 description = "Designer Gráfico e UI/UX, desenvolvedor Frontend e Backend.";
                 break;
-            case "/portfolio-taukane":
-                description = "Designer Gráfico e UI/UX, desenvolvedor Frontend e Backend, com experiência em criação e desenvolvimento de interfaces visuais desde 2002.";
-                break;
             default:
                 description = "Sou Taukane Pires, Web designer de criação Curitiba Brazel, Designer UX/UI,  desenvolvo interfaces visuais desde 2002. Salve Dezainers";
                 break;
@@ -88,9 +84,6 @@ function TitleUpdater() {
             case "/portfolio":
                 title = "Portfolio Web e Gráfico";
                 break;
-            case "/portfolio-taukane":
-                title = "Portfolio + Designer Web e Gráfico";
-                break;
             default:
                 title = "Taukane Portfolio / Designer Web e Gráfico Curitiba";
                 break;
@@ -120,16 +113,6 @@ const router = createBrowserRouter([
                 <TitleUpdater />
                 <MetaDescriptionUpdater />
                 <Port />
-            </>
-        )
-    },
-    {
-        path: "/portfolio-taukane",
-        element: (
-            <>
-                <TitleUpdater />
-                <MetaDescriptionUpdater />
-                <Portfolio />
             </>
         )
     },
