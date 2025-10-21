@@ -44,17 +44,17 @@ function MetaDescriptionUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let description = "Sou Taukane Pires, Web designer de criação Curitiba Brazel, Designer UX/UI,  desenvolvo interfaces visuais desde 2002. Salve Dezainers.";
+        let description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI,  desenvolvo interfaces visuais desde 2002.";
 
         switch (location.pathname) {
             case "/":
-                description = "Sou Taukane Pires, Web designer de criação Curitiba Brazel, Designer UX/UI,  desenvolvo interfaces visuais desde 2002. Salve Dezainers";
+                description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI,  desenvolvo interfaces visuais desde 2002.";
                 break;
             case "/portfolio":
                 description = "Designer Gráfico e UI/UX, desenvolvedor Frontend e Backend.";
                 break;
             default:
-                description = "Sou Taukane Pires, Web designer de criação Curitiba Brazel, Designer UX/UI,  desenvolvo interfaces visuais desde 2002. Salve Dezainers";
+                description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI,  desenvolvo interfaces visuais desde 2002.";
                 break;
         }
 
@@ -75,7 +75,7 @@ function TitleUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let title = "Taukane Portfolio / Designer Web e Gráfico Curitiba";
+        let title = "Portfolio Designer Curitiba";
 
         switch (location.pathname) {
             case "/":

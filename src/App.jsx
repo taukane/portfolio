@@ -40,7 +40,7 @@ const observer = new IntersectionObserver((entries) => {
 boxes.forEach(box => observer.observe(box));
     
 const panels = [
-    {id: 0, name: 'Branding ', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin <small>/ SEO Performance *Pizza em Fatias</small></a></p>, src: ['image/bom-bertolin-website.png']},
+    {id: 0, name: 'Website ', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin <small>/ SEO Performance</small></a></p>, src: ['image/bom-bertolin-website.png']},
     {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Mitsul / Mitsubishi <small>/ 2023</small></p>, src: ['image/mitsul.jpg']},
     {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png']},
     {id: 3, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg']},
@@ -64,7 +64,7 @@ const panels = [
 ];
 
 const thumbis = [
-    {id: 0, name: 'Branding', src: 'image/dombertolin-thumb.jpg'},
+    {id: 0, name: 'Website', src: 'image/dombertolin-thumb.jpg'},
     {id: 1, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/mitsul-thumb.jpg'},
     {id: 2, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg'},
     {id: 3, name: 'Website Interface + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
