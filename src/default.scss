@@ -66,6 +66,10 @@ html {min-height: 100%}
     }
 }
 
+:root {
+    --swiper-navigation-size: 23px !important;
+}
+
 body {
     height: 100%;
     font-family: "Space Mono", monospace, Courier, "Courier New", sans-serif;

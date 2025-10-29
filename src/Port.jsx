@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import { useState, useEffect, useCallback, useRef } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Grid, FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
+import { Grid, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/free-mode';
@@ -15,12 +15,13 @@ import Logo from "./assets/Logo.jsx";
 
 import Nav from "./assets/Nav.js";
 import { useTranslation } from 'react-i18next';
+import { ReactLenis, useLenis } from 'lenis/react';
 
 const panels = [
     {id: 0, name: 'Website ', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin <small>/ Branding</small></a></p>, src: ['image/bom-bertolin-website.png']},
     {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', 'image/volkswagen-design-ux-ui.webp']},
     {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', 'image/honda-interfaces.webp']},
-    {id: 3, name: 'Design UX/UI + Front-end Laravel', descricao: <p>Autoconf<small>/ 2021</small></p>, src: ['image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/autoconf-design-system-desktop.webp', 'image/layout-blog-autoconf-v2-01.jpg']},
+    {id: 3, name: 'Design UX/UI + Front-end Laravel', descricao: <p>Autoconf<small>/ 2021</small></p>, src: ['image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/autoconf-design-system-desktop.webp', 'image/autoconf-kanban-ux-ui.webp', 'image/autoconf-sitemap.webp', 'image/autoconf-websites-templates.webp', 'image/layout-blog-autoconf-v2-01.jpg']},
     {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png']},
     {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
     {id: 6, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp' ]},
@@ -149,7 +150,7 @@ return (
 <>
 <span className="scroller"></span>
 <Nav />
-
+<ReactLenis root>
 <div className="container">
         <div className="portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5 sticky-top" loading="lazy">
             <a  title="Designer Web e Grafico"
@@ -284,6 +285,15 @@ return (
                                             />
                                         </SwiperSlide>
                                     )}
+                                    {panel.src[5] && (
+                                        <SwiperSlide>
+                                            <img
+                                                src={panel.src[5]}
+                                                alt={`${panel.name} - Design 6`}
+                                                className="img-fluid rounded shadow-lg"
+                                            />
+                                        </SwiperSlide>
+                                    )}
                                 </Swiper>
                             ) : null}
                         </SwiperSlide>
@@ -291,6 +301,7 @@ return (
                 </Swiper>
             </div>
     </div>
+    </ReactLenis>
     <hr className="text-light w-50 mx-auto" />
 </>
 )}

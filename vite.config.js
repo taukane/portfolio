@@ -5,5 +5,6 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   // base: '/portfolio/',
-   server: { fs: { deny: ['.env', '.env.*', '*.{crt,pem}', 'custom.secret'] } }
+   server: { fs: { deny: ['.env', '.env.*', '*.{crt,pem}', 'custom.secret'] } },
+   quietDeps: true,
 })

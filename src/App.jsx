@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import{ useEffect, useRef, useCallback, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import Nav from "./assets/Nav";
-import Logo from "./assets/Logo.jsx";
+import Logo from "./assets/Logo";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, FreeMode, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
 import 'swiper/css';
@@ -12,9 +12,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
+import { ReactLenis, useLenis } from 'lenis/react';
+
 function App() {
 
-    const { t } = useTranslation();
     
     const boxesRef = useRef([]);
     const [currentBox, setCurrentBox] = useState(0);
@@ -43,7 +44,7 @@ const panels = [
     {id: 0, name: 'Website ', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin <small>/ Branding</small></a></p>, src: ['image/bom-bertolin-website.png']},
     {id: 1, name: 'Website Interface + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', 'image/volkswagen-design-ux-ui.webp']},
     {id: 2, name: 'Website Interface + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', 'image/honda-interfaces.webp']},
-    {id: 3, name: 'Design UX/UI + Front-end Laravel', descricao: <p>Autoconf<small>/ 2021</small></p>, src: ['image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/autoconf-design-system-desktop.webp', 'image/layout-blog-autoconf-v2-01.jpg']},
+    {id: 3, name: 'Design UX/UI + Front-end Laravel', descricao: <p>Autoconf<small>/ 2021</small></p>, src: ['image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/autoconf-design-system-desktop.webp', 'image/autoconf-kanban-ux-ui.webp', 'image/autoconf-sitemap.webp', 'image/autoconf-websites-templates.webp', 'image/layout-blog-autoconf-v2-01.jpg']},
     {id: 4, name: 'Projeto Gráfico', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png']},
     {id: 5, name: 'Website Interface UI Design', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
     {id: 6, name: 'Website Interface + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp' ]},
@@ -177,9 +178,11 @@ const thumbis = [
             };
         }, [handleKeyDown]);
 
+    const { t, i18n } = useTranslation();
 	return (
 		<>
 			<Nav />
+            <ReactLenis root>
 			<div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
@@ -379,6 +382,7 @@ const thumbis = [
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo" /><p>GitHub</p></SwiperSlide>
                 </Swiper>
             </div>
+            </ReactLenis>
             <hr className="text-light bg-light m-5" />
 			<a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
 				<img

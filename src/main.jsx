@@ -6,7 +6,6 @@ import {
     useLocation,
 } from "react-router";
 
-import i18n from './i18n';
 import * as bootstrap from 'bootstrap';
 
 import './default.scss';
