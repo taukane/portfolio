@@ -9,22 +9,6 @@ function Contato() {
                 <div className="col contact-infos">
                     <h3 className="fw-bold mt-5">{t('contact-title')}:</h3>
                     <section className="d-grid d-md-flex align-items-center gap-2 gap-md-5">
-                        <div className="small">
-                            <a href="mailto:taukanepires@gmail.com" className='ms-2'>
-                                <span>                                
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={32}
-                                        height={32}
-                                        fill="orange"
-                                        className="bi bi-envelope-fill"
-                                        viewBox="0 0 16 16">
-                                        <path d="M.05 3.555A2 2 0 012 2h12a2 2 0 011.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 002 14h12a2 2 0 001.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
-                                    </svg> 
-                                    <span className="ms-2">taukanepires@gmail.com</span>
-                                </span>
-                            </a>
-                        </div>
                         <div>
                             <a
                                 href="http://www.linkedin.com/in/taukane"
