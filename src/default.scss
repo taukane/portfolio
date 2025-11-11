@@ -56,13 +56,13 @@ html {min-height: 100%}
 
 @include color-mode(light) {
     .logotauk{fill:$light;}
-    .apresenta{background: linear-gradient(to bottom, #c1e4efcc 0%, #fbe4bfe7 100%);}
+    .apresenta{background: linear-gradient(to bottom, #c1e4ef 0%, #fbe4bf 100%);}
 }
 @include color-mode(dark) {
     .logotauk{fill:#c1e4efcc;}
 
     .apresenta, .portfa{
-        background: linear-gradient(to bottom, #0e303acc 0%, #ae7313e7 100%);
+        background: linear-gradient(to bottom, #0e303a 0%, #ae7313 100%);
     }
 }
 
@@ -159,7 +159,7 @@ img  {
         text-shadow:0 0 1ex rgb(59, 168, 198), 0 0 2px rgba(255, 255, 255, 0.8);
     }
     p {
-    text-align: center;
+    text-align: left;
     display: block;
     margin: 20px;
     font-size: 2em;

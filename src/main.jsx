@@ -43,17 +43,17 @@ function MetaDescriptionUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI,  desenvolvo interfaces visuais desde 2002.";
+        let description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI, desenvolvo interfaces visuais desde 2002.";
 
         switch (location.pathname) {
             case "/":
-                description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI,  desenvolvo interfaces visuais desde 2002.";
+                description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI, desenvolvo interfaces visuais desde 2002.";
                 break;
             case "/portfolio":
-                description = "Designer Gráfico e UI/UX, desenvolvedor Frontend e Backend.";
+                description = "Taukane, Web designer Curitiba, Designer UX/UI, desenvolvo interfaces visuais desde 2002. Designer Gráfico e UI/UX, desenvolvedor Frontend e Backend.";
                 break;
             default:
-                description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI,  desenvolvo interfaces visuais desde 2002.";
+                description = "Sou Taukane Pires, Web designer de criação Curitiba, Designer UX/UI, desenvolvo interfaces visuais desde 2002.";
                 break;
         }
 
@@ -74,17 +74,17 @@ function TitleUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let title = "Portfolio Designer Curitiba";
+        let title = "Web Designer Curitiba / Portfolio";
 
         switch (location.pathname) {
             case "/":
-                title = "Taukane Portfolio / Designer Web e Gráfico Curitiba";
+                title = "Web Designer Curitiba / Taukane Portfolio";
                 break;
             case "/portfolio":
-                title = "Portfolio Web e Gráfico";
+                title = "Portfolio / Web Designer Curitiba / Taukane";
                 break;
             default:
-                title = "Taukane Portfolio / Designer Web e Gráfico Curitiba";
+                title = "Taukane";
                 break;
         }
 
