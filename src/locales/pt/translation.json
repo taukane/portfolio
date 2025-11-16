@@ -7,9 +7,9 @@
     "top": "Topo Portfolio",
     "bio": [
         "Experiência sólida em desenvolvimento web Front-end.",
-        "Conhecimento em metodologias ágeis, versionamento de código com Git e implementação de boas práticas de desenvolvimento.",
         "Habilidades em design responsivo, otimização de performance, acessibilidade web e SEO.",
-        "Criação de identidades visuais para marcas e embalagens até a arte final para impressão."
+        "Criação de identidades visuais para marcas e embalagens até a arte final para impressão.",
+        "Implementação de boas práticas de desenvolvimento."
     ],
     "contact-title": "Contato",
     "services-title": "Serviços",
@@ -18,7 +18,7 @@
         "Design Gráfico",
         "Criação de Identidade Visual",
         "Branding",
-        "Desenvolvimento web Front-end Back-end",
+        "Desenvolvimento web Front-end",
         "Manutenção de Sites",
         "SEO / Otimização de Performance e Ranqueamento",
         "Conceitos para campanhas em Redes Sociais",

@@ -1,15 +1,15 @@
 {
-  "title": "Portfolio Designer Web and Graphic from Curitiba",
+  "title": "Portfolio Designer Curitiba",
   "intro": "Creation and development of visual interfaces. Online and offline media.",
   "designer": "Information architecture. Design UX/UI. Branding. Front-end Developer",
   "web": "Web and Graphic",
   "contact": "Contact",
   "top": "Top Portfolio",
     "bio": [
-        "Solid experience in front-end web development.",
-        "Knowledge of agile methodologies, code versioning with Git and implementation of good development practices.",
-        "Skills in responsive design, performance optimization, web accessibility and SEO.",
-        "Creation of visual identities for brands and packaging through to final artwork for printing."
+        "Solid experience in Front-end web development.",
+        "Skills in responsive design, web accessibility and performance optimization SEO.",
+        "Creation of visual identities for brands and packaging through to final artwork for printing.",
+        "Iimplementation of good development practices."
     ],
   "contact-title": "Contact",
   "services-title": "Services",

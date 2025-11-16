@@ -16,48 +16,48 @@ import { ReactLenis, useLenis } from 'lenis/react';
 
 function App() {
 
-    
     const boxesRef = useRef([]);
     const [currentBox, setCurrentBox] = useState(0);
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const swiperRef = useRef(null);
+    const lenis = useLenis();
 
-    const boxes = document.querySelectorAll('.box');
+    useEffect(() => {
+        const boxes = document.querySelectorAll('.box');
+        boxesRef.current = Array.from(boxes);
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            entry.target.classList.remove('is-leaving');
-        } else {
-            entry.target.classList.remove('is-visible');
-            entry.target.classList.add('is-leaving');
-        }
-    });
-}, {
-    threshold: [0, 0.25, 0.5, 0.75, 1]
-});
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    entry.target.classList.remove('is-leaving');
+                } else {
+                    entry.target.classList.remove('is-visible');
+                    entry.target.classList.add('is-leaving');
+                }
+            });
+        }, {
+            threshold: [0, 0.25, 0.5, 0.75, 1]
+        });
 
-boxes.forEach(box => observer.observe(box));
-    
-const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp']},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.webp']},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf<small>/ 2021</small></p>, src: [ 'image/autoconf-kanban-ux-ui.webp']},
-    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.webp']},
-    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
-    {id: 5, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.webp']},
+        boxes.forEach(box => observer.observe(box));
+        const mutationObserver = new MutationObserver(() => {
+            const updatedBoxes = document.querySelectorAll('.box');
+            boxesRef.current = Array.from(updatedBoxes);
+            updatedBoxes.forEach(box => {
+                if (!observer.getObserverCount?.(box)) {
+                    observer.observe(box);
+                }
+            });
+        });
 
-];
+        mutationObserver.observe(document.body, { childList: true, subtree: true });
 
-const thumbis = [
-    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg'},
-    {id: 1, name: 'Design UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg'},
-    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
-    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg'},
-    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
-];
+        return () => {
+            observer.disconnect();
+            mutationObserver.disconnect();
+        };
+    }, []);
 
     const toTop = useCallback(() => {
         window.scrollTo({
@@ -71,20 +71,42 @@ const thumbis = [
         if (!boxesRef.current || boxesRef.current.length === 0) return;
 
         setCurrentBox(prev => {
-            if (prev < boxesRef.current.length - 1) {
-                const nextBox = boxesRef.current[prev + 1];
-                if (nextBox) {
-                    nextBox.scrollIntoView({
-                        behavior: "smooth",
-                        block: 'center',
-                        inline: 'center'
+            const nextIndex = (prev + 1) % boxesRef.current.length;
+            const nextBox = boxesRef.current[nextIndex];
+            if (nextBox) {
+                nextBox.scrollIntoView({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth",
+                    block: 'center',
+                    inline: 'center'
                     });
-                    return prev + 1;
-                }
+                return nextIndex;
             }
             return prev;
         });
     }, []);
+
+        const scrollToPanel = useCallback(() => {
+            const hash = window.location.hash;
+            if (hash) {
+                const id = hash.startsWith('#portfolio') ? hash.slice(1) : hash;
+    
+                let element = document.querySelector(`[data-hash="portfolio-${id}"]`) || document.querySelector(hash);
+              
+                if (!element) {
+                    element = document.querySelector(`[data-hash="portfolio-${id}"]`) || document.querySelector(`#portfolio-${id}`) || document.querySelector(hash);
+                }
+                if (element) {
+                    element.scrollIntoView({
+                                            top: 0,
+                    left: 0,
+                        behavior: 'smooth',
+                        block: 'start',
+                    });
+                }
+            }
+        }, []);
 
 
     const handleThumbsSwiper = useCallback((swiper) => {
@@ -114,19 +136,20 @@ const thumbis = [
 			<div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
-                        <div className="box box-1 my-3 box-next" onClick={scrollToNextBox}>
+                        <div className="box my-3 box-next" onClick={scrollToNextBox}>
+                            <h1 className="d-none">Web Designer Curitiba</h1>
                             <h2>Taukane</h2>
                             <p>{t('intro')}</p>
                         </div>
                         <hr className="bg-light text-white w-50 mx-auto shadow-sm" />
-                        <div className="box box-2 my-3" onClick={scrollToNextBox}>
+                        <div className="box my-3" onClick={scrollToNextBox}>
                             <h2>Designer</h2>
                             <p>{t('designer')}</p>
                         </div>
                     </div>
                 </div>
 			</div>
-            <div className="container" onClick={scrollToNextBox}>
+            <div className="container">
                 <div className="row">
                     <div className="col">
                         <Swiper
@@ -136,21 +159,21 @@ const thumbis = [
                                 320: {
                                     slidesPerView: 2,
                                     grid: {
-                                        rows: 8,
+                                        rows: 4,
                                         fill: 'row',
                                     },
                                 },
                                 768: {
                                     slidesPerView: 3,
                                     grid: {
-                                        rows: 5,
+                                        rows: 2,
                                         fill: 'row',
                                     },
                                 },
                                 1200: {
                                     slidesPerView: 6,
                                     grid: {
-                                        rows: 3,
+                                        rows: 1,
                                         fill: 'row',
                                     },
                                 },
@@ -161,7 +184,7 @@ const thumbis = [
                         {
                             thumbis.map((tumbis) =>(
                                 <SwiperSlide  key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}>
-                                    <a href="#ancora" alt="Web Design Curitiba" title="Web Design Curitiba">
+                                    <a href={`#portfolio-${tumbis.id}`} alt="Web Designer Curitiba" title="Web Designer Curitiba">
                                         <h4 className="link-offset-3">{tumbis.name}</h4>   
                                         {tumbis.src ? (
                                             <img
@@ -178,8 +201,8 @@ const thumbis = [
                     </div>
                 </div>
             </div>
+            <div className="box"  style={{'height': '10px',}}></div>
             <div className="container">
-                <div className="row">
                     <div className="col-12 col-xxl-auto mx-auto p-3">
                         <Swiper
                             style={{
@@ -200,7 +223,7 @@ const thumbis = [
                             autoHeight={true}
                             ref={swiperRef}>
                             {panels.map((panel) => (
-                                <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora" className="pb-3">
+                                <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} className="pb-3">
                                     <h5 className="mt-5 pt-4 fw-bold text-light">{panel.name}</h5>
                                     <div>{panel.descricao}</div>
                                     {panel.src && panel.src.length > 0 && (
@@ -230,7 +253,6 @@ const thumbis = [
                         </Swiper>
                     </div>
                 </div>
-            </div>
             <div className="container-fluid" onClick={scrollToNextBox}> 
                 <div className="box">
                     <div className="row">
@@ -250,7 +272,7 @@ const thumbis = [
                     <div className="apresenta rounded">
                         <NavLink to="/portfolio" title="Portfolio Designer Curitiba">
                             <Logo />
-                            <h1>Portfolio Designer Curitiba</h1>
+                            <h6 className="d-none">Designer Curitiba</h6>
                         </NavLink>
                     </div>
                 </div>  
@@ -284,6 +306,7 @@ const thumbis = [
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD Logo" /><p>Adobe XD</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma Logo" /><p>Figma</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg" alt="GIMP Logo" /><p>GIMP</p></SwiperSlide>
+                    <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" alt="Blender Logo" /><p>Blender</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML Logo" /><p>HTML</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo" /><p>CSS</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Sass Logo" /><p>Sass</p></SwiperSlide>
@@ -293,6 +316,7 @@ const thumbis = [
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Logo" /><p>MySQL</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress Logo" /><p>WordPress</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel Logo" /><p>Laravel</p></SwiperSlide>
+                    <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular Logo" /><p>Angular</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/livewire/livewire-original-wordmark.svg" alt="Livewire Logo" /><p>Livewire</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-plain-wordmark.svg" alt="Tailwind Css" /><p>Tailwind CSS</p></SwiperSlide>
                     <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite Logo" /><p>Vite</p></SwiperSlide>
@@ -326,4 +350,23 @@ const thumbis = [
 		</>
 	)
 }
+
+const panels = [
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp']},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.webp']},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf<small>/ 2021 / 2025</small></p>, src: [ 'image/autoconf-kanban-ux-ui.webp']},
+    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Desenvolvimento de embalagens<small>/ 2020</small></p>, src: ['image/facas-embalagens.webp']},
+    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
+    {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.webp']},
+
+];
+
+const thumbis = [
+    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg'},
+    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
+    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg'},
+    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
+];
 export default App
