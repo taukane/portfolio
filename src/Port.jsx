@@ -60,36 +60,6 @@ const thumbis = [
 ];
 
 function Port() {
-    const handleKeyDown = useCallback((e) => {
-        if (e.key === 'Enter' || e.key === 'ArrowDown') {
-            e.preventDefault();
-            console.log(e.key);
-            window.scrollTo({
-                top: document.querySelector('#works').offsetTop,
-                behavior: 'smooth',
-            });
-        }
-        if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            console.log(e.key);
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-        }
-        if (e.key === '1') {
-            console.log(e.key);
-            window.location.href = '/';
-        }
-    }, []);
-
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown);
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [handleKeyDown]);
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const panelsSwiperRef = useRef(null);
@@ -138,23 +108,9 @@ function Port() {
                     if (retryEl) retryEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 1420);
             }
-        } else {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
         }
     }, []);
 
-    useEffect(() => {
-        // Call after a short delay so dynamic UI (Swiper) can render
-        const id = setTimeout(scrollToPanel, 60);
-        window.addEventListener('hashchange', scrollToPanel);
-        return () => {
-            clearTimeout(id);
-            window.removeEventListener('hashchange', scrollToPanel);
-        };
-    }, [scrollToPanel]);
 return (
 <>
 <span className="scroller"></span>
