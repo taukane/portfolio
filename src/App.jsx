@@ -41,12 +41,12 @@ const observer = new IntersectionObserver((entries) => {
 boxes.forEach(box => observer.observe(box));
     
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.png']},
-    {id: 1, name: 'Design UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg']},
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp']},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.webp']},
     {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf<small>/ 2021</small></p>, src: [ 'image/autoconf-kanban-ux-ui.webp']},
-    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.png']},
+    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Desenvolvimento de embalagens Bulbo Led <small>/ 2020</small></p>, src: ['image/facas-embalagens.webp']},
     {id: 4, name: 'Design UX/UI', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
-    {id: 5, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg']},
+    {id: 5, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.webp']},
 
 ];
 
@@ -55,7 +55,7 @@ const thumbis = [
     {id: 1, name: 'Design UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
     {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg'},
     {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
-    {id: 4, name: 'Design UI', src: 'image/laww-thumb.jpg'},
+    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg'},
     {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
 ];
 
