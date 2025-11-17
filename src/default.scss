@@ -56,13 +56,13 @@ html {min-height: 100%}
 
 @include color-mode(light) {
     .logotauk{fill:$light;}
-    .apresenta{background: linear-gradient(to bottom, #c1e4ef 0%, #fbe4bf 100%);}
+    .apresenta{background: linear-gradient(to bottom, #c1e4ef 0%, #fae3be 100%);}
 }
 @include color-mode(dark) {
     .logotauk{fill:#c1e4efcc;}
 
     .apresenta, .portfa{
-        background: linear-gradient(to bottom, #0e303a 0%, #ae7313 100%);
+        background: linear-gradient(to bottom, #0e303a 0%, #2e144a 100%);
     }
 }
 
@@ -73,10 +73,10 @@ html {min-height: 100%}
 body {
     height: 100%;
     font-family: "Space Mono", monospace, Courier, "Courier New", sans-serif;
-    background: -moz-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
-    background: -webkit-linear-gradient(top, #002e3e 0%, #fbe4bf 100%);
-    background: linear-gradient(to bottom, #002e3e 0%, #fbe4bf 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002e3e', endColorstr='#fbe4bf', GradientType=0);
+    background: -moz-linear-gradient(top, #002e3e 0%, #fae3be 100%);
+    background: -webkit-linear-gradient(top, #002e3e 0%, #fae3be 100%);
+    background: linear-gradient(to bottom, #002e3e 0%, #fae3be 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002e3e', endColorstr='#fae3be', GradientType=0);
     cursor: crosshair;
   }
 
@@ -215,29 +215,8 @@ img  {
     }
 }
 
-
-@keyframes animatreis {
-    0% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-    60% {
-        transform: scale(1) translateY(0);
-        opacity: 0.8;
-
-    }
-    65% {
-        transform: scale(1) translateY(0);
-        opacity: .6;
-    }
-    100%{
-        transform: scale(1) translateY(100%);
-        opacity: 0;
-    }
-}
-
 .apresenta {
-    background: linear-gradient(to bottom, #c1e4efcc 0%, #fbe4bfe7 100%);
+    background: linear-gradient(to bottom, #c1e4efcc 0%, #fae3bee7 100%);
     border-radius: $border-radius;
     aspect-ratio: 16/9;
     clip-path: polygon(0 74%, 0 0, 100% 0, 100% 74%, 50% 100%);
@@ -296,7 +275,7 @@ img  {
     100% {
         transform: scale(.5) translateY(0);
         opacity: .3;
-        background-color:linear-gradient(to bottom, #fbe4bfe7 50%, #c1e4efcc 70%);
+        background-color:linear-gradient(to bottom, #fae3bee7 50%, #c1e4efcc 70%);
     }
 }
 
@@ -325,7 +304,7 @@ img  {
     aspect-ratio: 16/9;
     clip-path: polygon(0 74%, 0 0, 100% 0, 100% 74%, 50% 100%);
     margin: 0 auto;
-    background: linear-gradient(to bottom, #c1e4efcc 0%, #fbe4bfe7 100%);
+    background: linear-gradient(to bottom, #c1e4efcc 0%, #fae3bee7 100%);
     animation: animaportfa;
     animation-range: entry 100% exit 100%;
     animation-timeline: view();
@@ -347,21 +326,21 @@ img  {
 
 @keyframes animaportfa {
     0% {
-        transform: scale(1) translateY(-40px);
+        transform: scale(1.7) translateY(0);
         opacity: 1;
     }
     50% {
         transform: scale(1) translateY(0);
-        opacity:1;
+        opacity: .8;
 
     }
     90% {
         transform: scale(1) translateY(0);
-        opacity: 1;
+        opacity: .7;
     }
     100% {
         transform: scale(.5) translateY(20px);
-        opacity: 0.5;
+        opacity: 0.25;
     }
 }
 
@@ -463,6 +442,7 @@ img  {
 }
 
 .swiper{
+        width: 100%;
     h5, p{
         color: $white;
         text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
@@ -473,6 +453,7 @@ img  {
 }
   
 .swiper-slide {
+    width: 100%;
     img {
         max-width: 100%;
         margin: 0 auto;

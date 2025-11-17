@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/grid';
-import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
@@ -63,6 +62,7 @@ function Port() {
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const panelsSwiperRef = useRef(null);
+    const lenis = useLenis();
 
     const tumbers = useCallback((Swiper) => {
         setThumbsSwiper(Swiper);
@@ -87,45 +87,71 @@ function Port() {
         updateHash();
     }, []);
 
-    const scrollToPanel = useCallback(() => {
-        const hash = window.location.hash;
-        if (hash) {
-            const id = hash.startsWith('#') ? hash.slice(1) : hash;
+    const scrollToPanel = useCallback((incomingHash) => {
+        const hash = typeof incomingHash === 'string' ? incomingHash : window.location.hash;
+        if (!hash) return;
 
-            let element = document.getElementById(id) || document.querySelector(`[data-hash="${id}"]`) || document.querySelector(hash);
-          
-            if (!element) {
-                element = document.querySelector(`[data-hash="${id}"]`) || document.querySelector(`#${id}`) || document.querySelector(hash);
+        const raw = hash.replace(/^#/, '');
+
+        const findElement = () => {
+            return document.getElementById(raw) || 
+                   document.querySelector(`[data-hash="${raw}"]`) || 
+                   document.querySelector(`#${raw}`) || 
+                   document.querySelector(`[data-hash="portfolio-${raw}"]`) || 
+                   document.querySelector(`#portfolio-${raw}`);
+        };
+
+        const scrollToEl = (el) => {
+            if (!el) return;
+            const top = el.getBoundingClientRect().top + window.scrollY;
+            if (lenis) {
+                lenis.scrollTo(top, { duration: 0.6 });
+            } else {
+                window.scrollTo({ top, behavior: 'smooth' });
             }
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                });
-            }
+        };
+
+        let el = findElement();
+        if (el) {
+            scrollToEl(el);
+            return;
         }
-    }, []);
+
+        let attempts = 0;
+        const maxAttempts = 6;
+        const retry = () => {
+            attempts += 1;
+            el = findElement();
+            if (el) {
+                scrollToEl(el);
+            } else if (attempts < maxAttempts) {
+                setTimeout(retry, 250);
+            }
+        };
+        setTimeout(retry, 200);
+    }, [lenis]);
 
 return (
 <>
 <span className="scroller"></span>
 <Nav />
 <ReactLenis root>
-<div className="container">
-        <div className="portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5 sticky-top">
+        <div className="container">
+            <div className="portfa rounded-bottom col-md-11 col-lg-12 col-xl-8 col-auto col mb-5 sticky-top">
             <a  title="Web Designer Curitiba"
                 href="#works">
                 <Logo />
                 <h1>Web Designer Curitiba</h1>
             </a>
         </div>
-        <div className="container">
+        <div className="row">
+            <div className="col-12">
                 <Swiper
                     style={{
                         '--swiper-navigation-color': '#ff9900',
                     }}
-                    modules={[Grid, Navigation]}
                     onSwiper={tumbers}
+                    modules={[Grid, Navigation]}
                     slidesPerView={2}
                     navigation={true}
                     grid={{
@@ -152,8 +178,17 @@ return (
                 >
                 {
                     thumbis.map((tumbis) =>(
-                        <SwiperSlide  key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}>
-                            <a href={`#portfolio-${tumbis.id}`} alt="Web Designer Curitiba" title="Web Designer Curitiba">
+                        <SwiperSlide  key={tumbis.id}>
+                            <a 
+                                href={`#portfolio-${tumbis.id}`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.hash = `portfolio-${tumbis.id}`;
+                                    scrollToPanel(`#portfolio-${tumbis.id}`);
+                                }}
+                                alt="Web Designer Curitiba" 
+                                title="Web Designer Curitiba"
+                            >
                                 <h4 className="link-offset-3">{tumbis.name}</h4>   
                                 {tumbis.src ? (
                                     <img
@@ -169,19 +204,19 @@ return (
                 }
                 </Swiper>
             </div>
-            <div className="col-12 col-lg-11 col-xxl-auto mx-auto" id="ancora">
+            <div className="col-12 col-lg-11 col-xxl-auto mx-auto">
                 <Swiper
                     style={{
                         '--swiper-navigation-color': '#ff9900',
                     }}
                     modules={[Keyboard, Navigation, Thumbs, HashNavigation]}
                     hashNavigation={{
-                        watchState: true,
+                        watchState: false,
                     }}
                     onSwiper={hash}
-                    thumbs={{ swiper: thumbsSwiper }}
+                    thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                     loop={true}
-                    spaceBetween={40}
+                    spaceBetween={20}
                     keyboard={{
                         enabled: true,
                     }}
@@ -189,19 +224,25 @@ return (
                     autoHeight={true}
                     ref={panelsSwiperRef}>
                     {panels.map((panel) => (
-                        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id={`portfolio-${panel.id}`} className="pb-3">
+                        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} className="pb-3" loading="lazy">
                             <h5 className="mt-5 pt-4 fw-bold text-light">{panel.name}</h5>
                             <div>{panel.descricao}</div>
                             {panel.src && panel.src.length > 0 ? (
                                 <Swiper
-                                    style={{
-                                        '--swiper-navigation-color': '#f40',
-                                    }}
-                                    spaceBetween={40}
-                                    slidesPerView={1}
-                                    modules={[Navigation, Pagination]}
-                                    navigation={panel.src.length > 1}
-                                    pagination={{ clickable: true }}>
+                                style={{ '--swiper-navigation-color': '#f40', 'height': 'auto' }}
+                                lazy={true.toString()}
+                                spaceBetween={40}
+                                slidesPerView={1}
+                                modules={[Navigation, Pagination]}
+                                navigation={panel.src.length > 1}
+                                pagination={{ clickable: true }}
+                                autoHeight={true}
+                                nested={true}
+                                onTouchStart={(e) => e.stopPropagation()}
+                                onTouchMove={(e) => e.stopPropagation()}
+                                onPointerDown={(e) => e.stopPropagation()}
+                                onMouseDown={(e) => e.stopPropagation()}
+                                >
                                     <SwiperSlide>
                                         <img
                                             src={panel.src[0]}
@@ -260,6 +301,7 @@ return (
                     ))}
                 </Swiper>
             </div>
+        </div>
     </div>
     </ReactLenis>
     <hr className="text-light w-50 mx-auto" />

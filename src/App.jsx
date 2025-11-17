@@ -87,27 +87,6 @@ function App() {
         });
     }, []);
 
-        const scrollToPanel = useCallback(() => {
-            const hash = window.location.hash;
-            if (hash) {
-                const id = hash.startsWith('#portfolio') ? hash.slice(1) : hash;
-    
-                let element = document.querySelector(`[data-hash="portfolio-${id}"]`) || document.querySelector(hash);
-              
-                if (!element) {
-                    element = document.querySelector(`[data-hash="portfolio-${id}"]`) || document.querySelector(`#portfolio-${id}`) || document.querySelector(hash);
-                }
-                if (element) {
-                    element.scrollIntoView({
-                                            top: 0,
-                    left: 0,
-                        behavior: 'smooth',
-                        block: 'start',
-                    });
-                }
-            }
-        }, []);
-
 
     const handleThumbsSwiper = useCallback((swiper) => {
         setThumbsSwiper(swiper);
@@ -127,6 +106,50 @@ function App() {
         swiper.on('slideChange', updateHash);
         updateHash();
     }, []);
+
+        const scrollToPanel = useCallback((incomingHash) => {
+            const hash = typeof incomingHash === 'string' ? incomingHash : window.location.hash;
+            if (!hash) return;
+    
+            const raw = hash.replace(/^#/, '');
+    
+            const findElement = () => {
+                return document.getElementById(raw) || 
+                       document.querySelector(`[data-hash="${raw}"]`) || 
+                       document.querySelector(`#${raw}`) || 
+                       document.querySelector(`[data-hash="portfolio-${raw}"]`) || 
+                       document.querySelector(`#portfolio-${raw}`);
+            };
+    
+            const scrollToEl = (el) => {
+                if (!el) return;
+                const top = el.getBoundingClientRect().top + window.scrollY;
+                if (lenis) {
+                    lenis.scrollTo(top, { duration: 0.6 });
+                } else {
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            };
+    
+            let el = findElement();
+            if (el) {
+                scrollToEl(el);
+                return;
+            }
+    
+            let attempts = 0;
+            const maxAttempts = 6;
+            const retry = () => {
+                attempts += 1;
+                el = findElement();
+                if (el) {
+                    scrollToEl(el);
+                } else if (attempts < maxAttempts) {
+                    setTimeout(retry, 250);
+                }
+            };
+            setTimeout(retry, 200);
+        }, [lenis]);
 
     const { t, i18n } = useTranslation();
 	return (
@@ -183,8 +206,17 @@ function App() {
                         >
                         {
                             thumbis.map((tumbis) =>(
-                                <SwiperSlide  key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}>
-                                    <a href={`#portfolio-${tumbis.id}`} alt="Web Designer Curitiba" title="Web Designer Curitiba">
+                                <SwiperSlide  key={tumbis.id}>
+                                    <a 
+                                        href={`#portfolio-${tumbis.id}`}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            window.location.hash = `portfolio-${tumbis.id}`;
+                                            scrollToPanel(`#portfolio-${tumbis.id}`);
+                                        }}
+                                        alt="Designer UX/UI Curitiba" 
+                                        title="Web Design"
+                                    >
                                         <h4 className="link-offset-3">{tumbis.name}</h4>   
                                         {tumbis.src ? (
                                             <img
@@ -353,11 +385,11 @@ function App() {
 
 const panels = [
     {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp']},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.webp']},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf<small>/ 2021 / 2025</small></p>, src: [ 'image/autoconf-kanban-ux-ui.webp']},
-    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Desenvolvimento de embalagens<small>/ 2020</small></p>, src: ['image/facas-embalagens.webp']},
-    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp']},
-    {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.webp']},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.webp']},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf</p>, src: [ 'image/autoconf-kanban-ux-ui.webp']},
+    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina</p>, src: ['image/facas-embalagens.webp']},
+    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww</p>, src: ['image/laww-layout-home-v2.webp']},
+    {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE</p>, src: ['image/volvo-facebook-2012.webp']},
 
 ];
 

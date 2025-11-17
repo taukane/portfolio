@@ -145,9 +145,8 @@ function Portfolio() {
     }}
     id="works">
     {thumbis.map((tumbis) => (
-        <SwiperSlide key={tumbis.id} data-hash={`portfolio-${tumbis.id}`}                         
-        loading="lazy">
-            <a href="#ancora">
+        <SwiperSlide key={tumbis.id} loading="lazy">
+            <a href={`#portfolio-${tumbis.id}`}>
                 <h4>{tumbis.name}</h4>
                 {tumbis.src ? (
                     <img
@@ -182,7 +181,7 @@ function Portfolio() {
     autoHeight={true}
     ref={panelsSwiperRef}>
     {panels.map((panel) => (
-        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} id="ancora" loading="lazy">
+        <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} loading="lazy">
             <h5 className="mt-5 pt-4 ps-4 fw-bold text-light">{panel.name}</h5>
             <div className="ps-4">{panel.descricao}</div>
             {panel.src && panel.src.length > 0 ? (
