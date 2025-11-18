@@ -67,12 +67,6 @@ function Nav() {
             </div>
         </div>
     </nav>
-    <button 
-        onClick={toggleLanguage}
-        className="btn btn-sm btn-outline-secondary position-fixed bottom-0 start-0 m-3" 
-        style={{zIndex: 1}}>
-        {i18n.language === 'pt' ? 'EN' : 'PT'}
-    </button>
     <ContatoModal 
         show={showContato} 
         onClose={() => setShowContato(false)} 

@@ -1,6 +1,19 @@
+import React, {useEffect, useState} from 'react';
+import { NavLink } from "react-router";
+import i18n from './i18n.jsx';
 import { useTranslation } from 'react-i18next';
 
 function Contato() { 
+    useEffect(() => {
+        const savedLang = localStorage.getItem('i18nextLng');
+        if (savedLang) {
+            i18n.changeLanguage(savedLang);
+        }
+    }, []);
+    const toggleLanguage = () => {
+        const newLang = i18n.language === 'pt' ? 'en' : 'pt';
+        i18n.changeLanguage(newLang);
+    };
     const { t } = useTranslation();
     return ( 
     <div className="vh-100 d-flex justify-content-center align-items-center">
@@ -50,14 +63,19 @@ function Contato() {
                 </div>
                 <div className="row mt-5"> 
                 <div className="col">
-                        <section>
-                            <h4 className="fw-bold">{t('services-title')}:</h4>
-                            <ul className="small">
-                                {t('services', { returnObjects: true }).map((service, index) => (
-                                    <li key={index}>{service}</li>
-                                ))}
-                            </ul>
-                        </section>
+                    <section>
+                        <h4 className="fw-bold">{t('services-title')}:</h4>
+                        <ul className="small">
+                            {t('services', { returnObjects: true }).map((service, index) => (
+                                <li key={index}>{service}</li>
+                            ))}
+                        </ul>
+                    </section>
+                        <button 
+                            onClick={toggleLanguage}
+                            className="btn btn-sm btn-outline-secondary m-3">
+                            {i18n.language === 'pt' ? 'English' : 'Português'}
+                        </button>
                 </div>
             </div>
         </div>

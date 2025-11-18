@@ -159,7 +159,7 @@ function App() {
 			<div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
-                        <div className="box my-3 box-next" onClick={scrollToNextBox}>
+                        <div className="box mt-0 mb-3 box-next" onClick={scrollToNextBox}>
                             <h1 className="d-none">Web Designer Curitiba</h1>
                             <h2>Taukane</h2>
                             <p>{t('intro')}</p>
