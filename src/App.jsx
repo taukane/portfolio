@@ -214,8 +214,8 @@ function App() {
                                             window.location.hash = `portfolio-${tumbis.id}`;
                                             scrollToPanel(`#portfolio-${tumbis.id}`);
                                         }}
-                                        alt="Designer UX/UI Curitiba" 
-                                        title="Web Design"
+                                        alt={`${tumbis.alt}`} 
+                                        title={`${tumbis.alt}`}
                                     >
                                         <h4 className="link-offset-3">{tumbis.name}</h4>   
                                         {tumbis.src ? (
@@ -273,7 +273,7 @@ function App() {
                                                 <SwiperSlide key={idx}>
                                                     <img
                                                         src={imgSrc}
-                                                        alt={`${panel.name} - Web Design Curitiba ${idx + 1}`}
+                                                        alt={`${panel.name} - ${panel.name} - ${idx + 1}`}
                                                         className="img-fluid rounded shadow-lg"
                                                     />
                                                 </SwiperSlide>
@@ -384,21 +384,21 @@ function App() {
 }
 
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp']},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.webp']},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf</p>, src: [ 'image/autoconf-kanban-ux-ui.webp']},
-    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina</p>, src: ['image/facas-embalagens.webp']},
-    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww</p>, src: ['image/laww-layout-home-v2.webp']},
-    {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE</p>, src: ['image/volvo-facebook-2012.webp']},
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Website + Branding + SEO'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf</p>, src: [ 'image/autoconf-kanban-ux-ui.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
+    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina</p>, src: ['image/facas-embalagens.webp'], alt: 'Projeto Gráfico Embalagem'},
+    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww</p>, src: ['image/laww-layout-home-v2.webp'], alt: 'Design UX/UI'},
+    {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE</p>, src: ['image/volvo-facebook-2012.webp'], alt: 'Direção de Arte Redes Sociais'},
 
 ];
 
 const thumbis = [
-    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg'},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg'},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg'},
-    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg'},
-    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg'},
-    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg'},
+    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Website + Branding + SEO'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
+    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg', alt: 'Projeto Gráfico'},
+    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg', alt: 'Design UX/UI'},
+    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg', alt: 'Direção de Arte'},
 ];
 export default App
