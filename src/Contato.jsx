@@ -16,7 +16,7 @@ function Contato() {
     };
     const { t } = useTranslation();
     return ( 
-    <div className="vh-100 d-flex justify-content-center align-items-center">
+    <div className="vh-100 d-flex justify-content-center align-items-center" id="contato">
         <div className="contatk container-md my-4"> 
             <div className="row">
                 <div className="col contact-infos">

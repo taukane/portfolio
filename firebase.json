@@ -3,11 +3,38 @@
     "public": "dist",
     "headers": [
       {
-        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "source": "**/*.@(webp|jpg|jpeg|gif|png)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=7200"
+            "value": "max-age=2592000, public"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800, public"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(svg|woff|woff2|ttf|eot)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=2592000, public"
+          }
+        ]
+      },
+      {
+        "source": "index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600, must-revalidate"
           }
         ]
       },
@@ -16,7 +43,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=30000"
+            "value": "max-age=300"
           }
         ]
       }

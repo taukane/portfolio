@@ -238,8 +238,8 @@ img  {
     opacity: 0;
     transform: scale(1) translateY(15%);
     transition: transform .6s ease-in-out, opacity .6s ease-in;
-                will-change: filter;
-            transition: filter 900ms;
+    will-change: filter;
+    transition: filter 900ms;
         svg{
             animation: animalogo forwards;
             animation-range:entry 0 exit 100%;
@@ -319,7 +319,7 @@ img  {
     animation: animaportfa;
     animation-range: entry 100% exit 100%;
     animation-timeline: view();
-    z-index: -100;
+    z-index: 0;
     height: 190px;
     h1{
         text-indent: -90000px;

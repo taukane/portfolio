@@ -222,6 +222,7 @@ function App() {
                                             <img
                                             src={tumbis.src} 
                                             alt={tumbis.name}
+                                            title={tumbis.alt}
                                             />
                                         ): null
                                         }
@@ -273,7 +274,7 @@ function App() {
                                                 <SwiperSlide key={idx}>
                                                     <img
                                                         src={imgSrc}
-                                                        alt={`${panel.name} - ${panel.name} - ${idx + 1}`}
+                                                        alt={`${panel.name} - ${panel.alt} - ${idx + 1}`}
                                                         className="img-fluid rounded shadow-lg"
                                                     />
                                                 </SwiperSlide>
