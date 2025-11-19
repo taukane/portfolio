@@ -33,6 +33,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "sass": "^1.93.2",
+    "terser": "^5.44.1",
     "vite": "^7.1.12"
   }
 }

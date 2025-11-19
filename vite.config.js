@@ -7,4 +7,20 @@ export default defineConfig({
   // base: '/portfolio/',
    server: { fs: { deny: ['.env', '.env.*', '*.{crt,pem}', 'custom.secret'] } },
    quietDeps: true,
+   build: {
+     rollupOptions: {
+       output: {
+         manualChunks: {
+           'vendor': ['react', 'react-dom', 'react-router', 'swiper', 'lenis'],
+           'i18n': ['react-i18next', 'i18next'],
+         },
+       },
+     },
+     minify: 'terser',
+     terserOptions: {
+       compress: {
+         drop_console: true,
+       },
+     },
+   },
 })

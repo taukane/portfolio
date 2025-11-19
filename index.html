@@ -11,14 +11,19 @@
     <title>Taukane / Designer Web e Gráfico</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://static.hotjar.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-    body {
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
-    }
+        html { min-height: 100%; }
+        body { 
+            font-family: "Space Mono", Courier, monospace; 
+            margin: 0; 
+            padding: 0;
+            background: linear-gradient(to bottom, #002e3e 0%, #fbe4bf 100%);
+        }
+        #root { display: contents; }
     </style>
     <script>
         (function(h,o,t,j,a,r){
