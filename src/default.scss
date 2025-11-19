@@ -4,12 +4,11 @@ $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .473);
 $border-radius: .473rem;
 $primary: #002e3e;
 $secondary: #678CA8;
-$font-family-base: "Space Mono", monospace !default;
+$font-family-base: 'Space Mono' !default;
 $body-bg: #c1e4ef;
 $lighter:#e1f4fd;
 $warning: #dbe20a;
 $info: #88CFCD;
-$yellow: #dbe20a;
 $sand: #fae3be;
 $purple: #2e144a;
 
@@ -20,10 +19,9 @@ $purple: #2e144a;
 }
 
 body {
+    font-family: "Space Mono", monospace;
     background: $body-bg;
-    font-family : "Space Mono", monospace, Arial;
     height: 100%;
-    font-family: "Space Mono", monospace, sans-serif;
     background: -moz-linear-gradient(top, $primary 0%, $sand 100%);
     background: -webkit-linear-gradient(top, $primary 0%, $sand 100%);
     background: linear-gradient(to bottom, $primary 0%, $sand 100%);
