@@ -97,12 +97,14 @@ function Port() {
 
         const scrollToEl = (el) => {
             if (!el) return;
-            const top = el.getBoundingClientRect().top + window.scrollY;
-            if (lenis) {
-                lenis.scrollTo(top, { duration: 0.6 });
-            } else {
-                window.scrollTo({ top, behavior: 'smooth' });
-            }
+            requestAnimationFrame(() => {
+                const top = el.getBoundingClientRect().top + window.scrollY;
+                if (lenis) {
+                    lenis.scrollTo(top, { duration: 0.6 });
+                } else {
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
         };
 
         let el = findElement();

@@ -74,13 +74,13 @@ function App() {
             const nextIndex = (prev + 1) % boxesRef.current.length;
             const nextBox = boxesRef.current[nextIndex];
             if (nextBox) {
-                nextBox.scrollIntoView({
-                    top: 0,
-                    left: 0,
-                    behavior: "smooth",
-                    block: 'center',
-                    inline: 'center'
+                requestAnimationFrame(() => {
+                    nextBox.scrollIntoView({
+                        behavior: "smooth",
+                        block: 'center',
+                        inline: 'center'
                     });
+                });
                 return nextIndex;
             }
             return prev;
@@ -123,12 +123,15 @@ function App() {
     
             const scrollToEl = (el) => {
                 if (!el) return;
-                const top = el.getBoundingClientRect().top + window.scrollY;
-                if (lenis) {
-                    lenis.scrollTo(top, { duration: 0.6 });
-                } else {
-                    window.scrollTo({ top, behavior: 'smooth' });
-                }
+                // Use requestAnimationFrame to batch DOM reads and avoid forced reflow
+                requestAnimationFrame(() => {
+                    const top = el.getBoundingClientRect().top + window.scrollY;
+                    if (lenis) {
+                        lenis.scrollTo(top, { duration: 0.6 });
+                    } else {
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                });
             };
     
             let el = findElement();
