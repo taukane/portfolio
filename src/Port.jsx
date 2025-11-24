@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { ReactLenis, useLenis } from 'lenis/react';
 
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="text-light">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.png'], alt: 'Website + Branding + SEO'},
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-family-base">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.png'], alt: 'Website + Branding + SEO'},
     {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', 'image/volkswagen-design-ux-ui.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
     {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', 'image/honda-interfaces.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
     {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf<small> / 2021 / 2024</small></p>, src: ['image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/autoconf-design-system-desktop.webp', 'image/autoconf-kanban-ux-ui.webp', 'image/autoconf-sitemap.webp', 'image/autoconf-websites-templates.webp', 'image/layout-blog-autoconf-v2-01.jpg'], alt: 'Design UX/UI + Desenvolvimento Laravel e Wordpress'},
@@ -228,7 +228,7 @@ return (
                     ref={panelsSwiperRef}>
                     {panels.map((panel) => (
                         <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} className="pb-3" loading="lazy">
-                            <h5 className="mt-5 pt-4 fw-bold text-light">{panel.name}</h5>
+                            <h5 className="mt-5 pt-4 fw-bold">{panel.name}</h5>
                             <div>{panel.descricao}</div>
                             {panel.src && panel.src.length > 0 ? (
                                 <Swiper
@@ -316,8 +316,9 @@ return (
     </div>
 </div>
 </ReactLenis>
-<hr className="text-light w-50 mx-auto" />
-<p className="small text-center">Taukane Portfolio / 2025</p>
+<hr className="w-50 mx-auto" />
+    <p className="small text-center">Taukane Portfolio / 2025</p>
+<hr className="w-50 mx-auto" />
 </>
 )}
 

@@ -3,15 +3,18 @@ $enable-shadows: true;
 $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .473);
 $border-radius: .473rem;
 $primary: #002e3e;
+$tertiary: #3d3d3d;
+$blue: #0D24E7;
 $secondary: #678CA8;
 $font-family-base: 'Space Mono' !default;
 $body-bg: #c1e4ef;
 $light:#FEFEFE;
 $lighter:#e1f4fd;
 $warning: #dbe20a;
-$info: #88CFCD;
+$info: #FF8307;
 $sand: #fae3be;
 $purple: #2e144a;
+$dark: #0a041c;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -23,9 +26,9 @@ body {
     font-family: "Space Mono", monospace;
     background: $body-bg;
     height: 100%;
-    background: -moz-linear-gradient(top, $primary 0%, $sand 100%);
-    background: -webkit-linear-gradient(top, $primary 0%, $sand 100%);
-    background: linear-gradient(to bottom, $primary 0%, $sand 100%);
+    background: -moz-linear-gradient(top, $light 0%, $lighter 100%);
+    background: -webkit-linear-gradient(top, $light 0%, $lighter 100%);
+    background: linear-gradient(to bottom, $light 0%, $lighter 100%);
     cursor: crosshair;
 }
 
@@ -33,15 +36,21 @@ html {min-height: 100%}
 
 [data-bs-theme=dark]{ 
      body {
-        background: rgba(33, 32, 34, 0.522);
-        color: var(--bs-light);
+        background: $dark;
+        color: $light;
     }
     .apresenta, .bio {
-        color: var(--bs-light);
+        color: $white;
     }
     .myexpertise p{
-        color: var(--bs-light);
+        color: $light;
         text-shadow: none !important;
+    }
+    .swiper{
+        h5, p{
+            color: $lighter;
+            text-shadow: 1px 1px 0 $purple;
+        }
     }
     .modal-overlay {
         background: $lighter;
@@ -55,6 +64,14 @@ html {min-height: 100%}
     }
     .bi-person-lines-fill{fill: $light !important;}
     .modal-close{fill: $light !important;}
+    .box{
+        background-blend-mode: normal;
+        h2,p{
+            color: $lighter;
+        text-shadow: 1px 1px 2px $purple;
+    }
+    }
+    .octicon-mark-github{fill: $light}
 }
 
 [data-bs-theme=light] {
@@ -72,11 +89,17 @@ html {min-height: 100%}
         a{color: $dark !important;}
     }
     .modal-close{fill: $dark !important;}
-    .bi-person-lines-fill{fill: $secondary !important;}
+    .bi-person-lines-fill{fill: $lighter;}
+    #works{
+        h4{
+            color: $primary;
+            text-shadow: 1px 1px 1px $warning;
+        }
+    }
 }
 
 @include color-mode(light) {
-    .logotauk{fill:$light;}
+    .logotauk{fill:$light !important;}
     .apresenta{background: linear-gradient(to bottom, $body-bg 0%, $sand 100%);}
 }
 @include color-mode(dark) {
@@ -101,17 +124,17 @@ img  {
     line-height: 1.473rem;
     &.active {
         font-weight: bold;
-        color: var(--bs-yellow) !important;
-        border-bottom: 2px solid var(--bs-secondary);
+        color: $yellow !important;
+        border-bottom: 2px solid $yellow;
     }
 }
 
 .scroller {
-    height: 8px;
+    background-color: $warning;
+    height: 3px;
     position: fixed;
     bottom: 0;
     z-index: 100;
-    background-color: $secondary;
     width: 100%;
     transform: scale(0, 1);
     transform-origin: left;
@@ -122,7 +145,7 @@ img  {
 @keyframes scroller {
     to {
         transform: scale(1, 1);
-        background-color: $body-bg;
+        background-color: $warning;
     }
 }
 
@@ -142,30 +165,34 @@ img  {
 }
     
 .box {
+    background-image: url("/image/fundo.svg");
+    background-size: auto;
+    background-position: center;    
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation-range: entry 100% exit 10%;
+    animation-range: entry 100% exit 1%;
     animation: reveal;
     animation-timeline: view();
     position: relative;
     opacity: 0;
-    transform: scale(1) translateY(15%);
-    transition: transform .4s ease-in-out, opacity .4s ease-in-out;
+    transform: scale(1) translateY(10%);
+    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
     h2 {
         font-size: 5.5em;
-        color: $lighter;
-        text-shadow:0 0 1ex rgb(59, 168, 198), 0 0 2px rgba(255, 255, 255, 0.8);
+        color: $tertiary;
+        text-shadow:2px 2px 2px $warning;
     }
     p {
     text-align: left;
     display: block;
     margin: 20px;
     font-size: 2em;
-    color: $lighter;
+    color: $dark;
     font-weight: bold;
     width: 50%;
     }
@@ -241,10 +268,10 @@ img  {
             height:calc(2.325rem + 30vw);
             will-change: filter;
             transition: filter 900ms;
-            filter: drop-shadow(0 0 2em rgba(128, 173, 185, 0.838)); 
+            filter: drop-shadow(0 0 2em $purple); 
             &:hover {
                 opacity: .8;
-                filter: drop-shadow(0 0 2em rgba(255, 255, 255, 0.473));
+                filter: drop-shadow(0 0 2em $dark);
             }
         }
     h1{
@@ -362,8 +389,8 @@ img  {
 }
 
 .bio{
-    background-color: rgba(0, 0, 0, .47);
-    color: $dark;
+    background-color: $dark; 
+    color: $lighter;
     border-radius: $border-radius;
     z-index: 2;
     padding: 2rem;
@@ -392,9 +419,9 @@ img  {
         height: 1px;
         z-index: -1;
         margin: 30px;
-        font-size: .89rem;
+        font-size: 1rem;
         font-weight: bold;
-        color: $light;
+        color: $warning;
         text-shadow: 1px 1px 1px $dark;
     }
     img{
@@ -446,8 +473,8 @@ img  {
 .swiper{
         width: 100%;
     h5, p{
-        color: $white;
-        text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
+        color: $primary;
+        text-shadow: 1px 1px 0 $sand;
     }
     .swiper-wrapper{
        flex-direction: row !important;

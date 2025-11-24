@@ -20,14 +20,14 @@ function Contato() {
         <div className="contatk container-md my-4"> 
             <div className="row">
                 <div className="col contact-infos">
-                    <h3 className="fw-bold mt-5">{t('contact-title')}:</h3>
-                    <section className="d-grid d-md-flex align-items-center gap-2 gap-md-5">
+                    <h3 className="fw-bold my-5">{t('contact-title')}:</h3>
+                    <section className="d-grid d-md-flex align-items-center gap-5 gap-md-5">
                         <div>
                             <a
                                 href="http://www.linkedin.com/in/taukane"
                                 title="Linkedin"
                                 target="_blank">
-                                <span className="btn btn-sm">
+                                <span className="lh-lg">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="32"
@@ -47,7 +47,7 @@ function Contato() {
                                 href="https://github.com/taukane/portfolio"
                                 title="Github"
                                 target="_blank">
-                                <span className="btn btn-sm">                                
+                                <span className="lh-lg">                                
                                     <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
                                             data-view-component="true"
                                             className="octicon octicon-mark-github v-align-middle color-fg-default">

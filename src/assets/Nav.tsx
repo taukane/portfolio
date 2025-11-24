@@ -34,7 +34,7 @@ function Nav() {
 
     return (
     <>
-    <nav className="navbar bg-body-tertiary bg-gradient shadow sticky-top">
+    <nav className="navbar bg-dark bg-gradient shadow-lg sticky-top" data-bs-theme="dark">
         <div className="container-fluid">
             <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir Navegação">
                 <span className="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@ function Nav() {
             </svg>
             </a>
             <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul className="navbar-nav my-3 hstack gap-5 d-block d-md-flex">
+                <ul className="navbar-nav m-3 py-53 hstack gap-5 d-block">
                     <li className="nav-item">
                     <NavLink className={({ isActive }) => 
                             isActive ? "nav-link active" : "nav-link"
