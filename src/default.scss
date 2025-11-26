@@ -6,7 +6,7 @@ $primary: #002e3e;
 $tertiary: #3d3d3d;
 $blue: #0D24E7;
 $secondary: #678CA8;
-$font-family-base: 'Space Mono' !default;
+$font-family-base: "Space Mono" !default;
 $body-bg: #c1e4ef;
 $light:#FEFEFE;
 $lighter:#e1f4fd;
@@ -65,9 +65,9 @@ html {min-height: 100%}
     .bi-person-lines-fill{fill: $light !important;}
     .modal-close{fill: $light !important;}
     .box{
-        background-blend-mode: normal;
+        background: url("/image/fundo.svg") $dark !important;
         h2,p{
-            color: $lighter;
+        color: $lighter;
         text-shadow: 1px 1px 2px $purple;
     }
     }
@@ -75,9 +75,7 @@ html {min-height: 100%}
 }
 
 [data-bs-theme=light] {
-    .myexpertise p{
-        color: var(--bs-dark);
-    }
+    .myexpertise p{color: var(--bs-dark)}
     .modal-content {
         background: $light ;
         color: $dark !important;
@@ -89,7 +87,9 @@ html {min-height: 100%}
         a{color: $dark !important;}
     }
     .modal-close{fill: $dark !important;}
+    
     .bi-person-lines-fill{fill: $lighter;}
+
     #works{
         h4{
             color: $primary;
@@ -107,7 +107,7 @@ html {min-height: 100%}
 
     .apresenta, .portfa{
         background: linear-gradient(to bottom, $primary 0%, $purple 100%);
-    }
+    }   
 }
 
 #navbarNav .nav-link,#topo {cursor: pointer}
@@ -142,45 +142,64 @@ img  {
     animation-timeline: scroll();
 }
 
-@keyframes scroller {
-    to {
-        transform: scale(1, 1);
-        background-color: $warning;
-    }
-}
-
-@keyframes logo-BOom {
+@keyframes reveal {
     0% {
-        transform: scale(1) translateY(0);
+        transform: scale(.1) translateY(0);
+        background: $purple;
         opacity: 1;
+    }
+    10% {
+        transform: scale(1) translateY(20%);
+        opacity: 1;
+        background: $dark;
+    }
+    25% {
+        transform: scale(1) translateY(-5%);
+        opacity: 1;
+        background: url("/image/fundo.svg");
+        background-repeat: no-repeat;
     }
     50% {
-        transform: scale(1.234) translateY(0);
-        opacity: .1234;
-    }
-    100% {
         transform: scale(1) translateY(0);
         opacity: 1;
+        background: url("/image/fundo.svg");
+        background-repeat: no-repeat;
+
+    }
+    65%{
+        transform: scale(1) translateY(25%);
+        opacity: 1;
+        background: url("/image/fundo.svg");
+        background-repeat: no-repeat;
+    }
+    80%{
+        transform: scale(1) translateY(30%);
+        opacity: 0.3;
+        background: $lighter;
+    }
+    100% {
+        transform: scale(.7) translateY(60%);
+        opacity: 0.1;
+        background: $sand;
     }
 }
-    
+   
 .box {
-    background-image: url("/image/fundo.svg");
-    background-size: auto;
+    background: url("/image/fundo.svg");
+    background-size: contain;
     background-position: center;    
     background-repeat: no-repeat;
+    background-blend-mode: lighten;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation-range: entry 100% exit 1%;
+    animation-range: entry 100% exit 100%;
     animation: reveal;
     animation-timeline: view();
     position: relative;
-    opacity: 0;
-    transform: scale(1) translateY(10%);
     transition: transform .2s ease-in-out, opacity .2s ease-in-out;
     h2 {
         font-size: 5.5em;
@@ -214,35 +233,7 @@ img  {
     }
 }
 
-@keyframes reveal {
-    0% {
-        transform: scale(1) translateY(0);
-    }
-    10% {
-        transform: scale(1) translateY(10%);
-        opacity: 1;
-    }
-    25% {
-        transform: scale(1) translateY(-3%);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1) translateY(1%);
-        opacity: 1;
-    }
-    65%{
-        transform: scale(1) translateY(15%);
-        opacity: 1;
-    }
-    80%{
-        transform: scale(.9) translateY(30%);
-        opacity: 0.3;
-    }
-    100% {
-        transform: scale(0.8) translateY(100%);
-        opacity: 0.2;
-    }
-}
+
 
 .apresenta {
     background: linear-gradient(to bottom, $body-bg 0%, $sand 100%);
@@ -322,6 +313,28 @@ img  {
         transform: scale(.85) translateY(0);
         opacity: 1;
         fill: $secondary;
+    }
+}
+
+@keyframes scroller {
+    to {
+        transform: scale(1, 1);
+        background-color: $warning;
+    }
+}
+
+@keyframes logo-BOom {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.234) translateY(0);
+        opacity: .1234;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
     }
 }
 
