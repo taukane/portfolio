@@ -20,6 +20,7 @@ $dark: #0a041c;
 
 :root {
     --swiper-navigation-size: 23px !important;
+    --swiper-theme-color: #FF8307 !important;
 }
 
 body {
@@ -43,7 +44,7 @@ html {min-height: 100%}
         color: $white;
     }
     .myexpertise p{
-        color: $light;
+        color: $tertiary;
         text-shadow: none !important;
     }
     .swiper{
@@ -407,7 +408,7 @@ img  {
     border-radius: $border-radius;
     z-index: 2;
     padding: 2rem;
-    margin: 50% auto;
+    margin: 12% auto;
     h2,h3,h4,h5{
         font-size: 1.3rem;
     }

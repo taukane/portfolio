@@ -290,7 +290,7 @@ function App() {
             <section className="box d-block w-100">
                 <div className="container-fluid" onClick={scrollToNextBox}> 
                     <div className="row">
-                        <div className="col-md-6 my-auto align-items-center bio">
+                        <div className="col-md-6 bio">
                         <hr/>
                         <h3>{t('bio.0')}</h3>
                         <hr/>
@@ -334,7 +334,7 @@ function App() {
                 grabCursor={true}
                 freeMode={true}
                 loop={true}
-                className="myexpertise bg-gradient p-5 mb-5 text-center rounded-0 rounded-bottom shadow-lg" data-bs-theme="light">
+                className="myexpertise bg-gradient bg-body-tertiary p-5 mb-5 text-center rounded-0 rounded-bottom shadow-lg" data-bs-theme="light">
                 <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator Logo" /><p>Illustrator</p></SwiperSlide>
                 <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop Logo" /><p>Photoshop</p></SwiperSlide>
                 <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD Logo" /><p>Adobe XD</p></SwiperSlide>

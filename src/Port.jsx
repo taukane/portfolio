@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import { useState, useEffect, useCallback, useRef } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Grid, Keyboard, Pagination, Navigation, Thumbs, HashNavigation } from 'swiper/modules';
+import { Grid, Keyboard, Pagination, Navigation, FreeMode, Thumbs, HashNavigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
@@ -17,21 +17,16 @@ import { useTranslation } from 'react-i18next';
 import { ReactLenis, useLenis } from 'lenis/react';
 
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-family-base">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.png'], alt: 'Website + Branding + SEO'},
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-family-base">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Website + Branding + SEO'},
     {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', 'image/volkswagen-design-ux-ui.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
     {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', 'image/honda-interfaces.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf<small> / 2021 / 2024</small></p>, src: ['image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/autoconf-design-system-desktop.webp', 'image/autoconf-kanban-ux-ui.webp', 'image/autoconf-sitemap.webp', 'image/autoconf-websites-templates.webp', 'image/layout-blog-autoconf-v2-01.jpg'], alt: 'Design UX/UI + Desenvolvimento Laravel e Wordpress'},
+    {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf<small> / 2021 / 2024</small></p>, src: ['image/autoconf-kanban-ux-ui.webp', 'image/autoconf-design-system-desktop.webp', 'image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/layout-blog-autoconf-v2-01.jpg'], alt: 'Design UX/UI + Desenvolvimento Laravel e Wordpress'},
     {id: 4, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina<small> / 2020</small></p>, src: ['image/facas-embalagens.png'], alt: 'Projeto Gráfico Embalagem'},
     {id: 5, name: 'Design UX/UI', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp'], alt: 'Design UX/UI'},
-    {id: 6, name: 'Design UX/UI + Desenvolvimento Wordpress', descricao: <p>Black Club <small>/ 2018</small></p>, src: ['image/black-club-layout-v2.webp'], alt: 'Design UX/UI + Desenvolvimento Wordpress'},
-    {id: 7, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp'], alt: 'Direção de Arte Redes Sociais'},
-    {id: 8, name: 'Design UX/UI + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2016</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg'], alt: 'Design UX/UI + Desenvolvimento Wordpress'},
-    {id: 9, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg'], alt: 'Branding'},
-    {id: 10, name: 'Projeto Gráfico Jornal', descricao:<p>Jornal Independente <small>/ 2014</small></p>, src: ['image/jornal-independente-big.jpg'], alt: 'Projeto Gráfico Jornal'},
-    {id: 11, name: 'Branding + Design UX/UI + Desenvolvimento Wordpress', descricao:<p>Zeta Estaleiro <small>/ 2013</small></p>, src: ['image/zeta-estaleiro-redesign.jpg'], alt: 'Branding + Design UX/UI + Desenvolvimento Wordpress'},
-    {id: 12, name: 'Direção de Arte Redes Sociais', descricao:<p>Shopping Total <small>/ 2012</small></p>, src: ['image/shopping-total.webp', 'image/shopping-total.jpg'], alt: 'Direção de Arte Redes Sociais'},
-    {id: 13, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg'], alt: 'Direção de Arte Redes Sociais e Email Marketing'},
-    {id: 14, name: 'Direção de Arte Web', descricao:<p>Gazeta do Povo <small>/ 2010</small></p>, src: ['image/gazeta.webp'], alt: 'Direção de Arte Web'},
+    {id: 6, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp'], alt: 'Direção de Arte Redes Sociais'},
+    {id: 7, name: 'Design UX/UI + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2016</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg'], alt: 'Design UX/UI + Desenvolvimento Wordpress'},
+    {id: 8, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg'], alt: 'Branding'},
+    {id: 9, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg'], alt: 'Direção de Arte Redes Sociais e Email Marketing'},
 ];
 
 const thumbis = [
@@ -41,15 +36,10 @@ const thumbis = [
     {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
     {id: 4, name: 'Projeto Gráfico Embalagem', src: 'image/facas-embalagens-thumb.jpg', alt: 'Projeto Gráfico Embalagem'},
     {id: 5, name: 'Design UX/UI', src: 'image/laww-thumb.jpg', alt: 'Design UX/UI'},
-    {id: 6, name: 'Design UX/UI + Desenvolvimento Wordpress', src: 'image/blackclub-thumb.png', alt: 'Design UX/UI + Desenvolvimento Wordpress'},
-    {id: 7, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg', alt: 'Direção de Arte'},
-    {id: 8, name: 'Design UX/UI + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Wordpress'},
-    {id: 9, name: 'Branding', src: 'image/marmoraria-thumb.jpg', alt: 'Branding'},
-    {id: 10, name: 'Projeto Gráfico', src: 'image/jornal-independente-thumb.jpg', alt: 'Projeto Gráfico'},
-    {id: 11, name: 'Branding + Design UX/UI + Desenvolvimento Wordpress', src: 'image/zeta-estaleiro.jpg', alt: 'Branding + Design UX/UI + Desenvolvimento Wordpress'},
-    {id: 12, name: 'Direção de Arte', src: 'image/shopping-total-thumb.jpg', alt: 'Direção de Arte'},
-    {id: 13, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg', alt: 'Direção de Arte'},
-    {id: 14, name: 'Direção de Arte', src: 'image/gazeta-thumb.jpg', alt: 'Direção de Arte'},
+    {id: 6, name: 'Direção de Arte', src: 'image/roldao-posts-facebook-thumb.jpg', alt: 'Direção de Arte'},
+    {id: 7, name: 'Design UX/UI + Desenvolvimento Wordpress', src: 'image/probat-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Wordpress'},
+    {id: 8, name: 'Branding', src: 'image/marmoraria-thumb.jpg', alt: 'Branding'},
+    {id: 9, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg', alt: 'Direção de Arte'},
 ];
 
 function Port() {
@@ -146,31 +136,24 @@ return (
         <div className="row">
             <div className="col-12">
                 <Swiper
-                    style={{
-                        '--swiper-navigation-color': '#ff9900',
-                    }}
                     onSwiper={tumbers}
-                    modules={[Grid, Navigation]}
-                    slidesPerView={2}
-                    navigation={true}
-                    grid={{
-                        rows: 3,
-                    }}
+                    modules={[Grid, Keyboard, Pagination, FreeMode, Thumbs]}
+                    pagination={{ clickable: true }}
+                    loop={true}
+                    freeMode={true}
+                    grabCursor={true}
                     breakpoints={{
                     640: {
                         slidesPerView: 2,
                         spaceBetween: 1,
-                        rows: 10,
                     },
                     768: {
-                        slidesPerView: 4,
+                        slidesPerView: 3,
                         spaceBetween: 1,
-                        rows: 8,
                     },
                     1024: {
-                        slidesPerView: 5,
+                        slidesPerView: 4,
                         spaceBetween: 1,
-                        rows: 4,
                     },
                     }}
                     id="works"
