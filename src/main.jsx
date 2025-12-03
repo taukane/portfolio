@@ -47,13 +47,13 @@ function MetaDescriptionUpdater() {
 
         switch (location.pathname) {
             case "/":
-                description = "Sou Taukane Pires, Web designer com experiencia em conceito para marcas, identidade visual, embalagens até arte final para impressão. Front-end Developer";
+                description = "Sou Taukane Pires, Web designer com experiencia em conceito para marcas, identidade visual, embalagens, desenvolvimento Front-end";
                 break;
             case "/portfolio":
-                description = "Portfolio Taukane, Web designer Curitiba, Designer UX/UI, desenvolvo interfaces visuais desde 2002. Desenvolvedor Front-end.";
+                description = "Portfolio Taukane, Web designer Curitiba, Designer UX/UI, desenvolvo interfaces visuais, desenvolvimento Front-end  conceito para marcas, identidade visual,";
                 break;
             default:
-                description = "Sou Taukane Pires, Web designer com experiencia em conceito para marcas, identidade visual, embalagens até arte final para impressão.";
+                description = "Sou Taukane Pires, Web designer com experiencia em conceito para marcas, identidade visual,";
                 break;
         }
 
@@ -74,17 +74,17 @@ function TitleUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let title = "Web Designer / Portfolio";
+        let title = "Web Designer / Designer UX/UI  / Desenvolvedor Front-end / Taukane / Curitiba";
 
         switch (location.pathname) {
             case "/":
-                title = "Web Designer / Taukane / UX/UI Designer / Desenvolvedor Front-end";
+                title = "Web Designer / Designer UX/UI  / Desenvolvedor Front-end / Taukane / Curitiba";
                 break;
             case "/portfolio":
-                title = "Portfólio Taukane / Web Designer / UX/UI Designer / Front-end Developer / Curitiba";
+                title = "Portfólio Taukane / Web Designer / Designer UX/UI / Desenvolvedor Front-end / Curitiba";
                 break;
             default:
-                title = "Web Designer / UX/UI Designer / Front-end Developer / Taukane Portfólio";
+                title = "Web Designer / Designer UX/UI  / Desenvolvedor Front-end / Designer Gráfico / Taukane - Curitiba";
                 break;
         }
 

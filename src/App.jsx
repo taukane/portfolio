@@ -218,7 +218,7 @@ function App() {
                                     alt={`${tumbis.alt}`} 
                                     title={`${tumbis.alt}`}
                                 >
-                                    <h4 className="link-offset-3">{tumbis.name}</h4>   
+                                    <h3 className="link-offset-3">{tumbis.name}</h3>   
                                     {tumbis.src ? (
                                         <img
                                         src={tumbis.src} 
@@ -258,7 +258,7 @@ function App() {
                         ref={swiperRef}>
                         {panels.map((panel) => (
                             <SwiperSlide key={panel.id} data-hash={`portfolio-${panel.id}`} className="pb-3">
-                                <h5 className="mt-5 pt-4 fw-bold">{panel.name}</h5>
+                                <h4 className="mt-5 pt-4 fw-bold">{panel.name}</h4>
                                 <div>{panel.descricao}</div>
                                 {panel.src && panel.src.length > 0 && (
                                     <Swiper
@@ -292,13 +292,13 @@ function App() {
                     <div className="row">
                         <div className="col-md-6 bio">
                         <hr/>
-                        <h3>{t('bio.0')}</h3>
+                        <h5>{t('bio.0')}</h5>
                         <hr/>
-                        <h4>{t('bio.1')}</h4>
+                        <h5>{t('bio.1')}</h5>
                         <hr/>
-                        <h4>{t('bio.2')}</h4>
+                        <h5>{t('bio.2')}</h5>
                         <hr/>
-                        <h5 className="mb-5">{t('bio.3')}</h5>
+                        <h6 className="mb-5">{t('bio.3')}</h6>
                         </div>
                     </div>
                 </div>
@@ -313,7 +313,7 @@ function App() {
                     </div>
                 </div>  
             </section>
-            <h5 className="mt-0 mb-0 py-4 text-center position-relative fw-bold">{t('widgets-title')}:</h5>
+            <h6 className="mt-0 mb-0 py-4 text-center position-relative fw-bold">{t('widgets-title')}:</h6>
             <Swiper
                 breakpoints={{
                     '@0.00': {
@@ -371,11 +371,11 @@ function App() {
             <a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
                 <img
                     src="image/top.jpg"
-                    alt="Web Design"
-                    title="Web Design"
+                    alt="Ir para o topo"
+                    title="Ir para o topo"
                     className="img-fluid rounded shadow-lg"
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                 />
             </a>
             <span className="scroller"></span>
@@ -384,21 +384,21 @@ function App() {
 }
 
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-monospace">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Website + Branding + SEO'},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf</p>, src: [ 'image/autoconf-kanban-ux-ui.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina</p>, src: ['image/facas-embalagens.webp'], alt: 'Projeto Gráfico Embalagem'},
-    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww</p>, src: ['image/laww-layout-home-v2.webp'], alt: 'Design UX/UI'},
-    {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE</p>, src: ['image/volvo-facebook-2012.webp'], alt: 'Direção de Arte Redes Sociais'},
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-monospace">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Dom Bertolin: Website + Branding + SEO'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.webp'], alt: 'Honda: Design UX/UI + Desenvolvimento Laravel'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf</p>, src: [ 'image/autoconf-kanban-ux-ui.webp'], alt: 'Autoconf: Design UX/UI + Desenvolvimento Laravel'},
+    {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina</p>, src: ['image/facas-embalagens.webp'], alt: 'Tramontina: Projeto Gráfico Embalagem'},
+    {id: 4, name: 'Design UX/UI', descricao: <p>Lawww</p>, src: ['image/laww-layout-home-v2.webp'], alt: 'Lawww Design UX/UI'},
+    {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE</p>, src: ['image/volvo-facebook-2012.webp'], alt: 'Volvo CE: Direção de Arte Redes Sociais'},
 
 ];
 
 const thumbis = [
-    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Website + Branding + SEO'},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg', alt: 'Projeto Gráfico'},
-    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg', alt: 'Design UX/UI'},
-    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg', alt: 'Direção de Arte'},
+    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Dom Bertolin: Site + Brand + SEO'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel, Honda'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel, Autoconf'},
+    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg', alt: 'Projeto Gráfico, Tramontina'},
+    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg', alt: 'Design UX/UI, Lawww'},
+    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg', alt: 'Direção de Arte, Volvo CE'},
 ];
 export default App

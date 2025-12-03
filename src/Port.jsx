@@ -17,22 +17,22 @@ import { useTranslation } from 'react-i18next';
 import { ReactLenis, useLenis } from 'lenis/react';
 
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-family-base">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Website + Branding + SEO'},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao:<p>Real Veiculos / Volkswagen <small>/ 2022</small></p>, src: ['image/Volkswagen-layout-site.png', 'image/volkswagen-design-ux-ui.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda <small>/ 2021</small></p>, src: ['image/honda-veiculos.jpg', 'image/honda-interfaces.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf<small> / 2021 / 2024</small></p>, src: ['image/autoconf-kanban-ux-ui.webp', 'image/autoconf-design-system-desktop.webp', 'image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/layout-blog-autoconf-v2-01.jpg'], alt: 'Design UX/UI + Desenvolvimento Laravel e Wordpress'},
-    {id: 4, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina<small> / 2020</small></p>, src: ['image/facas-embalagens.png'], alt: 'Projeto Gráfico Embalagem'},
-    {id: 5, name: 'Design UX/UI', descricao: <p>Lawww <small>/ 2018</small></p>, src: ['image/laww-layout-home-v2.webp'], alt: 'Design UX/UI'},
-    {id: 6, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista  <small>/ 2017</small></p>, src: ['image/roldao-posts.webp'], alt: 'Direção de Arte Redes Sociais'},
-    {id: 7, name: 'Design UX/UI + Desenvolvimento Wordpress', descricao:<p>Probat Leogap <small>/ 2016</small></p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg'], alt: 'Design UX/UI + Desenvolvimento Wordpress'},
-    {id: 8, name: 'Branding', descricao:<p>Marmoraria Florianópolis <small>/ 2014</small></p>, src: ['image/marmoraria-florianopolis-2014.jpg'], alt: 'Branding'},
-    {id: 9, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE <small>/ 2012</small></p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg'], alt: 'Direção de Arte Redes Sociais e Email Marketing'},
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-family-base">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Dom Bertolin: Website + Branding + SEO'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao:<p>Volkswagen</p>, src: ['image/Volkswagen-layout-site.png', 'image/volkswagen-design-ux-ui.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.jpg', 'image/honda-interfaces.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
+    {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf</p>, src: ['image/autoconf-kanban-ux-ui.webp', 'image/autoconf-design-system-desktop.webp', 'image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/layout-blog-autoconf-v2-01.jpg'], alt: 'Design UX/UI + Desenvolvimento Laravel e Wordpress'},
+    {id: 4, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina</p>, src: ['image/facas-embalagens.png'], alt: 'Projeto Gráfico Embalagem'},
+    {id: 5, name: 'Design UX/UI', descricao: <p>Lawww</p>, src: ['image/laww-layout-home-v2.webp'], alt: 'Design UX/UI'},
+    {id: 6, name: 'Direção de Arte Redes Sociais', descricao:<p>Roldão Atacadista</p>, src: ['image/roldao-posts.webp'], alt: 'Direção de Arte Redes Sociais'},
+    {id: 7, name: 'Design UX/UI + Desenvolvimento Wordpress', descricao:<p>Probat Leogap</p>, src: ['image/probat-leogap-website-2017.jpg', 'image/probat-leogap-wireframe-2017.jpg'], alt: 'Design UX/UI + Desenvolvimento Wordpress'},
+    {id: 8, name: 'Branding', descricao:<p>Marmoraria Florianópolis</p>, src: ['image/marmoraria-florianopolis-2014.jpg'], alt: 'Branding'},
+    {id: 9, name: 'Direção de Arte Redes Sociais e Email Marketing', descricao:<p>Volvo CE</p>, src: ['image/volvo-facebook-2012.jpg','image/volvo-2012.jpg', 'image/volvo-2012-posts.jpg'], alt: 'Direção de Arte Redes Sociais e Email Marketing'},
 ];
 
 const thumbis = [
-    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Website + Branding + SEO'},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
+    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Dom Bertolin Website + Branding + SEO'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg', alt: 'Volkswagen Design UX/UI + Desenvolvimento Laravel'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Honda Design UX/UI + Desenvolvimento Laravel'},
     {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
     {id: 4, name: 'Projeto Gráfico Embalagem', src: 'image/facas-embalagens-thumb.jpg', alt: 'Projeto Gráfico Embalagem'},
     {id: 5, name: 'Design UX/UI', src: 'image/laww-thumb.jpg', alt: 'Design UX/UI'},
@@ -171,7 +171,7 @@ return (
                                 alt={`${tumbis.alt}`} 
                                 title={`${tumbis.alt}`}
                             >
-                                <h4 className="link-offset-3">{tumbis.name}</h4>   
+                                <h3 className="link-offset-3">{tumbis.name}</h3>   
                                 {tumbis.src ? (
                                     <img
                                     src={tumbis.src} 
@@ -192,9 +192,6 @@ return (
             </div>
             <div className="col-12 col-lg-11 col-xxl-auto mx-auto">
                 <Swiper
-                    style={{
-                        '--swiper-navigation-color': '#ff9900',
-                    }}
                     modules={[Keyboard, Navigation, Thumbs, HashNavigation]}
                     hashNavigation={{
                         watchState: false,
@@ -215,7 +212,6 @@ return (
                             <div>{panel.descricao}</div>
                             {panel.src && panel.src.length > 0 ? (
                                 <Swiper
-                                style={{ '--swiper-navigation-color': '#f40', 'height': 'auto' }}
                                 lazy={true.toString()}
                                 spaceBetween={40}
                                 slidesPerView={1}
@@ -280,15 +276,6 @@ return (
                                             />
                                         </SwiperSlide>
                                     )}
-                                    {panel.src[6] && (
-                                        <SwiperSlide>
-                                            <img
-                                                src={panel.src[6]}
-                                                alt={`${panel.name} - Wordpress Layout e Desenvolvimento`}
-                                                className="img-fluid rounded shadow-lg"
-                                            />
-                                        </SwiperSlide>
-                                    )}
                                 </Swiper>
                             ) : null}
                         </SwiperSlide>
@@ -300,7 +287,7 @@ return (
 </div>
 </ReactLenis>
 <hr className="w-50 mx-auto" />
-    <p className="small text-center">Taukane Portfolio / 2025</p>
+    <p className="small text-center">Portfolio Taukane / 2025</p>
 <hr className="w-50 mx-auto" />
 </>
 )}
