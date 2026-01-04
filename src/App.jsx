@@ -366,7 +366,6 @@ function App() {
                 <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo" /><p>Git</p></SwiperSlide>
                 <SwiperSlide><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo" /><p>GitHub</p></SwiperSlide>
             </Swiper>
-            <hr className="m-5" data-bs-theme="dark" />
             <a href="#" onClick={toTop} title="Topo Portfolio" id="topo">
                 <img
                     src="image/top.jpg"
@@ -378,6 +377,9 @@ function App() {
                 />
             </a>
             <span className="scroller"></span>
+                <hr className="w-50 mx-auto" />
+                    <p className="small text-center">Taukane / 2026</p>
+                <hr className="w-50 mx-auto" />
             <ReactLenis root></ReactLenis>
 		</>
 	)

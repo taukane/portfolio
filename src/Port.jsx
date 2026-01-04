@@ -114,17 +114,18 @@ return (
                         loop={true}
                         freeMode={true}
                         grabCursor={true}
+                        slidesPerView={2}
                         breakpoints={{
                         640: {
-                            slidesPerView: 2,
-                            spaceBetween: 1,
-                        },
-                        768: {
                             slidesPerView: 3,
                             spaceBetween: 1,
                         },
-                        1024: {
+                        768: {
                             slidesPerView: 4,
+                            spaceBetween: 1,
+                        },
+                        1024: {
+                            slidesPerView: 5,
                             spaceBetween: 1,
                         },
                         }}
@@ -149,8 +150,8 @@ return (
                                         src={tumbis.src} 
                                         alt={`${tumbis.alt}`} 
                                         title={`${tumbis.alt}`}
-                                        width={280}
-                                        height={280}
+                                        width={180}
+                                        height={180}
                                         className="img-fluid"
                                         />
                                     ): null
@@ -171,7 +172,7 @@ return (
                         onSwiper={hash}
                         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                         loop={true}
-                        spaceBetween={20}
+                        spaceBetween={10}
                         keyboard={{
                             enabled: true,
                         }}
@@ -258,7 +259,7 @@ return (
         </div>
     </div>
     <hr className="w-50 mx-auto" />
-        <p className="small text-center">Portfolio Taukane / 2025</p>
+        <p className="small text-center">Taukane / 2026</p>
     <hr className="w-50 mx-auto" />
 </>
 )}
