@@ -100,7 +100,19 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/portfolio",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/contato",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/api",
         "destination": "/index.html"
       }
     ]

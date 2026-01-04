@@ -14,19 +14,9 @@
   "contact-title": "Contact",
   "services-title": "Services",
       "services": [
-        "UX/UI Design",
-        "Graphic Design",
-        "Visual Identity Creation",
-        "Design Consulting",
-        "Web Development",
-        "Website Maintenance",
-        "SEO / Performance Optimization and Ranking",
-        "Social Media Marketing",
-        "Web Application Development",
-        "Landing Page Creation",
-        "E-Commerce Development",
-        "Website Template Creation",
-        "Custom Systems Development"
-  ],
+        "UI/UX Design and Graphic Design,",
+        "Web Development and Performance Optimization and SEO Ranking,",
+        "Branding e Visual Identity: Creation and repositioning of brands."
+      ],
   "widgets-title": "Tools"
 }

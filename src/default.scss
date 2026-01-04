@@ -192,7 +192,7 @@ img  {
     background-repeat: no-repeat;
     background-blend-mode: lighten;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -362,7 +362,7 @@ img  {
         width: 120px;
         height:140px;
         animation: logoport forwards;
-        animation-range: entry 100% exit 100%;
+        animation-range: entry 200% exit 100%;
         animation-timeline: view();
     }
 }
@@ -598,7 +598,7 @@ img  {
     }
     .box {
         width: 100%;
-        height: 100vh;
+        // height: 100%;
         text-align: left;
         h2{
             font-variant-ligatures: contextual;
@@ -613,14 +613,14 @@ img  {
         }
     }
     .portfa{
-        width:95%;
+        width:85%;
+        svg{animation-range: entry 390% exit 100%;}
     }
     #works {
         img{
         border:solid 4px $lighter;
-        margin-bottom: 40px;
         filter: sepia(0) hue-rotate(0deg) saturate(100%);
-        opacity: .55;
+        opacity: .75;
         }
         h3{display: none}
         a{text-decoration: none}
@@ -631,7 +631,7 @@ img  {
     .swiper-button-next, .swiper-button-prev{display: none !important}
 
     .contatk{
-        width:98% !important;
+        width:90% !important;
     }
 }
 

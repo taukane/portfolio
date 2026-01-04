@@ -157,7 +157,6 @@ function App() {
     const { t, i18n } = useTranslation();
 	return (
 		<>
-        <ReactLenis root></ReactLenis>
         <Nav />
         <div className="container-fluid p-0 m-0 d-flex">
         <section className="d-block w-100">
@@ -303,9 +302,9 @@ function App() {
                     </div>
                 </div>
             </section>
-            <section className="box d-block w-100 vh-100">
+            <section className="d-block w-100">
                 <div className="container my-5">
-                    <div className="apresenta rounded">
+                    <div className="apresenta rounded py-2 my-2">
                         <NavLink to="/portfolio" title="Portfolio Designer Curitiba">
                             <Logo />
                             <h6 className="d-none">Designer Curitiba</h6>
@@ -379,26 +378,26 @@ function App() {
                 />
             </a>
             <span className="scroller"></span>
+            <ReactLenis root></ReactLenis>
 		</>
 	)
 }
 
+const thumbis = [
+    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Dom Bertolin: Website'},
+    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel, Honda'},
+    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel, Autoconf'},
+    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg', alt: 'Projeto Gráfico, Tramontina'},
+    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg', alt: 'Design UX/UI, Lawww'},
+    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg', alt: 'Direção de Arte, Volvo CE'},
+];
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-monospace">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Dom Bertolin: Website + Branding + SEO'},
+    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-monospace">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Dom Bertolin: Website'},
     {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.webp'], alt: 'Honda: Design UX/UI + Desenvolvimento Laravel'},
     {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Autoconf</p>, src: [ 'image/autoconf-kanban-ux-ui.webp'], alt: 'Autoconf: Design UX/UI + Desenvolvimento Laravel'},
     {id: 3, name: 'Projeto Gráfico Embalagem', descricao: <p>Tramontina</p>, src: ['image/facas-embalagens.webp'], alt: 'Tramontina: Projeto Gráfico Embalagem'},
     {id: 4, name: 'Design UX/UI', descricao: <p>Lawww</p>, src: ['image/laww-layout-home-v2.webp'], alt: 'Lawww Design UX/UI'},
     {id: 5, name: 'Direção de Arte Redes Sociais', descricao:<p>Volvo CE</p>, src: ['image/volvo-facebook-2012.webp'], alt: 'Volvo CE: Direção de Arte Redes Sociais'},
 
-];
-
-const thumbis = [
-    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Dom Bertolin: Site + Brand + SEO'},
-    {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel, Honda'},
-    {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel, Autoconf'},
-    {id: 3, name: 'Projeto Gráfico', src: 'image/facas-embalagens-thumb.jpg', alt: 'Projeto Gráfico, Tramontina'},
-    {id: 4, name: 'Design UX/UI', src: 'image/laww-thumb.jpg', alt: 'Design UX/UI, Lawww'},
-    {id: 5, name: 'Direção de Arte', src: 'image/volvo-ce-facebook.jpg', alt: 'Direção de Arte, Volvo CE'},
 ];
 export default App

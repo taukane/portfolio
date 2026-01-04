@@ -17,6 +17,7 @@ import Contato from './Contato.jsx';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import Api from './Api.jsx';
+import Errou from './NotFound.jsx';
 
 let firebaseConfig = {
     apiKey: import.meta.env.VITE_API_KEY,
@@ -43,17 +44,17 @@ function MetaDescriptionUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let description = "Sou Taukane Pires, Web designer e Gráfico de Curitiba, Designer UX/UI, Front-end Developer";
+        let description = "Sou Taukane Pires, Web designer e Gráfico de Curitiba, Designer UX/UI, Desenvolvedor Front-end";
 
         switch (location.pathname) {
             case "/":
-                description = "Sou Taukane Pires, Web designer com experiencia em conceito para marcas, identidade visual, embalagens, desenvolvimento Front-end";
+                description = "Sou Taukane Pires, Web designer de Curitiba, com experiencia em conceito para marcas, identidade visual, embalagens, desenvolvimento Front-end";
                 break;
             case "/portfolio":
-                description = "Portfolio Taukane, Web designer Curitiba, Designer UX/UI, desenvolvo interfaces visuais, desenvolvimento Front-end  conceito para marcas, identidade visual,";
+                description = "Portfolio Taukane, Designer UX/UI  desenvolvedor web Front-end";
                 break;
             default:
-                description = "Sou Taukane Pires, Web designer com experiencia em conceito para marcas, identidade visual,";
+                description = "Sou Taukane Pires, Designer Web e Gráfico de Curitiba. com experiencia em conceito para marcas, identidade visual";
                 break;
         }
 
@@ -74,17 +75,17 @@ function TitleUpdater() {
     const location = useLocation();
 
     useEffect(() => {
-        let title = "Web Designer / Designer UX/UI  / Desenvolvedor Front-end / Taukane / Curitiba";
+        let title = "Web Designer Freelancer / Designer UX/UI  / Desenvolvedor Front-end / Design Gráfico / Taukane Freelancer";
 
         switch (location.pathname) {
             case "/":
-                title = "Web Designer / Designer UX/UI  / Desenvolvedor Front-end / Taukane / Curitiba";
+                title = "Taukane: Web Designer / Designer UX/UI  / Desenvolvimento de Websites / Freelancer Curitiba";
                 break;
             case "/portfolio":
-                title = "Portfólio Taukane / Web Designer / Designer UX/UI / Desenvolvedor Front-end / Curitiba";
+                title = "Taukane: Portfólio / Web Designer / Designer Gráfico / Desenvolvedor Front-end / Freelancer Curitiba";
                 break;
             default:
-                title = "Web Designer / Designer UX/UI  / Desenvolvedor Front-end / Designer Gráfico / Taukane - Curitiba";
+                title = "Taukane: Web Designer / Designer UI/UX  / Desenvolvedor Front-end / Designer Gráfico";
                 break;
         }
 
@@ -139,7 +140,7 @@ const router = createBrowserRouter([
             <>
                 <TitleUpdater />
                  <MetaDescriptionUpdater />
-                <App />
+                <Errou />
             </>
         )
     },

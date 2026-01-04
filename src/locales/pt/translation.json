@@ -1,10 +1,10 @@
 {
-    "title": "Designer UX/UI e Front-end Developer / Portfolio",
+    "title": "Designer UX/UI e Desenvolvedor Front End / Portfolio",
     "intro": "Criação e desenvolvimento de interfaces visuais para mídias online e offline.",
     "designer": "Desde a Arquitetura da Informação, até a implementação de interfaces centradas no usuário.",
     "web": "Web e Gráfico",
     "contact": "Contato",
-    "top": "Topo Portfolio",
+    "top": "Topo website",
     "bio": [
         "Experiência sólida em desenvolvimento web Front-end.",
         "Habilidades em design responsivo, otimização de performance, acessibilidade web e SEO.",
@@ -14,19 +14,9 @@
     "contact-title": "Contato",
     "services-title": "Serviços",
       "services": [
-        "UX/UI Design",
-        "Design Gráfico",
-        "Criação de Identidade Visual",
-        "Branding",
-        "Desenvolvimento web Front-end",
-        "Manutenção de Sites",
-        "SEO / Otimização de Performance e Ranqueamento",
-        "Conceitos para campanhas em Redes Sociais",
-        "Criação de Landing Pages",
-        "E-commerce foco em conversão",
-        "Desenvolvimento Wordpress",
-        "Criação de Templates para Sites",
-        "Desenvolvimento de Sistemas Personalizados"
-  ],
+        "Design UX/UI e Design Gráfico,",
+        "Desenvolvimento Web e Otimização de Performance e Ranqueamento SEO,",
+        "Branding e Identidade Visual: Criação e reposicionamento de marcas."
+      ],
    "widgets-title": "Ferramentas"
 }

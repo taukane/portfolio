@@ -66,7 +66,7 @@ function Contato() {
                     <section>
                         <h4 className="fw-bold">{t('services-title')}:</h4>
                         <ul className="small">
-                            {t('services', { returnObjects: true }).map((service, index) => (
+                            {t('services', { returnObjects: true }).map((service,index) => (
                                 <li key={index}>{service}</li>
                             ))}
                         </ul>
