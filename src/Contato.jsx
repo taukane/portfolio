@@ -2,10 +2,11 @@ import React, {useEffect, useState} from 'react';
 import { NavLink } from "react-router";
 import i18n from './i18n.jsx';
 import { useTranslation } from 'react-i18next';
+import { storageHelper } from './utils/storageHelper';
 
 function Contato() { 
     useEffect(() => {
-        const savedLang = localStorage.getItem('i18nextLng');
+        const savedLang = storageHelper.getItem('i18nextLng');
         if (savedLang) {
             i18n.changeLanguage(savedLang);
         }

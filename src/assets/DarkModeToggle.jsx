@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { storageHelper } from '../utils/storageHelper';
 
 function DarkModeToggle() {
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    const [theme, setTheme] = useState(storageHelper.getItem('theme') || 'light');
 
     useEffect(() => {
         document.documentElement.setAttribute('data-bs-theme', theme);
-        localStorage.setItem('theme', theme);
+        storageHelper.setItem('theme', theme);
     }, [theme]);
 
     const toggleTheme = () => {

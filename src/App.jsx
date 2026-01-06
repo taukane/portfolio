@@ -289,8 +289,7 @@ function App() {
             <section className="box d-block w-100">
                 <div className="container-fluid" onClick={scrollToNextBox}> 
                     <div className="row">
-                        <div className="col-md-6 bio">
-                        <hr/>
+                        <div className="col-md-6 bio p-5">
                         <h5>{t('bio.0')}</h5>
                         <hr/>
                         <h5>{t('bio.1')}</h5>

@@ -48,10 +48,10 @@ function MetaDescriptionUpdater() {
 
         switch (location.pathname) {
             case "/":
-                description = "Sou Taukane Pires, Web designer de Curitiba, com experiencia em conceito para marcas, identidade visual, embalagens, desenvolvimento Front-end";
+                description = "Sou Taukane Pires, Web designer de Curitiba, com experiencia em conceito para marcas, identidade visual, embalagens, desenvolvimento Front-end em Curitiba";
                 break;
             case "/portfolio":
-                description = "Portfolio Taukane, Designer UX/UI  desenvolvedor web Front-end";
+                description = "Portfolio Taukane, Designer UX/UIn Desenvolvedor web Front-end Freelancer em Curitiba";
                 break;
             default:
                 description = "Sou Taukane Pires, Designer Web e Gráfico de Curitiba. com experiencia em conceito para marcas, identidade visual";
@@ -79,13 +79,13 @@ function TitleUpdater() {
 
         switch (location.pathname) {
             case "/":
-                title = "Taukane: Web Designer / Designer UX/UI  / Desenvolvimento de Websites / Freelancer Curitiba";
+                title = "Taukane: Web Designer / Designer UX/UI  / Desenvolvimento de Websites / Freelancer de Curitiba";
                 break;
             case "/portfolio":
                 title = "Taukane: Portfólio / Web Designer / Designer Gráfico / Desenvolvedor Front-end / Freelancer Curitiba";
                 break;
             default:
-                title = "Taukane: Web Designer / Designer UI/UX  / Desenvolvedor Front-end / Designer Gráfico";
+                title = "Taukane: Web Designer / Designer UI/UX  / Desenvolvedor Front-end / Designer Gráfico em Curitiba";
                 break;
         }
 

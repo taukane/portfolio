@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 width="1024px" height="768px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768">
-	<g opacity="0.5">
+	<g opacity="0.3">
 		<radialGradient id="SVGID_1_" cx="512" cy="386" r="379.2737" gradientTransform="matrix(1 0 0 -1 0 770)" gradientUnits="userSpaceOnUse">
 			<stop  offset="1.065558e-08" style="stop-color:#FAE3BE"/>
 			<stop  offset="0.2881" style="stop-color:#FAE4C1;stop-opacity:0.7119"/>
@@ -9,6 +9,6 @@
 			<stop  offset="0.9298" style="stop-color:#FDFAF4;stop-opacity:7.015020e-02"/>
 			<stop  offset="1" style="stop-color:#FEFEFE;stop-opacity:0"/>
 		</radialGradient>
-		<circle fill="url(#SVGID_1_)" fill-opacity="0.6" cx="512" cy="384" r="379.3"/>
+		<circle fill="url(#SVGID_1_)" fill-opacity="0.4" cx="512" cy="384" r="379.3"/>
 	</g>
 </svg>

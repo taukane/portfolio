@@ -3,10 +3,11 @@ import { NavLink } from "react-router";
 import i18n from '../i18n.jsx';
 import DarkModeToggle from './DarkModeToggle.jsx';
 import ContatoModal from '../ContatoModal.jsx';
+import { storageHelper } from '../utils/storageHelper';
 
 function Nav() {
     useEffect(() => {
-        const savedLang = localStorage.getItem('i18nextLng');
+        const savedLang = storageHelper.getItem('i18nextLng');
         if (savedLang) {
             i18n.changeLanguage(savedLang);
         }

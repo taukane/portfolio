@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Keyboard, Pagination, Navigation, FreeMode, Thumbs, HashNavigation } from 'swiper/modules';
@@ -10,6 +10,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 import Logo from "./assets/Logo.jsx";
+
+//import { useTranslation } from 'react-i18next';
 
 import Nav from "./assets/Nav.js";
 import { ReactLenis, useLenis } from 'lenis/react';
@@ -121,11 +123,11 @@ return (
                             spaceBetween: 1,
                         },
                         768: {
-                            slidesPerView: 4,
+                            slidesPerView: 5,
                             spaceBetween: 1,
                         },
                         1024: {
-                            slidesPerView: 5,
+                            slidesPerView: 6,
                             spaceBetween: 1,
                         },
                         }}
@@ -265,7 +267,7 @@ return (
 )}
 
 const panels = [
-    {id: 0, name: 'Website + Branding + SEO', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-family-base">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Dom Bertolin Criação Website'},
+    {id: 0, name: 'Website + SEO + Branding', descricao:<p><a href="https://dombertolin.com.br" target="_blank" className="font-family-base">Dom Bertolin</a></p>, src: ['image/bom-bertolin-website.webp'], alt: 'Dom Bertolin Criação Website'},
     {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', descricao:<p>Volkswagen</p>, src: ['image/Volkswagen-layout-site.png', 'image/volkswagen-design-ux-ui.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
     {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', descricao: <p>Honda</p>, src: ['image/honda-veiculos.jpg', 'image/honda-interfaces.webp'], alt: 'Design UX/UI + Desenvolvimento Laravel'},
     {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel e Wordpress', descricao: <p>Autoconf</p>, src: ['image/autoconf-kanban-ux-ui.webp', 'image/autoconf-design-system-desktop.webp', 'image/design-system-autoconf-bootstrap.webp', 'image/autoconf-design-system-mobile.webp', 'image/layout-blog-autoconf-v2-01.jpg'], alt: 'Design UX/UI + Desenvolvimento Laravel e Wordpress'},
@@ -278,7 +280,7 @@ const panels = [
 ];
 
 const thumbis = [
-    {id: 0, name: 'Website + Branding + SEO', src: 'image/dombertolin-thumb.jpg', alt: 'Dom Bertolin Website'},
+    {id: 0, name: 'Website', src: 'image/dombertolin-thumb.jpg', alt: 'Dom Bertolin Website'},
     {id: 1, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/volks-thumb.jpg', alt: 'Volkswagen Design UX/UI + Desenvolvimento Laravel'},
     {id: 2, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/honda-thumb.jpg', alt: 'Honda Design UX/UI + Desenvolvimento Laravel'},
     {id: 3, name: 'Design UX/UI + Desenvolvimento Laravel', src: 'image/autoconf-thumb.jpg', alt: 'Design UX/UI + Desenvolvimento Laravel'},
