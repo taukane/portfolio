@@ -48,10 +48,10 @@ function MetaDescriptionUpdater() {
 
         switch (location.pathname) {
             case "/":
-                description = "Sou Taukane Pires, Web designer de Curitiba, com experiencia em conceito para marcas, identidade visual, embalagens, desenvolvimento Front-end em Curitiba";
+                description = "Sou Taukane Pires, Web designer de Curitiba, com experiencia em conceito para marcas, identidade visual, embalagens, desenvolvimento de sites";
                 break;
             case "/portfolio":
-                description = "Portfolio Taukane, Designer UX/UIn Desenvolvedor web Front-end Freelancer em Curitiba";
+                description = "Portfolio Taukane, Web designer de Curitiba Desenvolvedor web Front-end Freelancer";
                 break;
             default:
                 description = "Sou Taukane Pires, Designer Web e Gráfico de Curitiba. com experiencia em conceito para marcas, identidade visual";
